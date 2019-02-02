@@ -3,7 +3,7 @@
 
 
 ## Create a "credentials" file (~/.aws/credentials)
-# aws configure
+\# aws configure
 
 -- Modify the file to include additional users and credentials
 
