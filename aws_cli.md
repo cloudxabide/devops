@@ -1,4 +1,4 @@
-## Install the AWS cli components - demonstrated in [./OSX.sh](OSX.sh#install-aws-cli)
+## Install the AWS cli components - demonstrated in [./OSX.sh](OSX.sh.md#install-aws-cli)
 
 ## Create a "credentials" file (~/.aws/credentials)
 \# aws configure
