@@ -18,8 +18,8 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 brew install python
 
-# Install Cask
-# http://caskroom.io/
+## Install Cask
+-- http://caskroom.io/
 brew tap caskroom/cask            # Tap the Caskroom/Cask repository from Github using HTTPS.
 
 # Install Atom
@@ -31,12 +31,13 @@ brew cask install atom            # Install the given cask.
 brew cleanup                      # For all installed or specific formulae, remove any older versions from the cellar.
 
 ## Install-AWS-CLI  
-# https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
+-- https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
 curl -O https://bootstrap.pypa.io/get-pip.py
 python3 get-pip.py --user
 pip install awscli --upgrade --user
 
-# Install Chrome
+## Install Chrome
+```
 case `hostname -f | sed -e 's/^[^.]*\.//'` in
   ant.amazon.com)
     echo "Install Chrome from Self-Service Apps"
@@ -45,6 +46,7 @@ case `hostname -f | sed -e 's/^[^.]*\.//'` in
       brew cask install google-chrome
   ;;
 esac
+```
 
 exit 0
 
