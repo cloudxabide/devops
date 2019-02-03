@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # OSX.sh
-# You should view [README.md](./README.md)
+# You should view README.md
 
 #  Install Xcode 
 xcode-select --install
@@ -38,7 +38,6 @@ python3 get-pip.py --user
 pip install awscli --upgrade --user
 
 # Install Chrome
-```
 case `hostname -f | sed -e 's/^[^.]*\.//'` in
   ant.amazon.com)
     echo "Install Chrome from Self-Service Apps"
@@ -47,7 +46,6 @@ case `hostname -f | sed -e 's/^[^.]*\.//'` in
       brew cask install google-chrome
   ;;
 esac
-```
 
 exit 0
 
