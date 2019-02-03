@@ -1,5 +1,8 @@
 ## Install the AWS cli components - demonstrated in [./OSX.sh](OSX.sh)
 
+I am concluding that while you can specify specific profiles several different ways (ENV Variable, configuration files, within a script itself) I believe it makes sense to define your configuration using files, and then reference those files.  My view may potentially change on this.
+
+
 ## Create a "credentials" file (~/.aws/credentials)
 \# aws configure
 
@@ -38,4 +41,14 @@ REGIONS    ec2.us-west-2.amazonaws.com    us-west-2
 mylaptop:~ jaradtke$ aws ec2 describe-instances --profile cXa-jaradtke --filters "Name=endpoint,Values=*us*"
 ```
 
+-- To utilize the configuration from a python script...  
+```
+import boto
+con = boto.connect_s3()
+```
 
+
+```
+import boto
+con = boto.connect_s3(profile_name="cXa-jaradtke")
+```
