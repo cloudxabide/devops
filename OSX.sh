@@ -31,6 +31,10 @@ brew cask info atom               # Displays information about the given Cask
 brew cask install atom            # Install the given cask.
 brew cleanup                      # For all installed or specific formulae, remove any older versions from the cellar.
 
+# Install GRIP  (GitHub Readme Instant Preview)
+## https://github.com/joeyespo/grip
+brew install grip
+
 # Install AWS CLI  
 ## https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
 curl -O https://bootstrap.pypa.io/get-pip.py

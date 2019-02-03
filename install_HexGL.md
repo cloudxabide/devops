@@ -8,17 +8,16 @@
 
 ```
 yum -y install git 
-mkdir /var/www/html ; cd $_
+mkdir -p /var/www/html ; cd $_
 git clone git://github.com/BKcore/HexGL.git
 cd HexGL
-restorecon -RFvv 
+restorecon -RFvv /var/www/html
 python -m SimpleHTTPServer &
 ```
--- Note:  Installing the HTTP server is COMPLETELY unecessary.  I simply do it 
 
 -- Test status
 ```
 netstat -anp | grep 8000
 curl localhost:8000
 yum -y install tcpdump
-tcpdump --port8000 
+tcpdump port 8000 
