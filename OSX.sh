@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # OSX.sh
-# You should view README.md
+# You should view [README.md](./README.md)
 
 #  Install Xcode 
 xcode-select --install
