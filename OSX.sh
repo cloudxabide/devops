@@ -3,7 +3,7 @@
 # OSX.sh
 # You should view README.md
 
-#  Install Xcode 
+# Install Xcode 
 xcode-select --install
 
 # Local setup
@@ -20,11 +20,11 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 brew install python
 
 # Install Cask
--- http://caskroom.io/
+## http://caskroom.io/
 brew tap caskroom/cask            # Tap the Caskroom/Cask repository from Github using HTTPS.
 
 # Install Atom
-# Visit https://www.code2bits.com
+## Visit https://www.code2bits.com
 brew update                       # Fetch latest version of homebrew and formula.
 brew search atom                  # Searches all known Casks for a partial or exact match.
 brew cask info atom               # Displays information about the given Cask
@@ -32,12 +32,12 @@ brew cask install atom            # Install the given cask.
 brew cleanup                      # For all installed or specific formulae, remove any older versions from the cellar.
 
 # Install AWS CLI  
-# https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
+## https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
 curl -O https://bootstrap.pypa.io/get-pip.py
 python3 get-pip.py --user
 pip install awscli --upgrade --user
 
-# Install Chrome
+# Install Chrome (using homebrew)
 case `hostname -f | sed -e 's/^[^.]*\.//'` in
   ant.amazon.com)
     echo "Install Chrome from Self-Service Apps"
@@ -49,7 +49,7 @@ esac
 
 exit 0
 
-# References:
+## References:
 https://docs.python-guide.org/starting/install3/osx/
 http://caskroom.io/
 
