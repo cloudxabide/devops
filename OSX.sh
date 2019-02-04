@@ -3,15 +3,15 @@
 # OSX.sh
 # You should view README.md
 
-# Install Xcode 
+# Install Xcode
 xcode-select --install
 
 # Local setup
 curl -o ~/.bashrc https://raw.githubusercontent.com/ridexabide/workstation/master/FILES/.bashrc
 curl -o ~/.bash_profile https://raw.githubusercontent.com/ridexabide/workstation/master/FILES/.bash_profile
-[ -d .ssh ] || ssh-keygen -trsa -b2048 
+[ -d .ssh ] || ssh-keygen -trsa -b2048
 curl -o ~/.ssh/config https://raw.githubusercontent.com/ridexabide/workstation/master/FILES/config
-chmod 0600 ~/.ssh/config 
+chmod 0600 ~/.ssh/config
 
 # Install Python 3.x
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -36,7 +36,7 @@ brew cleanup                      # For all installed or specific formulae, remo
 ## https://github.com/joeyespo/grip
 brew install grip
 
-# Install AWS CLI  
+# Install AWS CLI
 ## https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
 curl -O https://bootstrap.pypa.io/get-pip.py
 python3 get-pip.py --user
@@ -57,7 +57,5 @@ exit 0
 ## References:
 https://docs.python-guide.org/starting/install3/osx/
 http://caskroom.io/
-
 https://www.code2bits.com/how-to-install-atom-on-macos-using-homebrew/
-
 https://pythonbasics.org/
