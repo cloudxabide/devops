@@ -32,6 +32,7 @@ brew cask install atom            # Install the given cask.
 brew cleanup                      # For all installed or specific formulae, remove any older versions from the cellar.
 
 # Install GRIP  (GitHub Readme Instant Preview)
+## Not entirely sure this is worth messing around with.
 ## https://github.com/joeyespo/grip
 brew install grip
 
