@@ -4,7 +4,7 @@
 ## Generate a "random" numeric string
 I need to create some random strings to create S3 bucket names.  I (initially) imagined that UUIDgen would have some flag to modify it's output.  Nope.  
 
-The following will work to create an 8 digit numerica value:
+The following will work to create an 8 digit numeric value:
 ```
 $ cat /dev/urandom | LC_CTYPE=C tr -dc '0-9' | fold -w 8 | head -n1
 $ uuidgen | fold -w 8 | head -1
