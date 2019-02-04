@@ -3,7 +3,7 @@
 ## Summary  
 Repo for my DevOps type stuff - whatever that might mean.
 
-This particular Renaissance involves a transition to the cloud, from a primary focus on Red Hat Enterprise Linux, and Red Hat Products  (OpenShift, Satellite, Ansible) ... while also switching to a Mac as my daily driver from a Fedora laptop.  I imagine this is not a big ask for seasoned developers, but... like I mentioned, I am a "platform guy" which I have spent the entirety of my career doing.
+This particular Renaissance involves a transition to the cloud, from a primary focus on Red Hat Enterprise Linux, and Red Hat Products  (OpenShift, Satellite, Virtualization, Identity Management, Ansible) ... while also switching to a Mac as my daily driver from a Fedora laptop.  I imagine this is not a big ask for seasoned developers, but... like I mentioned, I am a "platform guy" which I have spent the entirety of my career doing.
 
 I have created this repo to track it all.
 
