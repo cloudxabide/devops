@@ -19,26 +19,19 @@ alias ll="/bin/ls -l"
 alias la="/bin/ls -la"
 alias please='/usr/bin/sudo $(history -p !!)'
 alias butwhy='/usr/bin/systemctl status $_ '
-alias matrixnet='/usr/bin/sudo route add -net 10.10.10.0 netmask 255.255.255.0 gw 192.168.0.1'
-
-alias oclogin='oc login -u morpheus -p 'Passw0rd' --insecure-skip-tls-verify --server=https://rh7-ocp3-mst.matrix.lab.:8443'
 
 # Use vi as the EDITOR
 set -o vi
 
-# google-chrome-stable --force-device-scale-factor=1.4
-
 # OS-specific optimization
-case `uname` in 
+case `uname` in
   Linux)
     alias ls="/bin/ls -N "
     alias vms="sudo virsh list --inactive --all"
     alias vv="sudo virt-viewer ${1}"
   ;;
-  Darwin)
-    # Placeholder for Apple Mac OS X
+  Darwin)  # for Apple Mac OS X
     PATH="/usr/local/opt/python/libexec/bin:${HOME}/Library/Python/3.7/bin:$PATH"
-
   ;;
   SunOS)
     PS1="`/usr/ucb/whoami`@${MYHOSTNAME} $ "
@@ -56,3 +49,4 @@ case `uname` in
 esac
 export PATH PS1 MANPATH LD_LIBRARY_PATH TERM EDITOR VISUAL GIT_EDITOR
 
+# google-chrome-stable --force-device-scale-factor=1.4
