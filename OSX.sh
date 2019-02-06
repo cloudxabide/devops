@@ -1,6 +1,8 @@
 #!/bin/bash
 
+
 # OSX.sh
+# ver: 1
 # You should view README.md
 
 # Install Xcode
