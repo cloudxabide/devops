@@ -1,4 +1,4 @@
-# Install HexGL 
+# Install and run HexGL (using Apache)
 
 
 ## Basic Provisioning from AWS Console
@@ -7,17 +7,22 @@
 -- Login (ssh) to the EC2 and run
 
 ```
-yum -y install git 
-mkdir -p /var/www/html ; cd $_
+sudo su -
+yum -y install git httpd
+cd /var/www/; mv html html.bak
 git clone git://github.com/BKcore/HexGL.git
-cd HexGL
+ln -s HexGL html
 restorecon -RFvv /var/www/html
-python -m SimpleHTTPServer &
+systemctl start httpd
 ```
 
 -- Test status
 ```
-netstat -anp | grep 8000
-curl localhost:8000
+netstat -anp | grep 80
+curl localhost:80
 yum -y install tcpdump
-tcpdump port 8000 
+tcpdump port not 22
+```
+
+## NOTES:
+The reference webpage suggests using python SimpleHTTPServer - which should work fine, other than it starts on port 8000.  If you are running this from a container, I recommend still going that route.

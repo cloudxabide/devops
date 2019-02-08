@@ -34,9 +34,11 @@ brew cask install atom            # Install the given cask.
 brew cleanup                      # For all installed or specific formulae, remove any older versions from the cellar.
 
 # Install GRIP  (GitHub Readme Instant Preview)
-## Not entirely sure this is worth messing around with.
+## Not entirely sure this is worth messing around with. (Atom has a built-in md viewer)
 ## https://github.com/joeyespo/grip
 brew install grip
+
+brew install tree
 
 # Install AWS CLI
 ## https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
