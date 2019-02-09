@@ -13,7 +13,7 @@ cd /var/www/; mv html html.bak
 git clone git://github.com/BKcore/HexGL.git
 ln -s HexGL html
 restorecon -RFvv /var/www/html
-systemctl start httpd
+systemctl start httpd; systemctl enable $_
 ```
 
 -- Test status
