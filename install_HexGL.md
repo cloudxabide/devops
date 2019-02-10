@@ -1,8 +1,8 @@
 # Install and run HexGL (using Apache)
 
-I have 2 different approaches listed below (apache or python:SimpleHTTPServer).  
-Additionally - I put my "web content" in a "web directory" and apply the SELinux contexts, 
-mostly because that seems like a good practice.
+I have 2 different approaches listed below (Using Apache or python:SimpleHTTPServer - the python method is what the author intended).
+
+Additionally - regardless of the method, I put my "web content" in a "web directory" and apply the SELinux contexts, mostly because that seems like a good practice.  (You may have to mess around with file system permissions)
 
 ## Basic Provisioning from AWS Console
 -- Create an EC2 instance
@@ -31,10 +31,12 @@ restorecon -RFvv /var/www/html
 python -m SimpleHTTPServer
 ```
 
--- Test status
+## Test status
+-- See if the system is listening on port 80 (which also will display 8000)
 ```
 netstat -anp | grep 80
 curl localhost:80
+curl localhost:8000
 yum -y install tcpdump
 tcpdump port not 22
 ```
