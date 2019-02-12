@@ -1,12 +1,14 @@
 #!/bin/bash
 
-
 # OSX.sh
 # ver: 1
 # You should view README.md
 
 # Install Xcode
 xcode-select --install
+
+# Optimize VIM
+# See [vim_foo.sh](./vim_foo.sh)
 
 # Local setup
 curl -o ~/.bashrc https://raw.githubusercontent.com/ridexabide/workstation/master/FILES/.bashrc
