@@ -28,7 +28,7 @@ mkdir -p /var/www/html; cd $_
 git clone git://github.com/BKcore/HexGL.git
 cd HexGl
 restorecon -RFvv /var/www/html
-python -m SimpleHTTPServer
+python -m SimpleHTTPServer (OSX - $ python -m http.server 8000)
 ```
 
 ## Test status

@@ -9,6 +9,7 @@ xcode-select --install
 
 # Optimize VIM
 # See [vim_foo.sh](./vim_foo.sh)
+bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/master/vim_foo.sh)
 
 # Local setup
 curl -o ~/.bashrc https://raw.githubusercontent.com/ridexabide/workstation/master/FILES/.bashrc

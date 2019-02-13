@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Cleanup for VIM
-mkdir -p ~/.vim/{autoload,bundle,plugins}
+mkdir -p ~/.vim/{autoload,bundle,plugins,tmp}
 
 cat << EOF > ~/.vimrc
 " ================ Indentation ======================
@@ -16,6 +16,9 @@ set expandtab
 
 filetype plugin on
 filetype indent on
+
+" Move *.swp files to central location
+set directory^=$HOME/.vim/tmp//
 EOF
 
 exit 0
