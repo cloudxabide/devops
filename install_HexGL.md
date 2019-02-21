@@ -4,6 +4,8 @@ I have 2 different approaches listed below (Using Apache or python:SimpleHTTPSer
 
 Additionally - regardless of the method, I put my "web content" in a "web directory" and apply the SELinux contexts, mostly because that seems like a good practice.  (You may have to mess around with file system permissions)
 
+Finally - at this time, the version published in the git repo only works on Mozilla Firefox.
+
 ## Basic Provisioning from AWS Console
 -- Create an EC2 instance
 
