@@ -7,6 +7,20 @@
 # Install Xcode
 xcode-select --install
 
+# OS X Desktop Tweaks
+# Enable "tap-to-click" (not sure whether sudo is needed)
+# http://osxdaily.com/2014/01/31/turn-on-mac-touch-to-click-command-line/
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# Set Dark Mode
+
+# Tweak GIT
+git config --global core.excludesfile ~/.gitignore_global
+echo ".DS_Store" >> ~/.gitignore_global
+
 # Optimize VIM
 # See [vim_foo.sh](./vim_foo.sh)
 bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/master/vim_foo.sh)
