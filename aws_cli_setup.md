@@ -14,7 +14,7 @@ Also, this explanation is predicated on the idea that you have already created s
 aws_access_key_id = ACCESSKEYIDHERE 
 aws_secret_access_key = SECRETACCESSKEYHERE
 
-[cXa-jaradtke]
+[cxa-jaradtke]
 aws_access_key_id = ACCESSKEYIDHERE
 aws_secret_access_key = SECRETACCESSKEYHERE
 ```
@@ -25,7 +25,7 @@ aws_secret_access_key = SECRETACCESSKEYHERE
 region=us-east-2
 output=json
 
-[profile cXa-jaradtke]
+[profile cxa-jaradtke]
 region=us-east-2
 output=text
 ```
@@ -33,13 +33,13 @@ output=text
 -- To utilize the configuration from the command line...  
 
 ```
-mylaptop:~ jaradtke$ export AWS_PROFILE=cXa-jaradtke
+mylaptop:~ jaradtke$ export AWS_PROFILE=cxa-jaradtke
 mylaptop:~ jaradtke$ aws ec2 describe-regions --filters "Name=endpoint,Values=*us*"
 REGIONS    ec2.us-east-1.amazonaws.com    us-east-1
 REGIONS    ec2.us-east-2.amazonaws.com    us-east-2
 REGIONS    ec2.us-west-1.amazonaws.com    us-west-1
 REGIONS    ec2.us-west-2.amazonaws.com    us-west-2
-mylaptop:~ jaradtke$ aws ec2 describe-instances --profile cXa-jaradtke --filters "Name=endpoint,Values=*us*"
+mylaptop:~ jaradtke$ aws ec2 describe-regions --profile cxa-jaradtke --filters "Name=endpoint,Values=*us*"
 ```
 
 -- To utilize the configuration from a python script...  
@@ -51,5 +51,5 @@ con = boto.connect_s3()
 
 ```
 import boto
-con = boto.connect_s3(profile_name="cXa-jaradtke")
+con = boto.connect_s3(profile_name="cxa-jaradtke")
 ```
