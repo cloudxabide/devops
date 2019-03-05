@@ -22,6 +22,7 @@ sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableTheme
 git config --global core.excludesfile ~/.gitignore_global
 echo ".DS_Store" >> ~/.gitignore_global
 
+
 # Optimize VIM
 # See [vim_foo.sh](./vim_foo.sh)
 bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/master/vim_foo.sh)
@@ -55,6 +56,13 @@ brew cleanup                      # For all installed or specific formulae, remo
 ## Not entirely sure this is worth messing around with. (Atom has a built-in md viewer)
 ## https://github.com/joeyespo/grip
 brew install grip
+
+# Install some Gnu utils 
+
+# Install a "sane" version of sed.
+brew install gnu-sed
+-- add the following to your .bash_profile/.bashrc/etc...
+echo "PATH=\"/usr/local/opt/gnu-sed/libexec/gnubin:$PATH\" >> ~/.bashrc
 
 brew install tree
 
