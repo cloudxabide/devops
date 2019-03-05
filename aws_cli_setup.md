@@ -33,13 +33,32 @@ output=text
 -- To utilize the configuration from the command line...  
 
 ```
-mylaptop:~ jaradtke$ export AWS_PROFILE=cxa-jaradtke
-mylaptop:~ jaradtke$ aws ec2 describe-regions --filters "Name=endpoint,Values=*us*"
+$ aws ec2 describe-regions --filters "Name=endpoint,Values=*us*"
+{
+    "Regions": [
+        {
+            "Endpoint": "ec2.us-east-1.amazonaws.com",
+            "RegionName": "us-east-1"
+        },
+        {
+            "Endpoint": "ec2.us-east-2.amazonaws.com",
+            "RegionName": "us-east-2"
+        },
+        {
+            "Endpoint": "ec2.us-west-1.amazonaws.com",
+            "RegionName": "us-west-1"
+        },
+        {
+            "Endpoint": "ec2.us-west-2.amazonaws.com",
+            "RegionName": "us-west-2"
+        }
+    ]
+}
+$ aws ec2 describe-regions --profile "cxa-jaradtke" --filters "Name=endpoint,Values=*us*"
 REGIONS    ec2.us-east-1.amazonaws.com    us-east-1
 REGIONS    ec2.us-east-2.amazonaws.com    us-east-2
 REGIONS    ec2.us-west-1.amazonaws.com    us-west-1
 REGIONS    ec2.us-west-2.amazonaws.com    us-west-2
-mylaptop:~ jaradtke$ aws ec2 describe-regions --profile cxa-jaradtke --filters "Name=endpoint,Values=*us*"
 ```
 
 -- To utilize the configuration from a python script...  
