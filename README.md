@@ -1,9 +1,9 @@
 # devops - cloudXabide
 
 ## Summary  
-Repo for my DevOps type stuff - whatever that might mean.
+DevOps type stuff I find useful - whatever that might mean.
 
-This particular Renaissance involves a transition to the cloud, from a primary focus on Red Hat Enterprise Linux, and Red Hat Products  (OpenShift, Satellite, Ansible) ... while also switching to a Mac as my daily driver from a Fedora laptop.  I imagine this is not a big ask for seasoned developers, but... like I mentioned, I am a "platform guy" which I have spent the entirety of my career doing.
+The particular Renaissance I happen to be in involves a career transition to the cloud, from a primary focus on Red Hat Enterprise Linux, and Red Hat Products  (OpenShift, Satellite, Ansible) ... while also switching to a Mac as my daily driver from a Fedora Linux laptop.  I imagine this is not a big ask for seasoned developers, but... like I mentioned, I am a "platform guy" which I have spent the entirety of my career doing.
 
 I have created this repo to track it all.
 
@@ -23,4 +23,4 @@ I will self-proclaim that I am (probably) fairly old-school.  I would just as so
 Expect this to change quite frequently, and quite significantly initially (Winter of 2018/2019).
 
 WARNING ! WARNING ! WARNING... I'll say this again, I am just learning how to do this stuff on Mac
-  - use caution if you follow my guide here.
+  - as with anything you find on the Interwebs, you should be cautious if you deploy anything from my guide here.
