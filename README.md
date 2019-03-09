@@ -7,6 +7,8 @@ This particular Renaissance involves a transition to the cloud, from a primary f
 
 I have created this repo to track it all.
 
+At this point, I miss many things about a Linux Desktop Environment.  Gnu-utils just seem easier to get things accomplished with - perhaps it is just familiarity (or "old dog, new tricks").
+
 ## Goal
 As this is a fairly significant change in my career, I wanted to track it for a number of reasons.  Partially because I'm not really a spring chicken and may forget stuff, but... it will be fun to look back at the Genesis of all this.  
 Please, if you find stuff that seems inaccurate, non-optimal... or just plain wrong, let me know.
