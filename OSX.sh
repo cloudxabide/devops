@@ -22,7 +22,6 @@ sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableTheme
 git config --global core.excludesfile ~/.gitignore_global
 echo ".DS_Store" >> ~/.gitignore_global
 
-
 # Optimize VIM
 # See [vim_foo.sh](./vim_foo.sh)
 bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/master/vim_foo.sh)
@@ -57,8 +56,25 @@ brew cleanup                      # For all installed or specific formulae, remo
 ## https://github.com/joeyespo/grip
 brew install grip
 
-# Install some Gnu utils 
+### This section is for AWS Amplify
+# https://aws-amplify.github.io/docs/js/start?ref=amplify-rn-btn&platform=react-native
+# Install Node.js and npm 
+install_Amplify() {
+mkdir -p ~/Projects/Amplify ; cd $_
+brew install npm node.js yarn node watchman
+brew install yarn
+brew install node
+brew install watchman
+npm install -g @aws-amplify/cli
+npm install -g create-react-native-app
+npm install -g react-native-macos-cli 
+npm install -g react-native-cli
+npm install --save -g aws-amplify
+npm install --save -g aws-amplify-react-native
+}
 
+###### ###### ###### ######
+# Install some Gnu utils 
 # Install a "sane" version of sed.
 brew install gnu-sed
 -- add the following to your .bash_profile/.bashrc/etc...
