@@ -18,7 +18,7 @@ Please, if you find stuff that seems inaccurate, non-optimal... or just plain wr
 ## Layout
 COMMANDS - place where I'll track commands and procedures for tasks  
 FILES - Random files such as bash profile, etc...  
-Images - Store the pics  
+Images - Store the images 
 
 ## Notes
 I will self-proclaim that I am (probably) fairly old-school.  I would just as soon write a bash script, with some crazy awk/sed thing that I spent far too long researching.  But, I also want to be efficient and valuable to the people I work with/for, so... I am adopting a new strategy.
@@ -27,3 +27,12 @@ Expect this to change quite frequently, and quite significantly initially (Winte
 
 WARNING ! WARNING ! WARNING... I'll say this again, I am just learning how to do this stuff on Mac
   - as with anything you find on the Interwebs, you should be cautious if you deploy anything from my guide here.
+
+## Light Reading  
+A bit of supporting Docs to demonstrate my headspace.  
+
+[Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)  
+
+[Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)  
+
+
