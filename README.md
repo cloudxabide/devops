@@ -3,7 +3,7 @@
 ## Summary  
 DevOps type stuff I find useful - whatever that might mean.
 
-The particular Renaissance I happen to be in involves a career transition to the cloud, from a primary focus on Red Hat Enterprise Linux, and Red Hat Products  (OpenShift, Satellite, Ansible) ... while also switching to a Mac as my daily driver from a Fedora Linux laptop.  I imagine this is not a big ask for seasoned developers, but... like I mentioned, I am a "platform guy" which I have spent the entirety of my career doing.
+The particular Renaissance I happen to be in involves a career transition to the cloud, from a primary focus onInfrastructure and Platform (i.e.  Red Hat Enterprise Linux, and Red Hat Products - OpenShift, Satellite, Ansible) ... while also switching to a Mac as my daily driver from a Fedora Linux laptop.  I imagine this is not a big ask for seasoned developers, but... like I mentioned, I am a "platform guy" which I have spent the entirety of my career doing.
 
 I have created this repo to track it all.
 
@@ -18,6 +18,7 @@ Please, if you find stuff that seems inaccurate, non-optimal... or just plain wr
 ## Layout
 COMMANDS - place where I'll track commands and procedures for tasks  
 FILES - Random files such as bash profile, etc...  
+Images - Store the pics  
 
 ## Notes
 I will self-proclaim that I am (probably) fairly old-school.  I would just as soon write a bash script, with some crazy awk/sed thing that I spent far too long researching.  But, I also want to be efficient and valuable to the people I work with/for, so... I am adopting a new strategy.
