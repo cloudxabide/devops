@@ -1,7 +1,7 @@
 # AWS Cli Setup (and usage)
 ## Overview
 
-I am concluding that while you can specify specific profiles several different ways (ENV Variable, configuration files, within a script itself) I believe it makes sense to define your configuration using files, and then reference those files.  My view may potentially change on this.
+I am concluding that while you can invoke specific profiles several different ways (ENV Variable, configuration files, within a script itself) I believe it makes sense to define your configuration using files, and then reference those files.  My view may potentially change on this.
 
 Also, this explanation is predicated on the idea that you have already created several different IAM user accounts (different Organizations, different Roles, etc...)
 ## Steps
