@@ -13,7 +13,7 @@ At this point, I miss many things about a Linux Desktop Environment.  Gnu-utils 
 As this is a fairly significant change in my career, I wanted to track it for a number of reasons.  Partially because I'm not really a spring chicken and may forget stuff, but... it will be fun to look back at the Genesis of all this.  
 Please, if you find stuff that seems inaccurate, non-optimal... or just plain wrong, let me know.
 
-[Manifest Destinty](Images/ManifestDestiny.png <!-- .element height="50%" width="50%" -->
+[Manifest Destinty](Images/ManifestDestiny.png) <!-- .element height="50%" width="50%" -->
 
 ## Layout
 COMMANDS - place where I'll track commands and procedures for tasks  
