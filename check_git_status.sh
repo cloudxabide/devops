@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# Purpose:  I have 2 "structures" that I follow for my Git Repos
-#           ~/Repositories/Public
-#           ~/Repositories/Public
-#          
+# Purpose:  I wanted a quick way to review ALL the repos I have cached locally, as well as
+#           my own repos that I am working with.
+#           I have 2 "structures" that I follow for my Git Repos
+#             ~/Repositories/Public/<repo-owner>/<repo-name> (Public Repos)
+#             ~/Repositories/<my-repo-owner>/<repo-name> (My Personal Repos)
+#           
 
 COMMAND=" "
 COMMANDS=" "
@@ -65,7 +67,7 @@ case "$SCRIPTPARAM" in
     do_private "$COMMANDS"
   ;;
   "public")
-    COMMANDS="pull status "
+    COMMANDS="pull "
     do_public "$COMMANDS"
   ;;
   "" )  

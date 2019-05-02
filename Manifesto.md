@@ -1,5 +1,5 @@
 # Manifesto
-From Jeff Bezos...  
+## From Jeff Bezos...  
 https://www.inc.com/scott-mautz/jeff-bezos-says-asking-these-12-questions-now-will-make-you-proud-of-life-youve-built-later.html  
 
 1. How will you use your gifts?
@@ -46,3 +46,16 @@ Cynics lose their power when challenged. Challenge yourself to lift up rather th
 There's no value my wife and I try to role model more for our child than kindness. Why? Because it's the positive, environment-molding attribute from which all other positive attributes flow.
 
 We're the editors of our own life story. Our job is to build the most meaningful chapters we can before "The End". So get introspective now to enjoy your looking-back perspective later.
+
+## The Story
+This journey has been insane and I am documenting it for other's who may be following a similar path.
+
+[Pixies - Where is my Mind?](https://www.youtube.com/watch?v=49FB9hhoO6c) "You've met me in a very strange time in my life" -- Tyler Durden, Fight Club  
+[Basement Jaxx - Where's Your Head At](https://www.youtube.com/watch?v=5rAOyh7YmEc)
+
+It's OK to not know everything... and it's OK to know.. that you don't know everything.  In fact, if you feel that you know everything, you're probably [hosed.](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
+
+
+## References
+[Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)   
+[Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)  

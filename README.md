@@ -28,11 +28,3 @@ Expect this to change quite frequently, and quite significantly initially (Winte
 WARNING ! WARNING ! WARNING... I'll say this again, I am just learning how to do this stuff on Mac
   - as with anything you find on the Interwebs, you should be cautious if you deploy anything from my guide here.
 
-## Light Reading  
-A bit of supporting Docs to demonstrate my headspace.  
-
-[Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)  
-
-[Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)  
-
-
