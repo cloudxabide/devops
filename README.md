@@ -16,6 +16,7 @@ Please, if you find stuff that seems inaccurate, non-optimal... or just plain wr
 ![Manifest Destinty](Images/ManifestDestiny.png)<!-- .element height="20%" width="20%" -->
 
 ## Layout
+* Directories
 COMMANDS - place where I'll track commands and procedures for tasks  
 FILES - Random files such as bash profile, etc...  
 Images - Store the images 
