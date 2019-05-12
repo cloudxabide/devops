@@ -4,7 +4,6 @@ https://www.inc.com/scott-mautz/jeff-bezos-says-asking-these-12-questions-now-wi
 
 1. How will you use your gifts?
 We all have gifts, no exception. How can you wield yours like the superpowers they are to do good for the world?
-
 Different gifts can surface at different times. My business/marketing gifts served me well for decades, until I wanted to use other gifts in servitude (thus becoming a speaker/author/
 teacher/coach). I've found the most happiness in using my gifts to serve something greater than myself.
 
