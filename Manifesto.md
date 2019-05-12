@@ -7,12 +7,11 @@ We all have gifts, no exception. How can you wield yours like the superpowers th
 Different gifts can surface at different times. My business/marketing gifts served me well for decades, until I wanted to use other gifts in servitude (thus becoming a speaker/author/
 teacher/coach). I've found the most happiness in using my gifts to serve something greater than myself.
 
-2. What choices will you make?
+2. What choices will you make?  
 This is about being intentional, working on your life versus in it. Breaking toxic patterns and accepting responsibility for the outcomes. And as 70s rock icon Geddy Lee sang: "If you choose not to decide, you still have made a choice," so living on autopilot isn't an option. Choose to be intentional in your choices.
 
-3. Will inertia be your guide, or will you follow your passions?
+3. Will inertia be your guide, or will you follow your passions?  
 "Unstuck" starts with "U." The road to success is dotted with many tempting parking spots--if you've put it in park, thrust it into drive.
-
 I fell into a comfortable, corporate pattern. Things were coming easy but learning and growth wasn't. I was shrinking. It wasn't until I kicked my entrepreneurial dreams into overdrive that I yanked myself out of a rut.
 
 4. Will you follow dogma or be original?
