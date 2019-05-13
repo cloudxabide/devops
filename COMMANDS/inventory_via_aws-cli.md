@@ -1,3 +1,4 @@
+```
 # Inventory AWS resources
 REGIONS=$(aws ec2 describe-regions --query "Regions[].{Name:RegionName}" --output text --filters "Name=region-name,Values=us-*")
 for REGION in $REGIONS
@@ -12,4 +13,4 @@ do
   #aws ec2 describe-vpc-attribute
   #aws ec2 describe-volumes
 done
-
+```
