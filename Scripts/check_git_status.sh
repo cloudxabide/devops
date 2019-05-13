@@ -5,7 +5,8 @@
 #           I have 2 "structures" that I follow for my Git Repos
 #             ~/Repositories/Public/<repo-owner>/<repo-name> (Public Repos)
 #             ~/Repositories/<my-repo-owner>/<repo-name> (My Personal Repos)
-#           
+#           I create a symlink to this script in ~/Repositories and run it
+#             from there
 
 COMMAND=" "
 COMMANDS=" "

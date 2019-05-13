@@ -20,6 +20,7 @@ Please, if you find stuff that seems inaccurate, non-optimal... or just plain wr
 COMMANDS - place where I'll track commands and procedures for tasks  
 FILES - Random files such as bash profile, etc...  
 Images - Store the images 
+Scripts - a bunch of shell scripts
 
 ## Notes
 I will self-proclaim that I am (probably) fairly old-school.  I would just as soon write a bash script, with some crazy awk/sed thing that I spent far too long researching.  But, I also want to be efficient and valuable to the people I work with/for, so... I am adopting a new strategy.
