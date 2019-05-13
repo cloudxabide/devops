@@ -10,7 +10,7 @@ My past:
 * Backup & Restore (Netbackup and TSM)
 * Operating System (Solaris, Vmware, AIX)
 * Consultant, Solutions Architect 
-* Worked for Sun Microsystems and Red Hat
+* Worked for Sun Microsystems, and Red Hat
 
 I have created this repo to track my latest Renaissance.
 
