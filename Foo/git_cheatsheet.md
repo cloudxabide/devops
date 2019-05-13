@@ -12,3 +12,8 @@ git add .
 git commit -m "fixed untracked files"
 ```
 
+## Markdown examples
+
+> **_NOTE:_**  Here is a blockquote
+
+    **_NOTE:_**  Here is a "double tab"
