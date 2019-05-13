@@ -37,7 +37,7 @@ do
     #[ $? == 0 ] || ERRMSG="$ERRMSG $REPO \n"
     echo ""
   done
-  echo "cd -"
+  echo "# go back... cd -"
   cd -
   echo ""
   echo "###################"
