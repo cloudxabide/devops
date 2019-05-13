@@ -49,7 +49,7 @@ This journey has been insane and I am documenting it for other's who may be foll
 [Pixies - Where is my Mind?](https://www.youtube.com/watch?v=49FB9hhoO6c) "You've met me in a very strange time in my life" -- Tyler Durden, Fight Club  
 [Basement Jaxx - Where's Your Head At](https://www.youtube.com/watch?v=5rAOyh7YmEc)
 
-It's OK to not know everything... and it's OK to know.. that you don't know everything.  In fact, if you feel that you know everything, you're probably [hosed.](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
+I have learned (with quite a bit of validation from peers/friends):  It's OK to not know everything... and it's OK to know.. that you don't know everything.  In fact, if you feel that you know everything, you're probably [hosed.](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect) 
 
 
 ## References
