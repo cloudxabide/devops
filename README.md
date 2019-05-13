@@ -5,9 +5,9 @@ DevOps type stuff I find useful - whatever that might mean.
 
 The particular Renaissance I happen to be in involves a career transition to the cloud, from a primary focus on Infrastructure and OS Platform (i.e.  Red Hat Enterprise Linux, and Red Hat Products - OpenShift, Satellite, Ansible) ... while also switching to a Mac as my daily driver from a Fedora Linux laptop.  I imagine this is not a big ask for seasoned developers, but... like I mentioned, I am a "platform guy" which I have spent the entirety of my career doing.
 
-I have created this repo to track it all.
+I have created this repo to track my latest Renaissance.
 
-At this point, I miss many things about a Linux Desktop Environment.  Gnu-utils just seem easier to get things accomplished with - perhaps it is just familiarity (or "old dog, new tricks").
+At this point, I miss many things about a Linux Desktop Environment.  Gnu-utils (vs the BSD equivalents) just seem easier to get things accomplished with - perhaps it is just familiarity (or "old dog, new tricks").
 
 I try to use the [Manifest.md](Manifesto.md) to guide me.
 
