@@ -5,7 +5,7 @@ I am concluding that while you can invoke specific profiles several different wa
 
 Also, this explanation is predicated on the idea that you have already created several different IAM user accounts (different Organizations, different Roles, etc...)
 ## Steps
-### Install the AWS cli components (see [OSX.sh](OSX.sh))
+### Install the AWS cli components (see [../Scripts/OSX.sh](../Scripts/OSX.sh))
 
 ### Create a "credentials" file (~/.aws/credentials)
 ```
