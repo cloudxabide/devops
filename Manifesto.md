@@ -51,6 +51,26 @@ This journey has been insane and I am documenting it for other's who may be foll
 
 I have learned (with quite a bit of validation from peers/friends):  It's OK to not know everything... and it's OK to know.. that you don't know everything.  In fact, if you feel that you know everything, you're probably [hosed.](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect) 
 
+##
+Don't {un|re}invent the wheel...
+Somebody has (probably) already done what you are about to undertake.  Look around, ask around.
+
+Be Present
+This may seem obvious, but... listen to calls, try to read the customers tone.  Don't browse, scribble (unless scribbling is how you center, I guess)
+
+Be Punctual
+Being on-time is likely one of the simplest goals.  If this means you have to add a 15 reminder to meeting notices, then.. you know what you have to do.
+
+Know the mission
+If you don't know *why* you are doing *what* you are doing, find out.  Dig in.
+
+
+Good times, bad times... ya know I've had my share
+Like Jimmy Page eluded to.
+
+
+"I'm going to give you a little advice. There's a force in the universe that makes things happen; all you have to do is get in touch with it. Stop thinking...let things happen...and be...the ball." -- Ty Webb, Caddyshack
+
 
 ## References
 [Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)   

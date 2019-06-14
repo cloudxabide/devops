@@ -39,6 +39,7 @@ output=text
 -- To utilize the configuration from the command line...  
 
 ```
+$ export AWS_DEFAULT_PROFILE="cxa-jaradtke"
 $ aws ec2 describe-regions --filters "Name=endpoint,Values=*us*"
 {
     "Regions": [
