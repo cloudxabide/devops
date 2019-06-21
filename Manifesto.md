@@ -1,4 +1,42 @@
 # Manifesto
+
+## The Story
+This journey has been insane and I am documenting it for other's who may be following a similar path.
+
+[Pixies - Where is my Mind?](https://www.youtube.com/watch?v=49FB9hhoO6c) "You've met me in a very strange time in my life" -- Tyler Durden, Fight Club
+[Basement Jaxx - Where's Your Head At](https://www.youtube.com/watch?v=5rAOyh7YmEc)
+
+I have learned (with quite a bit of validation from peers/friends):  It's OK to not know everything... and it's OK to know.. that you don't know everything.  In fact, if you feel that you know everything, you're probably [hosed.](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
+
+##
+Don't {un|re}invent the wheel...
+Somebody has (probably) already done what you are about to take on.  Look around, ask around.
+
+Be Present
+This may seem obvious, but... listen to calls, really listen.  Take notes.  Try to read the customers tone.  Don't browse, don't scribble (unless scribbling is how you center, I guess)
+
+Be Punctual
+Being on-time is likely one of the simplest goals.  If this means you have to add a 15 reminder to meeting notices, then.. you know what you have to do.
+
+Know the mission
+If you don't know *why* you are doing *what* you are doing, find out.  Dig in.
+
+Know thy enemy...
+While a bit dramatic, the point is:  Your "enemy" (perhaps "competition" is a better word) is competition for a reason - they posses traits/skills/etc... learn what those traits are, focus on the merits of the traits.  There is no shame in following other's example when they are positive and constructive.
+
+
+Good times, bad times... ya know I've had my share
+Like Jimmy Page eluded to.
+
+"I'm going to give you a little advice. There's a force in the universe that makes things happen; all you have to do is get in touch with it. Stop thinking...let things happen...and be...the ball." -- Ty Webb, Caddyshack
+
+
+## References
+[Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)
+[Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
+
+
+
 ## From Jeff Bezos...  
 https://www.inc.com/scott-mautz/jeff-bezos-says-asking-these-12-questions-now-will-make-you-proud-of-life-youve-built-later.html  
 
@@ -43,35 +81,3 @@ Cynics lose their power when challenged. Challenge yourself to lift up rather th
 There's no value my wife and I try to role model more for our child than kindness. Why? Because it's the positive, environment-molding attribute from which all other positive attributes flow.
 We're the editors of our own life story. Our job is to build the most meaningful chapters we can before "The End". So get introspective now to enjoy your looking-back perspective later.
 
-## The Story
-This journey has been insane and I am documenting it for other's who may be following a similar path.
-
-[Pixies - Where is my Mind?](https://www.youtube.com/watch?v=49FB9hhoO6c) "You've met me in a very strange time in my life" -- Tyler Durden, Fight Club  
-[Basement Jaxx - Where's Your Head At](https://www.youtube.com/watch?v=5rAOyh7YmEc)
-
-I have learned (with quite a bit of validation from peers/friends):  It's OK to not know everything... and it's OK to know.. that you don't know everything.  In fact, if you feel that you know everything, you're probably [hosed.](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect) 
-
-##
-Don't {un|re}invent the wheel...
-Somebody has (probably) already done what you are about to undertake.  Look around, ask around.
-
-Be Present
-This may seem obvious, but... listen to calls, try to read the customers tone.  Don't browse, scribble (unless scribbling is how you center, I guess)
-
-Be Punctual
-Being on-time is likely one of the simplest goals.  If this means you have to add a 15 reminder to meeting notices, then.. you know what you have to do.
-
-Know the mission
-If you don't know *why* you are doing *what* you are doing, find out.  Dig in.
-
-
-Good times, bad times... ya know I've had my share
-Like Jimmy Page eluded to.
-
-
-"I'm going to give you a little advice. There's a force in the universe that makes things happen; all you have to do is get in touch with it. Stop thinking...let things happen...and be...the ball." -- Ty Webb, Caddyshack
-
-
-## References
-[Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)   
-[Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)  
