@@ -25,19 +25,19 @@ for REPO in `find . -name .git | sed 's/.git//g' | grep -v Public`
 do
   clear
   echo "###################"
-  echo "cd $REPO"
+  echo "# cd $REPO"
   cd $REPO
   for COMMAND in $COMMANDS
   do
-    echo "Evaluating: $REPO"
-    echo "git $COMMAND"
+    echo "# Evaluating: $REPO"
+    echo "# Executing:  git $COMMAND"
     git $COMMAND --porcelain | egrep [AM] && ERRMSG="$ERRMSG $REPO \n"
     # This does not work (git exit codes)
     # 'new file|modified'
     #[ $? == 0 ] || ERRMSG="$ERRMSG $REPO \n"
     echo ""
   done
-  echo "# go back... cd -"
+  echo "# Executing: cd -"
   cd -
   echo ""
   echo "###################"
@@ -51,8 +51,8 @@ do
   for REPO in `find . -name .git | sed 's/.git//g' | grep Public`
   do
     echo "###################"
-    echo "Managing: $REPO"
-    echo "cd $REPO; git $COMMAND; cd -"
+    echo "# Evaluating: $REPO"
+    echo "# Executing: cd $REPO; git $COMMAND; cd -"
     cd $REPO; git $COMMAND; cd -
     echo ""
   done
