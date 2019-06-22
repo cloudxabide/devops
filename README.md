@@ -6,9 +6,9 @@ DevOps type stuff I find useful - whatever that might mean.
 The particular Renaissance I happen to be in involves a career transition to the cloud, from a primary focus on Infrastructure and OS Platform (i.e.  Red Hat Enterprise Linux, and Red Hat Products - OpenShift, Satellite, Ansible) ... while also switching to a Mac as my daily driver from a Fedora Linux laptop.  I imagine this is not a big ask for seasoned developers, but... like I mentioned, I am a "Infrastructure guy" which I have spent the entirety of my career doing.  
 
 My past: 
-* Enterprise Storage (Hitachi, EMC, NetApp)
+* Enterprise Storage (Hitachi, EMC, NetApp, Brocade, Cisco)
 * Backup & Restore (Netbackup and TSM)
-* Operating System (Solaris, Vmware, AIX)
+* Operating System (Linux, Solaris, Vmware, AIX)
 * Consultant, Solutions Architect 
 * Worked for Sun Microsystems, and Red Hat
 
@@ -16,7 +16,7 @@ I have created this repo to track my latest Renaissance.
 
 At this point, I miss many things about a Linux Desktop Environment.  Gnu-utils (vs the BSD equivalents) just seem easier to get things accomplished with - perhaps it is just familiarity (or "old dog, new tricks").
 
-I try to use the [Manifest.md](Manifesto.md) to guide me.
+I try to use the following [Manifesto](Manifesto.md) to guide me.
 
 ## Goal
 As this is a fairly significant change in my career, I wanted to track it for a number of reasons.  Partially because I'm not really a spring chicken and may forget stuff, but... it will be fun to look back at the Genesis of all this.  
