@@ -32,9 +32,6 @@ do
     echo "# Evaluating: $REPO"
     echo "# Executing:  git $COMMAND"
     git $COMMAND --porcelain | egrep [AM] && ERRMSG="$ERRMSG $REPO \n"
-    # This does not work (git exit codes)
-    # 'new file|modified'
-    #[ $? == 0 ] || ERRMSG="$ERRMSG $REPO \n"
     echo ""
   done
   echo "# Executing: cd -"
