@@ -3,7 +3,8 @@
 ## The Story
 This journey has been insane and I am documenting it for other's who may be following a similar path.
 
-[Pixies - Where is my Mind?](https://www.youtube.com/watch?v=49FB9hhoO6c) "You've met me in a very strange time in my life" -- Tyler Durden, Fight Club  
+[Pixies - Where is my Mind?](https://www.youtube.com/watch?v=49FB9hhoO6c)  
+"You've met me in a very strange time in my life" -- Tyler Durden, Fight Club  
 [Basement Jaxx - Where's Your Head At](https://www.youtube.com/watch?v=5rAOyh7YmEc)  
 
 I have learned (with quite a bit of validation from peers/friends):  It's OK to not know everything... and it's OK to know.. that you don't know everything.  In fact, if you feel that you know everything, you're probably [hosed.](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
@@ -22,20 +23,18 @@ Being on-time is likely one of the simplest goals.  If this means you have to ad
 If you don't know *why* you are doing *what* you are doing, find out.  Dig in.  This is rather important.  Be sure to ask the customer to identify goals and objectives.  Have them explain what problem(s) they are trying to solve and what outcomes they are seeking.  
 
 ### Know thy enemy...  
-While a bit dramatic, the point is:  Your "enemy" (perhaps "competition" is a better word) is competition for a reason - they posses traits/skills/etc... learn what those traits are, focus on the merits of the traits.  There is no shame in following other's example when they are positive and constructive.
+While the saying is a bit dramatic, the point is:  Your "enemy" (perhaps "competition" is a better word) is your competition for a reason - they possess traits/skills/etc...which present a challenge to you, or differentiate them from you.  Learn what those traits are, focus on the merits of the traits.  There is no shame in following other's example when they are positive and constructive.
 
 ### Know... that you won't know everything  
 "Fake it, 'til you make it"    
--- No...  this saying needs to stop    
+-- No...  this saying needs to stop.  Let's invent a better phrase.  
 While I appreciate the sentiment of trying to mitigate concern of the consultant, if a customer heard their $325/hour consultant say that phrase, I am pretty sure they would not be impressed.
 Now, you should not... and will not... know everything.  That is fine (and expected) - know your limits, know how to concede you need to research to provide the customer an accurate and timely response.
 
 ### Have fun
-Good times, bad times... you know I had my share  
-Like Jimmy Page eluded to.
+"Good times, bad times... you know I had my share" -- Jimmy Page 
 
 "I'm going to give you a little advice. There's a force in the universe that makes things happen; all you have to do is get in touch with it. Stop thinking...let things happen...and be...the ball." -- Ty Webb, Caddyshack
-
 
 ## References
 [Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)  
