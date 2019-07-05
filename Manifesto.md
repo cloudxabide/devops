@@ -26,6 +26,10 @@ If you don't know *why* you are doing *what* you are doing, find out.  Dig in.  
 ### Know thy enemy...  
 While the saying is a bit dramatic, the point is:  Your "enemy" (perhaps "competition" is a better word) is your competition for a reason - they possess traits/skills/etc...which present a challenge to you, or differentiate them from you.  Learn what those traits are, focus on the merits of the traits.  There is no shame in following other's example when they are positive and constructive.
 
+### Know the message
+Stop saying "we should eat our own dog food" and instead say "we drink our own Champagne" 
+Nobody likes dog food... celebrate our products!
+
 ### Know... that you won't know everything  
 "Fake it, 'til you make it"    
 -- No...  this saying needs to stop.  Let's invent a better phrase.  
