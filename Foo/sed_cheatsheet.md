@@ -2,7 +2,7 @@
 
 # NOTE
 I found this on reddit and I copied it verbatim with attributions.  
-
+```
 -------------------------------------------------------------------------
 USEFUL ONE-LINE SCRIPTS FOR SED (Unix stream editor)        Dec. 29, 2005
 Compiled by Eric Pement - pemente[at]northpark[dot]edu        version 5.5
@@ -454,4 +454,4 @@ written or contributed by:
  S.G. Ravenhall           # great de-html script
  Greg Ubben               # many contributions & much help
 -------------------------------------------------------------------------
-
+```
