@@ -39,8 +39,18 @@ So - a typical usage for this data would be a CloudFormation mapping
 If I was to script this (using AWS CLI - Python would possibly be better)
 ```
 #!/bin/bash
+
+usage() 
+{
+  echo "$0 [ami_id] [region]"
+  echo "$0 ami-55ef662f us-east-1"
+
+}
+
+# ASSIGN THE VARS TO THE PARAMS PASSED IN
 AMI_ID=$1
 SOURCE_REGION=$2
+
 # Get the AMI "Name"
 AMI_NAME=$(aws ec2 describe-images --output text --region $SOURCE_REGION --image-id $AMI_ID --query 'Images[].Name')
 
