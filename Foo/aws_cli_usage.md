@@ -47,13 +47,14 @@ usage()
 
 }
 
+if [ $# -ne 2 ]; then usage; fi
+
 # ASSIGN THE VARS TO THE PARAMS PASSED IN
 AMI_ID=$1
 SOURCE_REGION=$2
+DELIM="|"
 
-# Get the AMI "Name"
-AMI_NAME=$(aws ec2 describe-images --output text --region $SOURCE_REGION --image-id $AMI_ID --query 'Images[].Name')
-
+# Create the list of REGION(s) to poll
 case $SOURCE_REGION in
   us-east-1) REGIONS="us-east-2 us-west-2 us-west-1";;
   us-east-2) REGIONS="us-east-1 us-west-2 us-west-1";;
@@ -62,10 +63,20 @@ case $SOURCE_REGION in
   *) echo "ERROR: region ($SOURCE_REGION) not recognized"; exit 9;;
 esac
 
+# Get the AMI "Name" for the AMI_ID
+AMI_NAME=$(aws ec2 describe-images --output text --region $SOURCE_REGION --image-id $AMI_ID --query 'Images[].Name')
+
 for REGION in $REGIONS
 do
   AMI_ID=$(aws ec2 describe-images --output text --region "${REGION}" --filters "Name=name,Values=${AMI_NAME}" --owners self amazon --query 'Images[].ImageId')
-  echo "$REGION | $AMI_ID"
+  echo "${REGION} ${DELIM} ${AMI_ID}"
 done
 exit 0
+```
+expected output:
+```
+$ ./blah.sh ami-55ef662f us-east-1
+us-east-2 | ami-15e9c770
+us-west-2 | ami-bf4193c7
+us-west-1 | ami-a51f27c5
 ```
