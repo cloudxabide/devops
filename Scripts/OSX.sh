@@ -51,28 +51,6 @@ brew cask info atom               # Displays information about the given Cask
 brew cask install atom            # Install the given cask.
 brew cleanup                      # For all installed or specific formulae, remove any older versions from the cellar.
 
-# Install GRIP  (GitHub Readme Instant Preview)
-## Not entirely sure this is worth messing around with. (Atom has a built-in md viewer)
-## https://github.com/joeyespo/grip
-brew install grip
-
-### This section is for AWS Amplify
-# https://aws-amplify.github.io/docs/js/start?ref=amplify-rn-btn&platform=react-native
-# Install Node.js and npm 
-install_Amplify() {
-mkdir -p ~/Projects/Amplify ; cd $_
-brew install npm node.js yarn node watchman
-brew install yarn
-brew install node
-brew install watchman
-npm install -g @aws-amplify/cli
-npm install -g create-react-native-app
-npm install -g react-native-macos-cli 
-npm install -g react-native-cli
-npm install --save -g aws-amplify
-npm install --save -g aws-amplify-react-native
-}
-
 ###### ###### ###### ######
 # Install some Gnu utils 
 # Install a "sane" version of sed.
@@ -99,6 +77,29 @@ case `hostname -f | sed -e 's/^[^.]*\.//'` in
 esac
 
 exit 0
+
+# Install GRIP  (GitHub Readme Instant Preview)
+## Not entirely sure this is worth messing around with. (Atom has a built-in md viewer)
+## https://github.com/joeyespo/grip
+brew install grip
+
+### This section is for AWS Amplify
+# https://aws-amplify.github.io/docs/js/start?ref=amplify-rn-btn&platform=react-native
+# Install Node.js and npm
+install_Amplify() {
+  mkdir -p ~/Projects/Amplify ; cd $_
+  brew install npm node.js yarn node watchman
+  brew install yarn
+  brew install node
+  brew install watchman
+  npm install -g @aws-amplify/cli
+  npm install -g create-react-native-app
+  npm install -g react-native-macos-cli
+  npm install -g react-native-cli
+  npm install --save -g aws-amplify
+  npm install --save -g aws-amplify-react-native
+}
+
 
 ## References:
 https://docs.python-guide.org/starting/install3/osx/
