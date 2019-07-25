@@ -11,11 +11,6 @@ git clone git@github.com:cloudxabide/devops.git
 # Install Xcode
 xcode-select --install
 
-git config --global user.name
-git config --global user.name:wq!
-
-
-
 # OS X Desktop Tweaks
 # Enable "tap-to-click" (not sure whether sudo is needed)
 # http://osxdaily.com/2014/01/31/turn-on-mac-touch-to-click-command-line/
@@ -28,7 +23,16 @@ sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
 
 # Tweak GIT
-git config --global core.excludesfile ~/.gitignore_global
+#git config --global user.name "Your Name"
+#git config --global user.email you@example.com
+#git config --global core.excludesfile ~/.gitignore_global
+cat << EOF > ~/.gitconfig
+[core]
+	excludesfile = /Users/jradtke/.gitignore_global
+[user]
+	name = James Radtke
+	email = emailaddy@gmail.com
+EOF
 echo ".DS_Store" >> ~/.gitignore_global
 
 # Optimize VIM
