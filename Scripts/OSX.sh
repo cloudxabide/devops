@@ -11,6 +11,11 @@ git clone git@github.com:cloudxabide/devops.git
 # Install Xcode
 xcode-select --install
 
+git config --global user.name
+git config --global user.name:wq!
+
+
+
 # OS X Desktop Tweaks
 # Enable "tap-to-click" (not sure whether sudo is needed)
 # http://osxdaily.com/2014/01/31/turn-on-mac-touch-to-click-command-line/
