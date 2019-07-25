@@ -4,6 +4,10 @@
 # ver: 1
 # You should view README.md
 
+mkdir -p ~/Repositories/cloudxabide
+cd $_
+git clone git@github.com:cloudxabide/devops.git
+
 # Install Xcode
 xcode-select --install
 
@@ -42,6 +46,9 @@ brew install python
 # Install Cask
 ## http://caskroom.io/
 brew tap caskroom/cask            # Tap the Caskroom/Cask repository from Github using HTTPS.
+
+# Install iTerm2
+ brew cask install iterm2
 
 # Install Atom
 ## Visit https://www.code2bits.com
