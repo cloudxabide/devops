@@ -27,10 +27,10 @@ echo ".DS_Store" >> ~/.gitignore_global
 bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/master/Scripts/vim_foo.sh)
 
 # Local setup
-curl -o ~/.bashrc https://raw.githubusercontent.com/cloudxabide/master/FILES/.bashrc
-curl -o ~/.bash_profile https://raw.githubusercontent.com/cloudxabide/master/FILES/.bash_profile
+curl -o ~/.bashrc https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/.bashrc
+curl -o ~/.bash_profile https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/.bash_profile
 [ -d .ssh ] || ssh-keygen -trsa -b2048
-curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/master/FILES/config
+curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/config
 chmod 0600 ~/.ssh/config
 
 # Install Python 3.x
