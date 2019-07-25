@@ -55,7 +55,7 @@ brew cleanup                      # For all installed or specific formulae, remo
 # Install some Gnu utils 
 # Install a "sane" version of sed.
 brew install gnu-sed
--- add the following to your .bash_profile/.bashrc/etc...
+#-- add the following to your .bash_profile/.bashrc/etc...
 echo "PATH=\"/usr/local/opt/gnu-sed/libexec/gnubin:$PATH\" " >> ~/.bashrc
 
 brew install tree
