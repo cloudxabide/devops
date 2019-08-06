@@ -19,5 +19,11 @@ echo $(expr '(' $(date -j -v -14d -f "%Y-%m-%d" "2019-08-12" +%s) - $(date +%s) 
 ```
 but.. that would be the Monday before Aug 12 (literally 14 days).  I need to figure out how to do the Friday before.
 
+## Parsing values using sed/awk
+The following prints the email addresses from a list, which are contained between < and >
+```
+cat blah1.txt | awk -F '[<|>]' '{ print $2 }'
+```
+
 ## NOTES:
 Some of the tweaks here **may** be Mac specific (i.e. adding LC_CTYPE to the tr command).  I don't know whether they apply to Linux bash without modification.
