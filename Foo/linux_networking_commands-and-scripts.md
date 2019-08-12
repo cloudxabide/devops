@@ -64,7 +64,6 @@
 <li><a href="https://hewlettpackard.github.io/wireless-tools/Tools.html" target="_blank" rel="noopener">Wireless Tools for Linux</a> – includes iwconfig, iwlist, iwspy, iwpriv and ifrename.</li>
 <li><a href="https://www.wireshark.org/" target="_blank" rel="noopener">Wireshark</a> – network protocol analyzer.</li></ol>
 
-    <BR>
     Scraped from https://haydenjames.io/linux-networking-commands-scripts/ - go check out their page.
   </BODY>
 </HTML>
