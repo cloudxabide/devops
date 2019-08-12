@@ -1,9 +1,6 @@
-<HTML>
-  <HEAD>
-    <TITLE>Linux Network Commands and Scripts</TITLE>
-  </HEAD>
-  <BODY>
-    <ol>
+# Linux Networking Commands and Scripts
+
+<ol>
 <li><a href="https://linux.die.net/man/8/arpwatch" target="_blank" rel="noopener">arpwatch</a> – Ethernet Activity Monitor.</li>
 <li><a href="https://github.com/tgraf/bmon" target="_blank" rel="noopener">bmon</a> – bandwidth monitor and rate estimator.</li>
 <li><a href="https://www.gropp.org/?id=projects&amp;sub=bwm-ng" target="_blank" rel="noopener">bwm-ng</a> – live network bandwidth monitor.</li>
