@@ -4,7 +4,7 @@
 This journey has been insane and I am documenting it for other's who may be following a similar path.
 
 [Pixies - Where is my Mind?](https://www.youtube.com/watch?v=49FB9hhoO6c)  
-"You've met me in a very strange time in my life" -- Tyler Durden, Fight Club   
+"You've met me in a very strange time in my life" -- The Narrator, Fight Club   
 
 [Basement Jaxx - Where's Your Head At](https://www.youtube.com/watch?v=5rAOyh7YmEc)  
 
@@ -33,7 +33,7 @@ Nobody likes dog food... celebrate our products!
 ### Know... that you won't know everything  
 "Fake it, 'til you make it"    
 -- No...  this saying needs to stop.  Let's invent a better phrase.  
-While I appreciate the sentiment of trying to mitigate concern of the consultant, if a customer heard their $325/hour consultant say that phrase, I am pretty sure they would not be impressed.
+While I appreciate the sentiment of trying to mitigate concern of the consultant, if a customer heard their $3xx/hour consultant say that phrase, I am pretty sure they would not be impressed.
 Now, you should not... and will not... know everything.  That is fine (and expected) - know your limits, know how to concede you need to research to provide the customer an accurate and timely response.
 
 ### Have fun
