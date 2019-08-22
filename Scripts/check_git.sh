@@ -48,15 +48,14 @@ shift $((OPTIND -1))
 
 ###  DO SOME REPORTING AND VARIABLE SETTING
 # REPORT "BEFORE"
-echo "$0 -r $REPOS -c $COMMAND"
+echo "Original:  $0 $1 $2"
 if [ -z $REPOS ]; then REPOS="private"; fi
 if [ -z $COMMAND ]; then COMMAND="status"; fi
 # REPORT "AFTER"
-echo "$0 -r $REPOS -c $COMMAND"
+echo "Updated: $0 -r $REPOS -c $COMMAND"
 
 case $REPOS in 
   private)
-   echo "private"
    for REPO in `find . -name .git | sed 's/.git//g' | grep -v Public`
    do 
      echo "################ ################ "
