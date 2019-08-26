@@ -2,7 +2,7 @@
 
 clear 
 # Variables
-ERRMSG=" "
+ERRMSG=""
 
 # Subroutines
 usage() {
@@ -10,14 +10,18 @@ usage() {
   echo "$0 <blank> -- runs \"$0 private status\" as a default"
 }
 
-run_check(){
+run_check() {
 case $COMMAND in
   status)
-    echo "# Executing:  git $COMMAND against $REPO"
-    echo "cd $REPO &&  git status --porcelain | egrep [AM]; cd -"
+    echo "# Executing: $COMMAND against $REPO"
     # THIS IS A FOOKING HACK - porcelain will produce a A or M in the second character location
-    cd $REPO && git status --porcelain | egrep ^\ [AM] && ERRMSG="$ERRMSG $REPO \n" 
-    cd -
+    #echo -e "cd $REPO \n git status --porcelain | egrep [AM]\n  cd -"
+    #cd $REPO && git status --porcelain | egrep ^\ [AM] && ERRMSG="$ERRMSG $REPO \n" 
+    # Instead try the following:
+    echo -e "cd $REPO \ngit diff --exit-code; if [ \$? -ne 0 ]; then ERRMSG=\"\$ERRMSG \$REPO \\\n\"; fi \ncd -"
+    cd $REPO 
+    git diff --exit-code > /dev/null 2>&1 ; if [ $? -ne 0 ]; then ERRMSG="$ERRMSG $REPO \n"; fi
+    cd - > /dev/null 2>&1
     echo ""
   ;;
   pull)
