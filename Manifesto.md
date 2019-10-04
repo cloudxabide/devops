@@ -20,6 +20,9 @@ This may seem obvious, but... listen to calls, really listen.  Take notes.  Try 
 ### Be Punctual  
 Being on-time is likely one of the simplest goals.  If this means you have to add a 15 reminder to meeting notices, then.. you know what you have to do.
 
+### Yearn to Learn (elevate your state)
+Find passion in digging in and learning about the topics and technology(s) we implement and support.
+
 ### Know the mission  
 If you don't know *why* you are doing *what* you are doing, find out.  Dig in.  This is rather important.  Be sure to ask the customer to identify goals and objectives.  Have them explain what problem(s) they are trying to solve and what outcomes they are seeking.  
 
@@ -27,8 +30,8 @@ If you don't know *why* you are doing *what* you are doing, find out.  Dig in.  
 While the saying is a bit dramatic, the point is:  Your "enemy" (perhaps "competition" is a better word) is your competition for a reason - they possess traits/skills/etc...which present a challenge to you, or differentiate them from you.  Learn what those traits are, focus on the merits of the traits.  There is no shame in following other's example when they are positive and constructive.
 
 ### Know the message
-Stop saying "we should eat our own dog food" and instead say "we drink our own Champagne" 
-Nobody likes dog food... celebrate our products!
+Stop saying "we should eat our own dog food" and instead say "we drink our own Champagne"   
+Nobody likes dog food... celebrate our amazing products!
 
 ### Know... that you won't know everything  
 "Fake it, 'til you make it"    
