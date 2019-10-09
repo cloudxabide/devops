@@ -6,16 +6,21 @@ This journey has been insane and I am documenting it for other's who may be foll
 [Pixies - Where is my Mind?](https://www.youtube.com/watch?v=49FB9hhoO6c)  
 "You've met me in a very strange time in my life" -- The Narrator, Fight Club   
 
+"I'm going to give you a little advice. There's a force in the universe that makes things happen; all you have to do is get in touch with it. Stop thinking...let things happen...and be...the ball." -- Ty Webb, Caddyshack
+
 [Basement Jaxx - Where's Your Head At](https://www.youtube.com/watch?v=5rAOyh7YmEc)  
 
 I have learned (with quite a bit of validation from peers/friends):  It's OK to not know everything... and it's OK to know.. that you don't know everything.  In fact, if you feel that you know everything, you're probably [hosed.](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
 
-### Stay Woke
-Don't {un|re}invent the wheel...  
+### Have fun
+"Good times, bad times... you know I had my share" -- Jimmy Page 
+
+### Mind the Gap 
+Don't {un,re}invent the wheel...  
 Somebody has (probably) already done what you are about to take on.  Look around, ask around.
 
 ### Be Present  
-This may seem obvious, but... listen to calls, really listen.  Take notes.  Try to read the customers tone.  Don't browse, don't scribble (unless scribbling is how you center, I guess)
+This may seem obvious, but... listen to calls, really listen.  Take notes.  Try to read the customers tone.  Don't browse, don't scribble (unless scribbling is how you center, I suppose)
 
 ### Be Punctual  
 Being on-time is likely one of the simplest goals.  If this means you have to add a 15 reminder to meeting notices, then.. you know what you have to do.
@@ -38,11 +43,6 @@ Nobody likes dog food... celebrate our amazing products!
 -- No...  this saying needs to stop.  Let's invent a better phrase.  
 While I appreciate the sentiment of trying to mitigate concern of the consultant, if a customer heard their $3xx/hour consultant say that phrase, I am pretty sure they would not be impressed.
 Now, you should not... and will not... know everything.  That is fine (and expected) - know your limits, know how to concede you need to research to provide the customer an accurate and timely response.
-
-### Have fun
-"Good times, bad times... you know I had my share" -- Jimmy Page 
-
-"I'm going to give you a little advice. There's a force in the universe that makes things happen; all you have to do is get in touch with it. Stop thinking...let things happen...and be...the ball." -- Ty Webb, Caddyshack
 
 ## References
 [Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)  
