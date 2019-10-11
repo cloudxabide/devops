@@ -46,3 +46,13 @@ git commit -m "fixed untracked files"
 
     **_NOTE:_**  Here is a "double tab"
 
+### Code Documentation
+\```
+You code
+goes here
+\```
+
+```
+You code
+goes here
+```
