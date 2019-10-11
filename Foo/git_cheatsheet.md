@@ -37,8 +37,8 @@ git commit -m "fixed untracked files"
 
 ### Blockquote
 
-\> **_NOTE:_**  Here is a blockquote  
-> **_NOTE:_**  Here is a blockquote  
+\> NOTE:  Here is a blockquote  
+> NOTE:  Here is a blockquote  
 
 ### Indent Spacing  
 
