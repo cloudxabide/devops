@@ -14,9 +14,10 @@ done
 ## .gitignore tweaks
 ```
  # Tweak GIT
-git config --global core.excludesfile ~/.gitignore_global
 echo ".DS_Store" >> ~/.gitignore_global
 echo ".gitignore" >> ~/.gitignore_global
+echo ".gitconfig" >> ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
 ```
 ## .gitignore seems to be ignored...
 I had found myself in a place where no matter how I updated my .gitignore, certain files were still being analyzed and then reported against.  After some research I learned it was because I had told git to track them, prior to updating my ./.gitignore and therefore git still "knew" about the files.  
