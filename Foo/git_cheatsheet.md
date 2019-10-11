@@ -48,11 +48,11 @@ git commit -m "fixed untracked files"
 
 ### Code Documentation
 \```  
-You code  
+Your code  
 goes here
 \```  
 
 ```
-You code
+Your code
 goes here
 ```
