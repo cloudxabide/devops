@@ -40,5 +40,6 @@ git commit -m "fixed untracked files"
 
 
 \<space x 4\>\**\_NOTE:\_**  Here is a "double tab" with Emphasis '_' and Bold '**'  
+
     **_NOTE:_**  Here is a "double tab"
 
