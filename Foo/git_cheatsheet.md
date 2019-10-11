@@ -35,9 +35,12 @@ git commit -m "fixed untracked files"
 
 ## Markdown examples
 
+### Blockquote
+
 \> **_NOTE:_**  Here is a blockquote  
 > **_NOTE:_**  Here is a blockquote  
 
+### Indent Spacing  
 
 \<space x 4\>\**\_NOTE:\_**  Here is a "double tab" with Emphasis '_' and Bold '**'  
 
