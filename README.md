@@ -3,14 +3,14 @@
 ## Summary  
 DevOps type stuff I find useful - whatever that might mean.
 
-The particular Renaissance I happen to be in involves a career transition to the cloud, from a primary focus on Infrastructure and OS Platform (i.e.  Red Hat Enterprise Linux, and Red Hat Products - OpenShift, Satellite, Ansible) ... while also switching to a Mac as my daily driver from a Fedora Linux laptop.  I imagine this is not a big ask for seasoned developers, but... like I mentioned, I am a "Infrastructure guy" which I have spent the entirety of my career doing.  
+The particular Renaissance I happen to be in involves a career transition to the cloud, from a primary focus on Infrastructure and OS Platform (i.e.  Red Hat Enterprise Linux, and Red Hat Products - OpenShift, Satellite, Ansible) ... I worked for AWS for a while and learned that I left my heart in.... Washington, D.C. and went back to Red Hat.
 
 My past: 
 * Enterprise Storage (Hitachi, EMC, NetApp, Brocade, Cisco)
 * Backup & Restore (Netbackup and TSM)
 * Operating System (Linux, Solaris, Vmware, AIX)
-* Consultant, Solutions Architect 
-* Worked for Sun Microsystems, and Red Hat
+* Consultant, Solutions Architect for a VAR
+* Worked for Sun Microsystems, AWS, and Red Hat
 
 I have created this repo to track my latest Renaissance.
 
