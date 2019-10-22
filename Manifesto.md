@@ -39,10 +39,10 @@ Stop saying "we should eat our own dog food" and instead say "we drink our own C
 Nobody likes dog food... celebrate our amazing products!
 
 ### Know... that you won't know everything  
-"Fake it, 'til you make it"    
+"Fake it, 'til you make it"  
 -- No...  this saying needs to stop.  Let's invent a better phrase.  
-(OODA!)[https://en.wikipedia.org/wiki/OODA_loop]
-While I appreciate the sentiment of trying to mitigate concern we experience as a consultant, if a customer heard their $3xx/hour consultant say that phrase, I am pretty sure they would not be impressed.  And you're NOT faking anything.  You are there for a reason.  Now, you should not... and will not... know everything.  That is fine (and expected) - know your limits, know how to concede that you need to research to provide the customer an accurate and timely response.
+(OODA!)[https://en.wikipedia.org/wiki/OODA_loop]  
+While I appreciate the sentiment of trying to mitigate concern we inevitably encounter as a consultant, if a customer heard their $3xx/hour consultant say that phrase, I am pretty sure they would not be impressed.  And you're NOT faking anything.  You are there for a reason.  That said, you should not... and will not... know everything.  That is fine (and expected) - know your limits, know how to concede that you need to research to provide the customer an accurate and timely response.
 
 ## References
 [Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)  
