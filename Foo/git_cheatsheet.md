@@ -1,8 +1,9 @@
 # GIT Cheatsheet
 
 ## Clone ALL of my public repos (private requires an API key)
-It is expected that you already have your SSH key configured for GIT
+It is expected that you already have your SSH key configured for each GIT repo(user) you're about to clone.  
 ```
+cd
 for USER in cloudxabide ridexabide jradtke-rh
 do
   mkdir -p ~/Repositories/$USER; cd $_
@@ -10,6 +11,7 @@ do
   do
     git clone $REPO
   done
+  cd -
 done
 ```
 
