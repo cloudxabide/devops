@@ -2,7 +2,7 @@
 
 
 ## Generate a "random" numeric string
-I need to create some random strings to create S3 bucket names.  I (initially) imagined that UUIDgen would have some flag to modify it's output.  Nope.  
+I need to create some random strings to create S3 bucket names.  I (initially) imagined that UUIDgen would have some (native) flag to modify it's output.  Nope.  
 
 The following will work to create an 8 digit numeric value:
 ```
@@ -22,7 +22,11 @@ but.. that would be the Monday before Aug 12 (literally 14 days).  I need to fig
 ## Parsing values using sed/awk
 The following prints the email addresses from a list, which are contained between < and >
 ```
-cat blah1.txt | awk -F '[<|>]' '{ print $2 }'
+$ echo -e "<iamjames@james.com>\n<otherperson@email.com>" > blah1.txt
+$ cat blah1.txt | awk -F '[<|>]' '{ print $2 }'
+iamjames@james.com
+otherperson@email.com
+$ 
 ```
 
 ## NOTES:
