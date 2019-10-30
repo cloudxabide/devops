@@ -15,6 +15,16 @@ do
 done
 ```
 
+Or... let's say you want to grab all the (public) repos for a user (OpenShiftDemos)  
+
+```
+for REPO in $(curl -s https://api.github.com/users/OpenShiftDemos/repos | grep "clone_url"  | awk '{ print $2 }' | sed 's/,//g' | sed 's/"//g')
+do
+  git clone $REPO
+done
+```
+
+
 ## .gitignore tweaks
 ```
  # Tweak GIT
