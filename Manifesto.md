@@ -12,12 +12,9 @@ This journey has been insane and I am documenting it for other's who may be foll
 
 I have learned (with quite a bit of validation from peers/friends):  It's OK to not know everything... and it's OK to know.. that you don't know everything.  In fact, if you feel that you know everything, you're probably [hosed.](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
 
+---
 ### Have fun
 "Good times, bad times... you know I had my share" -- Jimmy Page 
-
-### Mind the Gap 
-Don't {un,re}invent the wheel...  
-Somebody has (probably) already done what you are about to take on.  Look around, ask around.
 
 ### Be Present  
 This may seem obvious, but... listen to calls, really listen.  Take notes.  Try to read the customers tone.  Don't browse, don't scribble (unless scribbling is how you center, I suppose)
@@ -28,8 +25,15 @@ Being on-time is likely one of the simplest goals.  If this means you have to ad
 ### Yearn to Learn (elevate your state)
 Find passion in digging in and learning about the topics and technology(s) we implement and support.
 
+### Mind the Gap
+Don't {un,re}invent the wheel...
+Somebody has (probably) already done what you are about to take on.  Look around, ask around.
+
 ### Know the mission  
 If you don't know *why* you are doing *what* you are doing, find out.  Dig in.  This is rather important.  Be sure to ask the customer to identify goals and objectives.  Have them explain what problem(s) they are trying to solve and what outcomes they are seeking.  
+
+### Start with the End (in mind)
+Or, working backwards.  Try to focus on the Business Objectives and what we are trying to accomplish - rather than focusing on all the problems and how they are (seemingly) insurmountable.
 
 ### Know thy enemy...  
 While the saying is a bit dramatic, the point is:  Your "enemy" (perhaps "competition" is a better word) is your competition for a reason - they possess traits/skills/etc...which present a challenge to you, or differentiate them from you.  Learn what those traits are, focus on the merits of the traits.  There is no shame in following other's example when they are positive and constructive.
@@ -49,7 +53,6 @@ While I appreciate the sentiment of trying to mitigate concern we inevitably enc
 ## References
 [Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)  
 [Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
-
 
 
 ## From Jeff Bezos...  
