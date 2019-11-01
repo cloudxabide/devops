@@ -14,7 +14,8 @@ I have learned (with quite a bit of validation from peers/friends):  It's OK to 
 
 ---
 ### Have fun
-"Good times, bad times... you know I had my share" -- Jimmy Page 
+"Good times, bad times... you know I had my share" -- Jimmy Page  
+These are all very important points - but, seriously this is work, and not personal.  Remain Customer-focused and Customer-centric.  Follow the other points below and things should go well.
 
 ### Be Present  
 This may seem obvious, but... listen to calls, really listen.  Take notes.  Try to read the customers tone.  Don't browse, don't scribble (unless scribbling is how you center, I suppose)
