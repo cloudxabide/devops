@@ -10,7 +10,8 @@ The chronicles of my insane journey including public cloud and "on-prem".
 
 [Basement Jaxx - Where's Your Head At](https://www.youtube.com/watch?v=5rAOyh7YmEc)  
 
-I have learned (with quite a bit of validation from peers/friends):  It's OK to not know everything... and it's OK to know.. that you don't know everything.  In fact, if you feel that you know everything, you're probably [hosed.](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
+Know-it-all:  I have learned (with quite a bit of validation from peers/friends):  It's OK to not know everything... and it's OK to know that you don't know everything.  
+In fact, if you feel that you know everything, you're probably [hosed.](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
 
 ---
 ### Have fun
