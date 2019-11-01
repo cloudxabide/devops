@@ -1,7 +1,7 @@
 # Manifesto
 
 ## The Story
-The chronicles of my insane journey including public cloud and "on-prem".
+The chronicles of my insane journey working with public cloud and "on-prem" infrastructure.
 
 [Pixies - Where is my Mind?](https://www.youtube.com/watch?v=49FB9hhoO6c)  
 "You've met me in a very strange time in my life" -- The Narrator, Fight Club   
@@ -16,7 +16,7 @@ In fact, if you feel that you know everything, you're probably [hosed.](https://
 ---
 ### Have fun
 "Good times, bad times... you know I had my share" -- Jimmy Page  
-These are all very important points - but, seriously this is work, and not personal.  Remain Customer-focused and Customer-centric.  Follow the other points below and things should go well.
+I feel all the points listed here are very important points - but "Have Fun" is fairly paramount.  Seriously this is work, and not personal.  Remain Customer-focused and Customer-centric.  Follow the other points below and things should go well.  If things do not go well, and you did your best, it likely has nothing to do with you.  
 
 ### Be Present  
 This may seem obvious, but... listen to calls, really listen.  Take notes.  Try to read the customers tone.  Don't browse, don't scribble (unless scribbling is how you center, I suppose)
