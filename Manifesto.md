@@ -1,7 +1,7 @@
 # Manifesto
 
 ## The Story
-This journey has been insane and I am documenting it for other's who may be following a similar path.
+The chronicles of my insane journey including public cloud and "on-prem".
 
 [Pixies - Where is my Mind?](https://www.youtube.com/watch?v=49FB9hhoO6c)  
 "You've met me in a very strange time in my life" -- The Narrator, Fight Club   
