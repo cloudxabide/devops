@@ -1,7 +1,7 @@
 # Manifesto
 
 ## The Story
-The chronicles of my crazy journey working with premiere OS and middleware software and public cloud in their Services Organizations as a consultant.
+The chronicles of my crazy journey working a consultant in the Services Organization of premiere companies which provide OS and middleware software, and public cloud.  (Sun Microsystems, Red Hat and AWS - if you were wondering...)
 
 [Pixies - Where is my Mind?](https://www.youtube.com/watch?v=49FB9hhoO6c)  
 "You've met me in a very strange time in my life" -- The Narrator, Fight Club   
