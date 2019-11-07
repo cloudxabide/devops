@@ -45,7 +45,7 @@ Stop saying "we should eat our own dog food" and instead say "we drink our own C
 Nobody likes dog food... celebrate our amazing products!
 
 ### Know... that you won't know everything  
-"Fake it, 'til you make it"  
+"Fake it, 'til you make it"   
 -- No...  this saying needs to stop.  Let's invent a better phrase.  
 "Face it 'til you make it"  
 
