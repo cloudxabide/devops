@@ -49,7 +49,7 @@ Nobody likes dog food... celebrate our amazing products!
 -- No...  this saying needs to stop.  Let's invent a better phrase.  
 "Face it 'til you make it"  
 
-[OODA!](https://en.wikipedia.org/wiki/OODA_loop)  
+[OODA!](https://en.wikipedia.org/wiki/OODA_loop) -- observe–orient–decide–act  
 While I appreciate the sentiment of trying to mitigate concern we inevitably encounter as a consultant, if a customer heard their $3xx/hour consultant say that phrase, I am pretty sure they would not be impressed.  And you're NOT faking anything.  You are there for a reason.  That said, you should not... and will not... know everything.  That is fine (and expected) - know your limits, know how to concede that you need to research to provide the customer an accurate and timely response.
 
 ## References
