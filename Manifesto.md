@@ -58,14 +58,14 @@ While I appreciate the sentiment of trying to mitigate concern we inevitably enc
 
 ## Design Principles
 This section was recently added and is still a work-in-progress.  I believe I want it to highlight that there are particular aspects of the architecture which should be present in all facets of the design process.  (i.e. always in the back of your mind.)  
+While we may not *all* have Security in our job title, it certainly should be in everyone's job description.  We are ALL responsible for security.  I have pondered whether the idea that anyone who is part of a system design, operation, maintenance should have their own personal data included with all their customer's personal data.  Protect everyone as though you would protect yourself.  
 
 ### Defense In Depth
 
 ### Separation of Duties
 
-
-
-
+### Bad design/implementation WILL happen
+Regardless if the topic of this section is actually true, you should build your system as though it is.
 
 
 ## From Jeff Bezos...  
