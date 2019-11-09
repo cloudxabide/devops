@@ -52,9 +52,20 @@ Nobody likes dog food... celebrate our amazing products!
 [OODA!](https://en.wikipedia.org/wiki/OODA_loop) -- observe–orient–decide–act  
 While I appreciate the sentiment of trying to mitigate concern we inevitably encounter as a consultant, if a customer heard their $3xx/hour consultant say that phrase, I am pretty sure they would not be impressed.  And you're NOT faking anything.  You are there for a reason.  That said, you should not... and will not... know everything.  That is fine (and expected) - know your limits, know how to concede that you need to research to provide the customer an accurate and timely response.
 
-## References
+### References
 [Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)  
 [Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
+
+## Design Principles
+This section was recently added and is still a work-in-progress.  I believe I want it to highlight that there are particular aspects of the architecture which should be present in all facets of the design process.  (i.e. always in the back of your mind.)  
+
+### Defense In Depth
+
+### Separation of Duties
+
+
+
+
 
 
 ## From Jeff Bezos...  
