@@ -24,6 +24,11 @@ do
 done
 ```
 
+Want to see what files have been modified recently (like the past 2 days?)
+```
+git log --name-status --since="2 days ago" 
+git log --pretty=format: --name-only --since="2 days ago"
+```
 
 ## .gitignore tweaks
 ```
