@@ -1,6 +1,12 @@
 # sed foo
 
-# NOTE
+## Remove Whitespace
+```
+sed -E -e 's/[[:blank:]]+/\n/g'
+```
+
+## All kinds of foo
+NOTE
 I found this on reddit and I copied it verbatim with attributions.  
 ```
 -------------------------------------------------------------------------
