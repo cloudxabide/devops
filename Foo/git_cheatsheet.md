@@ -30,13 +30,17 @@ git log --name-status --since="2 days ago"
 git log --pretty=format: --name-only --since="2 days ago"
 ```
 
-## .gitignore tweaks
+## GIT ENV Management
+mkdir ~/.git/
+
+## .git/ignore_global tweaks
+Using a mac I discovered that I was dealing with crud and there is a universal fixl
 ```
- # Tweak GIT
-echo ".DS_Store" >> ~/.gitignore_global
-echo ".gitignore" >> ~/.gitignore_global
-echo ".gitconfig" >> ~/.gitignore_global
-git config --global core.excludesfile ~/.gitignore_global
+ # Tweak GIT ignores - ignore files in your repo
+echo ".DS_Store" >> ~/.git/ignore_global
+echo ".gitignore" >> ~/.git/ignore_global
+echo ".gitconfig" >> ~/.git/ignore_global
+git config --global core.excludesfile ~/.git/ignore_global
 ```
 
 ## .gitignore seems to be ignored...
