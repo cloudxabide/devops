@@ -12,16 +12,21 @@
 #              This script is run from a host *behind* my home router/firewall.
 # 
 
-exec > /tmp/script.out 2>&1
-
 # PARAMETERS/VARIABLES
 AWS_PROFILE="rxa-route53"
 HOST="plex"
-DOMAIN="ridexabide.com"
+if [ $# -eq 1 ]
+then 
+  DOMAIN=${1}
+else
+  DOMAIN="linuxrevolution.com"
+fi
 RECORDSET="${HOST}.${DOMAIN}"
 TTL=3600
 TYPE=A
 UPDATECOMMENT="Update to record `date +%F`"
+
+exec > /tmp/update_route53-${DOMAIN}.out 2>&1
 
 # QUERY FOR INPUTS
 HOSTZONEID=$(aws route53 --query "HostedZones[*].Id" --output text list-hosted-zones-by-name --dns-name ${DOMAIN} --max-items 1)
@@ -85,4 +90,5 @@ echo "Clean up temp file"
 rm $ROUTE53template
 
 exit 0
+
 
