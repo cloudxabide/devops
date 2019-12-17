@@ -68,7 +68,7 @@ case $REPOS in
    done
   ;;
   public)
-    for REPO in `find Public -name .git | sed 's/.git//g'`
+    for REPO in `find Public -name .git -exec dirname {} \;`
     do
       echo "################ ################ "
       run_check
