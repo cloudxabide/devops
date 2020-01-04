@@ -4,9 +4,10 @@
 # ver: 1
 # You should view README.md
 
-mkdir -p ~/Repositories/cloudxabide
+mkdir -p ~/Repositories/
 cd $_
 git clone git@github.com:cloudxabide/devops.git
+git clone https://github.com/cloudxabide/devops.git
 
 # Install Xcode
 xcode-select --install
