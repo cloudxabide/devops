@@ -66,11 +66,14 @@ This section was recently added and is still a work-in-progress.  I believe I wa
 While we may not *all* have Security in our job title, it certainly should be in everyone's job description.  We are ALL responsible for security.  I have pondered whether the idea that anyone who is part of a system design, operation, maintenance should have their own personal data included with all their customer's personal data.  Protect everyone as though you would protect yourself.  
 
 ### Defense In Depth
+I find the [Defense in Depth](https://en.wikipedia.org/wiki/Defense_in_depth_(computing)) to probably be the most interesting.  My opinion is that it seems lik the most strategic and logical (regardless of what context it is being applied).  For example:  the wikipedia article says it's also known as the Castle Approach (and not Frank Castle from The Punisher).
+
 
 ### Separation of Duties
+The Principle regarding the [Separation of Duties](https://en.wikipedia.org/wiki/Separation_of_duties) has a history outside the realm of IT.  
 
 ### Bad design/implementation WILL happen
-Regardless if the topic of this section is actually true, you should build your system as though it is.
+Regardless if the topic of this section is actually true, you should build your system as though it is - and, architect to mitigate this reality.
 
 ### Least Privilege 
 The [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) is similar to the previous Principles insofar as you should *always* limit what access/exposure a service/user/process has.
