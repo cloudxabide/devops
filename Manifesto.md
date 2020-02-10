@@ -37,7 +37,7 @@ Somebody has (probably) already done what you are about to take on.  Look around
 If you don't know *why* you are doing *what* you are doing, find out.  Dig in.  This is rather important.  Be sure to ask the customer to identify goals and objectives.  Have them explain what problem(s) they are trying to solve and what outcomes they are seeking.  
 
 ### Start with the End (in mind)
-Or, working backwards.  Try to focus on the Business Objectives and what we are trying to accomplish - rather than focusing on all the problems and how they are (seemingly) insurmountable.
+Or, working backwards.  Try to focus on the Business Objectives and what we are trying to accomplish - rather than focusing on all the issues they had trying to solve problems and how they are (seemingly) insurmountable.
 
 ### Know thy enemy...  
 While the saying is a bit dramatic, the point is:  Your "enemy" (perhaps "competition" is a better word) is your competition for a reason - they possess traits/skills/etc...which present a challenge to you, or differentiate them from you.  Learn what those traits are, focus on the merits of the traits.  There is no shame in following other's example when they are positive and constructive.
