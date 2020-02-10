@@ -10,6 +10,8 @@ The chronicles of my crazy journey working a consultant in the Services Organiza
 
 [Basement Jaxx - Where's Your Head At](https://www.youtube.com/watch?v=5rAOyh7YmEc)  
 
+["A Man's *got* to know his limitiations"](https://www.youtube.com/watch?v=uki4lrLzRaU&feature=youtu.be&t=147) -- Harry Callahan (Clint Eastwood).  A message seemingly telling you to limit your risks - I see it as the opposite, how will you know what you're capable of, if you never push yourself to fail.
+
 Know-it-all:  I have learned (with quite a bit of validation from peers/friends):  It's OK to not know everything... and it's OK to know that you don't know everything.  
 In fact, if you feel that you know everything, you're probably [hosed.](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
 
@@ -51,6 +53,9 @@ Nobody likes dog food... celebrate our amazing products!
 
 [OODA!](https://en.wikipedia.org/wiki/OODA_loop) -- observe–orient–decide–act  
 While I appreciate the sentiment of trying to mitigate concern we inevitably encounter as a consultant, if a customer heard their $3xx/hour consultant say that phrase, I am pretty sure they would not be impressed.  And you're NOT faking anything.  You are there for a reason.  That said, you should not... and will not... know everything.  That is fine (and expected) - know your limits, know how to concede that you need to research to provide the customer an accurate and timely response.
+
+### Find comfort in being uncomfortable
+Similiar to the last quip, you should find a way to normalize being uncomfortable.  Many of us do this in different ways (pushing ourselves during exercise, getting a college degree as an adult, etc..)  To be clear:  don't seek to be indifferent about being uncomfortable - rather, learn to acknowledge it, and embrace it as a normal part of life (for someone who is trying to continously be better and challenge themself).  
 
 ### References
 [Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)  
