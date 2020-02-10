@@ -72,8 +72,13 @@ While we may not *all* have Security in our job title, it certainly should be in
 ### Bad design/implementation WILL happen
 Regardless if the topic of this section is actually true, you should build your system as though it is.
 
+### Least Privilege 
+The [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) is similar to the previous Principles insofar as you should *always* limit what access/exposure a service/user/process has.
+
+<hr>
 
 ## From Jeff Bezos...  
+I included the following because I think it's a meaningful thing to read.  
 https://www.inc.com/scott-mautz/jeff-bezos-says-asking-these-12-questions-now-will-make-you-proud-of-life-youve-built-later.html  
 
 1. How will you use your gifts?
