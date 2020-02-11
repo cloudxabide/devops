@@ -33,14 +33,17 @@ git log --pretty=format: --name-only --since="2 days ago"
 ## GIT ENV Management
 mkdir ~/.git/
 
-## .git/ignore_global tweaks
-Using a mac I discovered that I was dealing with crud and there is a universal fixl
+## GIT IGNORE 
+https://help.github.com/en/github/using-git/ignoring-files
+
 ```
- # Tweak GIT ignores - ignore files in your repo
-echo ".DS_Store" >> ~/.git/ignore_global
-echo ".gitignore" >> ~/.git/ignore_global
-echo ".gitconfig" >> ~/.git/ignore_global
-git config --global core.excludesfile ~/.git/ignore_global
+GLOBAL_GITIGNORE=~/.gitignore_global
+# Tweak GIT ignores - ignore files in your repo
+echo ".DS_Store" >> $GLOBAL_GITIGNORE
+echo ".gitignore" >> $GLOBAL_GITIGNORE
+echo ".gitconfig" >> $GLOBAL_GITIGNORE
+echo ".terraform" >> $GLOBAL_GITIGNORE
+git config --global core.excludesfile $GLOBAL_GITIGNORE
 ```
 
 ## .gitignore seems to be ignored...
