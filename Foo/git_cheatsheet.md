@@ -35,7 +35,7 @@ mkdir ~/.git/
 
 ## GIT IGNORE 
 https://help.github.com/en/github/using-git/ignoring-files
-
+NOTE:  *You* may not want to exclude all of the following, I exclude them for... reasons...
 ```
 GLOBAL_GITIGNORE=~/.gitignore_global
 # Tweak GIT ignores - ignore files in your repo
@@ -43,6 +43,8 @@ echo ".DS_Store" >> $GLOBAL_GITIGNORE
 echo ".gitignore" >> $GLOBAL_GITIGNORE
 echo ".gitconfig" >> $GLOBAL_GITIGNORE
 echo ".terraform" >> $GLOBAL_GITIGNORE
+echo "terraform.tfstate*" >> $GLOBAL_GITIGNORE
+
 git config --global core.excludesfile $GLOBAL_GITIGNORE
 ```
 
