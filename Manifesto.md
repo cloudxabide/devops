@@ -54,8 +54,9 @@ Nobody likes dog food... celebrate our amazing products!
 [OODA!](https://en.wikipedia.org/wiki/OODA_loop) -- observe–orient–decide–act  
 While I appreciate the sentiment of trying to mitigate concern we inevitably encounter as a consultant, if a customer heard their $3xx/hour consultant say that phrase, I am pretty sure they would not be impressed.  And you're NOT faking anything.  You are there for a reason.  That said, you should not... and will not... know everything.  That is fine (and expected) - know your limits, know how to concede that you need to research to provide the customer an accurate and timely response.
 
-### Find comfort in being uncomfortable
+### Get Comfortable Being Uncomfortable
 Similiar to the last quip, you should find a way to normalize being uncomfortable.  Many of us do this in different ways (pushing ourselves during exercise, getting a college degree as an adult, etc..)  To be clear:  don't seek to be indifferent about being uncomfortable - rather, learn to acknowledge it, and embrace it as a normal part of life (for someone who is trying to continously be better and challenge themself).  
+[Inc.com article](https://www.inc.com/chris-dessi/how-to-get-comfortable-with-being-uncomfortable-according-to-a-green-beret.html)
 
 ### References
 [Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)  
