@@ -69,15 +69,17 @@ While we may not *all* have Security in our job title, it certainly should be in
 ### Defense In Depth
 I find the [Defense in Depth](https://en.wikipedia.org/wiki/Defense_in_depth_(computing)) to probably be the most interesting.  My opinion is that it seems lik the most strategic and logical (regardless of what context it is being applied).  For example:  the wikipedia article says it's also known as the Castle Approach (and not Frank Castle from The Punisher).
 
+### Blast Radius
+I suppose technically a resut of Defense In Depth.  (provide more detail for this later though)
 
 ### Separation of Duties
 The Principle regarding the [Separation of Duties](https://en.wikipedia.org/wiki/Separation_of_duties) has a history outside the realm of IT.  
 
-### Bad design/implementation WILL happen
-Regardless if the topic of this section is actually true, you should build your system as though it is - and, architect to mitigate this reality.
-
 ### Least Privilege 
 The [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) is similar to the previous Principles insofar as you should *always* limit what access/exposure a service/user/process has.
+
+### Bad design/implementation WILL happen
+Regardless if the topic of this section is *actually* true, you should build your system as though it is - and, architect to mitigate this reality.  Like mentioned earlier, treat these systems as though your *own* data is going to be acquired if/when the systems are comprimised.
 
 <hr>
 
