@@ -4,16 +4,27 @@
 # ver: 1
 # You should view README.md
 
-mkdir -p ~/Repositories/
+# I put the following in a "routine" so that this can be run as a script 
+#   (and ignore the following which needs to be done prior to this 
+#   script being run (chicken-egg)
+manual_steps() {
+# Create your Github SSH key (and manually add your SSH key to your github)
+ssh-keygen -trsa -b2048 -f ~/.ssh/id_rsa-github-cloudxabide
+
+# Update your local SSH config
+curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/config; chmod 0600 ~/.ssh/config
+
+# Clone this repo
+mkdir -p ~/Repositories/cloudxabide
 cd $_
 git clone git@github.com:cloudxabide/devops.git
-git clone https://github.com/cloudxabide/devops.git
+}
 
 # Install Xcode
 xcode-select --install
 
 # OS X Desktop Tweaks
-# Enable "tap-to-click" (not sure whether sudo is needed)
+# Enable "tap-to-click" (not sure whether sudo is needed - does not seem to work)
 # http://osxdaily.com/2014/01/31/turn-on-mac-touch-to-click-command-line/
 sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 sudo defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
@@ -43,8 +54,8 @@ bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/master/Scrip
 curl -o ~/.bashrc https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/.bashrc
 curl -o ~/.bash_profile https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/.bash_profile
 [ -d .ssh ] || ssh-keygen -trsa -b2048
-curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/config
-chmod 0600 ~/.ssh/config
+# The next command should have already been executed (above)
+# curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/config;  chmod 0600 ~/.ssh/config
 
 # Install Python 3.x
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -53,11 +64,11 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 brew install python
 
 # Install Cask
-## http://caskroom.io/
-brew tap caskroom/cask            # Tap the Caskroom/Cask repository from Github using HTTPS.
+## https://brew.sh (FKA http://caskroom.io/)
+brew tap homebrew/cask # Tap the Caskroom/Cask repository from Github using HTTPS.
 
 # Install iTerm2
- brew cask install iterm2
+brew cask install iterm2
 
 # Install Atom
 ## Visit https://www.code2bits.com
@@ -72,9 +83,14 @@ brew cleanup                      # For all installed or specific formulae, remo
 # Install a "sane" version of sed.
 brew install gnu-sed
 #-- add the following to your .bash_profile/.bashrc/etc...
-echo "PATH=\"/usr/local/opt/gnu-sed/libexec/gnubin:$PATH\" " >> ~/.bashrc
-
+grep "gnu-sed" ~/.bashrc || { echo "PATH=\"/usr/local/opt/gnu-sed/libexec/gnubin:$PATH\" " >> ~/.bashrc; }
 brew install tree
+
+# Install Slack
+brew cask install slack
+
+# Install Steam Client
+brew cask install steam 
 
 # Install AWS CLI
 ## https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
