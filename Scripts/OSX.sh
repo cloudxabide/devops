@@ -92,6 +92,12 @@ brew cask install slack
 # Install Steam Client
 brew cask install steam 
 
+# Install Microsoft Office (huh?)
+#brew cask install microsoft-office
+
+# Install VMware Fusion
+#brew cask install vmware-fusion
+
 # Install AWS CLI
 ## https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
 curl -O https://bootstrap.pypa.io/get-pip.py
