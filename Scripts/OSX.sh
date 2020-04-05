@@ -72,11 +72,12 @@ brew cask install iterm2
 
 # Install Atom
 ## Visit https://www.code2bits.com
-brew update                       # Fetch latest version of homebrew and formula.
-brew search atom                  # Searches all known Casks for a partial or exact match.
-brew cask info atom               # Displays information about the given Cask
-brew cask install atom            # Install the given cask.
-brew cleanup                      # For all installed or specific formulae, remove any older versions from the cellar.
+brew update                           # Fetch latest version of homebrew and formula.
+brew tap homebrew/cask                # Tap the Caskroom/Cask repository from Github using HTTPS.
+brew search atom                      # Searches all known Casks for a partial or exact match.
+brew cask info atom                   # Displays information about the given Cask
+brew cask install atom                # Install the given cask.
+brew cleanup                          # Remove any older versions from the cellar.
 
 ###### ###### ###### ######
 # Install some Gnu utils 
@@ -91,6 +92,12 @@ brew cask install slack
 
 # Install Steam Client
 brew cask install steam 
+
+# Conky
+# https://github.com/Conky-for-macOS/conky-for-macOS/wiki
+brew cask install xquartz
+brew tap Conky-for-macOS/homebrew-formulae
+brew install conky-all 
 
 # Install Microsoft Office (huh?)
 #brew cask install microsoft-office
