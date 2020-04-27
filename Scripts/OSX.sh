@@ -4,6 +4,11 @@
 # ver: 1
 # You should view README.md
 
+MYHOSTNAME="neo"
+sudo scutil --set HostName "$MYHOSTNAME"
+sudo scutil --set LocalHostName "$MYHOSTNAME"
+sudo scutil --set ComputerName "$MYHOSTNAME"
+
 # I put the following in a "routine" so that this can be run as a script 
 #   (and ignore the following which needs to be done prior to this 
 #   script being run (chicken-egg)
@@ -13,15 +18,15 @@ ssh-keygen -trsa -b2048 -f ~/.ssh/id_rsa-github-cloudxabide
 
 # Update your local SSH config
 curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/config; chmod 0600 ~/.ssh/config
+}
+
+# Install Xcode
+xcode-select --install
 
 # Clone this repo
 mkdir -p ~/Repositories/cloudxabide
 cd $_
 git clone git@github.com:cloudxabide/devops.git
-}
-
-# Install Xcode
-xcode-select --install
 
 # OS X Desktop Tweaks
 # Enable "tap-to-click" (not sure whether sudo is needed - does not seem to work)
@@ -53,14 +58,17 @@ bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/master/Scrip
 # Local setup
 curl -o ~/.bashrc https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/.bashrc
 curl -o ~/.bash_profile https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/.bash_profile
-[ -d .ssh ] || ssh-keygen -trsa -b2048
+. ~/.bash_profile
+
+[ -d ${HOME}/.ssh ] || ssh-keygen -trsa -b2048
 # The next command should have already been executed (above)
 # curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/config;  chmod 0600 ~/.ssh/config
 
-# Install Python 3.x
+# Install Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 # you should add this to your .profile or .bashrc (etc...)
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# Install Python 3.x
 brew install python
 
 # Install Cask
