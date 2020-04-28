@@ -6,8 +6,11 @@ ERRMSG=""
 
 # Subroutines
 usage() {
+  echo ""
   echo "$0 -r {public|private|<blank>} -c {status|pull}"
   echo "$0 <blank> -- runs \"$0 private status\" as a default"
+  echo ""
+  exit 0
 }
 
 run_check() {
@@ -35,13 +38,16 @@ case $COMMAND in
 esac
 }
 
-while getopts "r:c:" opt; do
+while getopts "r:c:h" opt; do
   case ${opt} in
     r)
       REPOS=$OPTARG
     ;;
     c)
       COMMAND=$OPTARG
+    ;;
+    h)
+      usage
     ;;
     *)
       usage
