@@ -94,18 +94,19 @@ brew install gnu-sed
 #-- add the following to your .bash_profile/.bashrc/etc...
 grep "gnu-sed" ~/.bashrc || { echo "PATH=\"/usr/local/opt/gnu-sed/libexec/gnubin:$PATH\" " >> ~/.bashrc; }
 brew install tree
+brew install wget
 
 # Install Slack
 brew cask install slack
 
 # Install Steam Client
-brew cask install steam 
+#brew cask install steam 
 
 # Conky
 # https://github.com/Conky-for-macOS/conky-for-macOS/wiki
-brew cask install xquartz
-brew tap Conky-for-macOS/homebrew-formulae
-brew install conky-all 
+#brew cask install xquartz
+#brew tap Conky-for-macOS/homebrew-formulae
+#brew install conky-all 
 
 # Install Microsoft Office (huh?)
 #brew cask install microsoft-office
@@ -115,9 +116,11 @@ brew install conky-all
 
 # Install AWS CLI
 ## https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
-curl -O https://bootstrap.pypa.io/get-pip.py
-python3 get-pip.py --user
+curl -O https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py 
+python3 /tmp/get-pip.py --user
 pip install awscli --upgrade --user
+
+exit 0
 
 # Install Chrome (using homebrew)
 case `hostname -f | sed -e 's/^[^.]*\.//'` in
@@ -129,7 +132,6 @@ case `hostname -f | sed -e 's/^[^.]*\.//'` in
   ;;
 esac
 
-exit 0
 
 # Install GRIP  (GitHub Readme Instant Preview)
 ## Not entirely sure this is worth messing around with. (Atom has a built-in md viewer)
