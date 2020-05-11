@@ -64,19 +64,25 @@ curl -o ~/.bash_profile https://raw.githubusercontent.com/cloudxabide/devops/mas
 # The next command should have already been executed (above)
 # curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/config;  chmod 0600 ~/.ssh/config
 
-# Install Homebrew
+# Install Homebrew  (https://brew.sh) 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-# you should add this to your .profile or .bashrc (etc...)
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# Optional: you should add this to your .profile or .bashrc (etc...)
+grep "opt/python" ~/.bashrc || { echo "PATH=\"$PATH:/usr/local/opt/python/libexec/bin:$PATH" >> ~/.bashrc; }
+ 
+# Install Cask (FKA http://caskroom.io/)
+# Homebrew-Cask extends Homebrew and allows you to install large binary files via a command-line tool
+brew tap homebrew/cask                      # Tap the Caskroom/Cask repository from Github using HTTPS.
+
 # Install Python 3.x
 brew install python
 
-# Install Cask
-## https://brew.sh (FKA http://caskroom.io/)
-brew tap homebrew/cask # Tap the Caskroom/Cask repository from Github using HTTPS.
-
 # Install iTerm2
 brew cask install iterm2
+
+# Install Microsoft Visual Studio Code
+brew search visual-studio-code        # Searches all known Casks for a partial or exact match.
+brew cask info visual-studio-code     # Displays information about the given Cask
+brew cask install visual-studio-code  # Install the given cask.
 
 # Install Atom
 ## Visit https://www.code2bits.com
@@ -85,7 +91,30 @@ brew tap homebrew/cask                # Tap the Caskroom/Cask repository from Gi
 brew search atom                      # Searches all known Casks for a partial or exact match.
 brew cask info atom                   # Displays information about the given Cask
 brew cask install atom                # Install the given cask.
-brew cleanup                          # Remove any older versions from the cellar.
+
+# Install Microsoft Office (huh?)
+#brew cask install microsoft-office
+
+# Install Slack
+brew cask install slack
+
+# Install Google Chrome
+brew cask install google-chrome
+
+# Install Steam Client
+#brew cask install steam
+
+# Install AWS CLI
+## https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
+curl -O https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
+python3 /tmp/get-pip.py --user
+pip install awscli --upgrade --user
+
+# Install Steam Client
+#brew cask install steam 
+
+# Install VMware Fusion
+#brew cask install vmware-fusion
 
 ###### ###### ###### ######
 # Install some Gnu utils 
@@ -96,31 +125,18 @@ grep "gnu-sed" ~/.bashrc || { echo "PATH=\"/usr/local/opt/gnu-sed/libexec/gnubin
 brew install tree
 brew install wget
 
-# Install Slack
-brew cask install slack
-
-# Install Steam Client
-#brew cask install steam 
-
 # Conky
 # https://github.com/Conky-for-macOS/conky-for-macOS/wiki
 #brew cask install xquartz
 #brew tap Conky-for-macOS/homebrew-formulae
 #brew install conky-all 
 
-# Install Microsoft Office (huh?)
-#brew cask install microsoft-office
-
-# Install VMware Fusion
-#brew cask install vmware-fusion
-
-# Install AWS CLI
-## https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
-curl -O https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py 
-python3 /tmp/get-pip.py --user
-pip install awscli --upgrade --user
+#  LASTLY....
+brew cleanup                          # For all installed or specific formulae, remove any older versions from the cellar.
 
 exit 0
+##########################
+
 
 # Install Chrome (using homebrew)
 case `hostname -f | sed -e 's/^[^.]*\.//'` in
@@ -131,7 +147,6 @@ case `hostname -f | sed -e 's/^[^.]*\.//'` in
       brew cask install google-chrome
   ;;
 esac
-
 
 # Install GRIP  (GitHub Readme Instant Preview)
 ## Not entirely sure this is worth messing around with. (Atom has a built-in md viewer)
@@ -154,7 +169,6 @@ install_Amplify() {
   npm install --save -g aws-amplify
   npm install --save -g aws-amplify-react-native
 }
-
 
 ## References:
 https://docs.python-guide.org/starting/install3/osx/
