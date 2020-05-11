@@ -1,10 +1,15 @@
 #!/bin/bash
 
-# OSX.sh
-# ver: 1
-# You should view README.md
+# Name:     OSX.sh
+# Version:  1.1
+# Purpose:  To update a fresh OSX install with DevOps Tools
+# Notes:    You should view README.md.  
+#           Script is not idempotent - not sure what would happen if run several multiple times.
 
+# My Parameters
 MYHOSTNAME="neo"
+
+# Update System Names (based on Parameters above)
 sudo scutil --set HostName "$MYHOSTNAME"
 sudo scutil --set LocalHostName "$MYHOSTNAME"
 sudo scutil --set ComputerName "$MYHOSTNAME"
@@ -84,9 +89,11 @@ brew search visual-studio-code        # Searches all known Casks for a partial o
 brew cask info visual-studio-code     # Displays information about the given Cask
 brew cask install visual-studio-code  # Install the given cask.
 
+# Update Brew (should not be necessary at this time, here for a reference)
+brew update                           # Fetch latest version of homebrew and formula.
+
 # Install Atom
 ## Visit https://www.code2bits.com
-brew update                           # Fetch latest version of homebrew and formula.
 brew tap homebrew/cask                # Tap the Caskroom/Cask repository from Github using HTTPS.
 brew search atom                      # Searches all known Casks for a partial or exact match.
 brew cask info atom                   # Displays information about the given Cask
