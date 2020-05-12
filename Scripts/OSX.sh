@@ -70,7 +70,9 @@ curl -o ~/.bash_profile https://raw.githubusercontent.com/cloudxabide/devops/mas
 # curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/config;  chmod 0600 ~/.ssh/config
 
 # Install Homebrew  (https://brew.sh) 
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# Old (deprecated) method
+#   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 # Optional: you should add this to your .profile or .bashrc (etc...)
 grep "opt/python" ~/.bashrc || { echo "PATH=\"$PATH:/usr/local/opt/python/libexec/bin:$PATH" >> ~/.bashrc; }
  
