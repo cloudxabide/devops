@@ -115,9 +115,10 @@ brew cask install google-chrome
 
 # Install AWS CLI
 ## https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
-curl -O https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
-python3 /tmp/get-pip.py --user
+curl -O https://bootstrap.pypa.io/get-pip.py 
+python3 get-pip.py --user
 pip install awscli --upgrade --user
+echo "PATH=\"$(dirname $( find ~/Library/Python/ -name aws)):$PATH\" " >> ~/.bashrc
 
 # Install Steam Client
 #brew cask install steam 

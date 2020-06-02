@@ -1,5 +1,9 @@
 # .bashrc
 
+# THIS FILE WAS DERIVED FROM
+# https://github.com/cloudxabide/devops/blob/master/FILES/.bashrc
+#  Personalize file at the bottom
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -38,8 +42,8 @@ case `uname` in
   ;;
   Darwin)
     # Placeholder for Apple Mac OS X
-    PATH="/usr/local/opt/python/libexec/bin:${HOME}/Library/Python/3.7/bin:$PATH"
-
+    alias 
+    #PATH="/usr/local/opt/python/libexec/bin:${HOME}/Library/Python/3.7/bin:$PATH"
   ;;
   SunOS)
     PS1="`/usr/ucb/whoami`@${MYHOSTNAME} $ "
@@ -57,4 +61,6 @@ case `uname` in
 esac
 export PATH PS1 MANPATH LD_LIBRARY_PATH TERM EDITOR VISUAL GIT_EDITOR
 
-PATH="/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/python/libexec/bin:/Users/jaradtke/Library/Python/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# Entries BELOW this line are custom
+# ==============================================
+
