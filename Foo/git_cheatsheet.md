@@ -82,3 +82,35 @@ goes here
 Your code
 goes here
 ```
+
+### Quick branch/checkout/push
+```
+branchname="`id`-`date +%F-+%H-%M-%S`
+git clone ssh://git@gitlab.consulting.redhat.com:2222/kmo-consulting-engagement-reports/client-cers/ibm-ca-mmis-caj-1.git
+git checkout -b $branchname
+git add <changed files>
+git commit -m "My comment" <changed file>
+git push --set-upstream origin $branchname
+git push
+```
+
+### Git rec'd process
+#### Step 1. Fetch and check out the branch for this merge request
+```
+git fetch origin
+git checkout -b "jradtke-2020-06-05" "origin/jradtke-2020-06-05"
+```
+
+#### Step 2. Review the changes locally
+
+#### Step 3. Merge the branch and fix any conflicts that come up
+```
+git fetch origin
+git checkout "origin/master"
+git merge --no-ff "jradtke-2020-06-05"
+```
+
+#### Step 4. Push the result of the merge to GitLab
+```
+git push origin "master"
+```
