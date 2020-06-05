@@ -74,7 +74,7 @@ case $REPOS in
    done
   ;;
   public)
-    for REPO in `find Public -name .git -exec dirname {} \;`
+    for REPO in `find Public -name .git -exec dirname {} \; | egrep -v 'archive'`
     do
       echo "################ ################ "
       run_check
