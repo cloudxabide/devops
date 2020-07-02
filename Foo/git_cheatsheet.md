@@ -94,23 +94,25 @@ git push --set-upstream origin $branchname
 git push
 ```
 
+
 ### Git rec'd process
+-- this still needs tweaking
+```
+MYBRANCH="`id -un`-`date +%F-%H%M%S`"
 #### Step 1. Fetch and check out the branch for this merge request
-```
 git fetch origin
-git checkout -b "jradtke-2020-06-05" "origin/jradtke-2020-06-05"
-```
+git checkout -b "$MYBRANCH" 
 
 #### Step 2. Review the changes locally
+# Update files
+# git add {file}
+# git commit -m "Message" {file}
 
 #### Step 3. Merge the branch and fix any conflicts that come up
-```
-git fetch origin
-git checkout "origin/master"
-git merge --no-ff "jradtke-2020-06-05"
-```
+#git fetch origin
+#git checkout "origin/master"
+#git merge --no-ff "$MYBRANCH"
 
 #### Step 4. Push the result of the merge to GitLab
-```
-git push origin "master"
+git push --set-upstream origin "$MYBRANCH"
 ```
