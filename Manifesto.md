@@ -68,7 +68,7 @@ This section was recently added and is still a work-in-progress.  I believe I wa
 While we may not *all* have Security in our job title, it certainly should be in everyone's job description.  We are ALL responsible for security.  I have pondered whether the idea that anyone who is part of a system design, operation, maintenance should have their own personal data included with all their customer's personal data.  Protect everyone as though you would protect yourself.  
 
 ### Defense In Depth
-I find the [Defense in Depth](https://en.wikipedia.org/wiki/Defense_in_depth_(computing)) to probably be the most interesting.  My opinion is that it seems like the most strategic and logical (regardless of what context it is being applied).  For example:  the wikipedia article says it's also known as the Castle Approach (and not Frank Castle from The Punisher).
+I find the [Defense in Depth](https://en.wikipedia.org/wiki/Defense_in_depth_(computing)) to probably be the most interesting.  My opinion is that it seems like the most strategic and logical approach (regardless of what context it is being applied).  For example:  the wikipedia article says it's also known as the Castle Approach (and not Frank Castle from The Punisher).  Review the following [NIST 800-53](https://nvd.nist.gov/800-53/Rev4/control/SC-32) Control Description as an example in the "real world".
 
 ### Blast Radius
 I suppose technically a resut of Defense In Depth.  (provide more detail for this later though)
