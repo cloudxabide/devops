@@ -85,7 +85,7 @@ goes here
 
 ### Quick branch/checkout/push
 ```
-branchname="`id`-`date +%F-+%H-%M-%S`
+branchname="`whoami`-`date +%F-+%H-%M-%S`"
 git clone ssh://git@gitlab.consulting.redhat.com:2222/kmo-consulting-engagement-reports/client-cers/ibm-ca-mmis-caj-1.git
 git checkout -b $branchname
 git add <changed files>
