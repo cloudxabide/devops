@@ -24,7 +24,8 @@ alias la="/bin/ls -la | egrep -v '.DS_Store'"
 alias please='/usr/bin/sudo $(history -p !!)'
 alias butwhy='/usr/bin/systemctl status $_ '
 alias matrixnet='/usr/bin/sudo route add -net 10.10.10.0 netmask 255.255.255.0 gw 192.168.0.1'
-alias finalcountdown="echo $(expr '(' $(date -j -v -14d -f \"%Y-%m-%d\" \"2019-08-12\" +%s) - $(date +%s) ')' / 86400) \"days until I submit 2-week notice.\" "
+alias quarantining="echo $(expr '(' $(date -j -v -14d -f \"%Y-%m-%d\" \"2020-08-14\" +%s) - $(date +%s) ')' / 86400) \"days until quarantine begins. \" "
+alias finalcountdown="echo $(expr '(' $(date -j -f \"%Y-%m-%d\" \"2020-08-14\" +%s) - $(date +%s) ')' / 86400) \"days until \#NERDvana .\" "
 
 alias oclogin='oc login -u morpheus -p 'Passw0rd' --insecure-skip-tls-verify --server=https://rh7-ocp3-mst.matrix.lab.:8443'
 
@@ -42,8 +43,9 @@ case `uname` in
   ;;
   Darwin)
     # Placeholder for Apple Mac OS X
-    alias 
-    #PATH="/usr/local/opt/python/libexec/bin:${HOME}/Library/Python/3.7/bin:$PATH"
+    #alias 
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+    PATH="/usr/local/opt/python/libexec/bin:${HOME}/Library/Python/3.7/bin:$PATH"
   ;;
   SunOS)
     PS1="`/usr/ucb/whoami`@${MYHOSTNAME} $ "
