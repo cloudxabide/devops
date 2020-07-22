@@ -25,6 +25,9 @@ ssh-keygen -trsa -b2048 -f ~/.ssh/id_rsa-github-cloudxabide
 curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/config; chmod 0600 ~/.ssh/config
 }
 
+# Change shell BACK to bash 
+chsh -s /bin/bash
+
 # Install Xcode
 xcode-select --install
 
@@ -116,7 +119,7 @@ brew cask install google-chrome
 # Install AWS CLI
 ## https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
 curl -O https://bootstrap.pypa.io/get-pip.py 
-python3 get-pip.py --user
+python3 get-pip.py 
 pip install awscli --upgrade --user
 echo "PATH=\"$(dirname $( find ~/Library/Python/ -name aws)):$PATH\" " >> ~/.bashrc
 
