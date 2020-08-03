@@ -97,7 +97,9 @@ git push
 ### Git rec'd process
 -- this still needs tweaking
 ```
-MYBRANCH="`id -un`-`date +%F-%H%M%S`"
+MYBRANCH="`whoami`-`date +%F-%H%M%S`"
+git checkout master
+
 #### Step 1. Fetch and check out the branch for this merge request
 git fetch origin
 git checkout -b "$MYBRANCH" 
@@ -108,10 +110,14 @@ git checkout -b "$MYBRANCH"
 # git commit -m "Message" {file}
 
 #### Step 3. Merge the branch and fix any conflicts that come up
-#git fetch origin
+git fetch origin
 #git checkout "origin/master"
-#git merge --no-ff "$MYBRANCH"
+git merge --no-ff "$MYBRANCH"
 
 #### Step 4. Push the result of the merge to GitLab
 git push --set-upstream origin "$MYBRANCH"
+
+#### Step 5. Request peer review of MR (or merge it yourself)
+- Example URL
+https://gitlab.consulting.company.com/reports/client-cers/reportn-name-/merge_requests/new?merge_request%5Bsource_branch%5D=$MYBRANCH
 ```
