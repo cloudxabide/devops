@@ -5,6 +5,15 @@
 # Purpose:  To update a fresh OSX install with DevOps Tools
 # Notes:    You should view README.md.  
 #           Script is not idempotent - not sure what would happen if run several multiple times.
+#           Some of these steps must be in order - and see the previous "warning"
+
+# Change shell BACK to bash 
+chsh -s /bin/bash
+/bin/bash
+# Local setup
+curl -o ~/.bashrc https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/.bashrc
+curl -o ~/.bash_profile https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/.bash_profile
+. ~/.bash_profile
 
 # My Parameters
 MYHOSTNAME="neo"
@@ -25,8 +34,6 @@ ssh-keygen -trsa -b2048 -f ~/.ssh/id_rsa-github-cloudxabide
 curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/config; chmod 0600 ~/.ssh/config
 }
 
-# Change shell BACK to bash 
-chsh -s /bin/bash
 
 # Install Xcode
 xcode-select --install
@@ -42,7 +49,6 @@ git clone git@github.com:cloudxabide/devops.git
 sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 sudo defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
 # Set Dark Mode
 sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
 
@@ -63,11 +69,7 @@ echo ".DS_Store" >> ~/.gitignore_global
 # See [vim_foo.sh](./vim_foo.sh)
 bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/master/Scripts/vim_foo.sh)
 
-# Local setup
-curl -o ~/.bashrc https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/.bashrc
-curl -o ~/.bash_profile https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/.bash_profile
-. ~/.bash_profile
-
+# See if there is an existing ~/.ssh - if not, create one (with keys)
 [ -d ${HOME}/.ssh ] || ssh-keygen -trsa -b2048
 # The next command should have already been executed (above)
 # curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/config;  chmod 0600 ~/.ssh/config
@@ -90,19 +92,19 @@ brew install python
 brew cask install iterm2
 
 # Install Microsoft Visual Studio Code
-brew search visual-studio-code        # Searches all known Casks for a partial or exact match.
+#brew search visual-studio-code        # Searches all known Casks for a partial or exact match.
 brew cask info visual-studio-code     # Displays information about the given Cask
 brew cask install visual-studio-code  # Install the given cask.
 
-# Update Brew (should not be necessary at this time, here for a reference)
-brew update                           # Fetch latest version of homebrew and formula.
 
 # Install Atom
 ## Visit https://www.code2bits.com
-brew tap homebrew/cask                # Tap the Caskroom/Cask repository from Github using HTTPS.
-brew search atom                      # Searches all known Casks for a partial or exact match.
+#brew search atom                      # Searches all known Casks for a partial or exact match.
 brew cask info atom                   # Displays information about the given Cask
 brew cask install atom                # Install the given cask.
+
+# Update Brew (should not be necessary at this time, here for a reference)
+brew update                           # Fetch latest version of homebrew and formula.
 
 # Install Microsoft Office (huh?)
 #brew cask install microsoft-office
@@ -116,10 +118,13 @@ brew cask install google-chrome
 # Install Steam Client
 #brew cask install steam
 
+## Install PIP
+curl  https://bootstrap.pypa.io/get-pip.py -o ~/get-pip.py
+python3 ~/get-pip.py 
+rm ~/get-pip.py
+
 # Install AWS CLI
 ## https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
-curl -O https://bootstrap.pypa.io/get-pip.py 
-python3 get-pip.py 
 pip install awscli --upgrade --user
 echo "PATH=\"$(dirname $( find ~/Library/Python/ -name aws)):$PATH\" " >> ~/.bashrc
 
