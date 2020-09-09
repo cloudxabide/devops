@@ -98,14 +98,16 @@ git push
 -- this still needs tweaking
 ```
 MYBRANCH="`whoami`-`date +%F-%H%M%S`"
-git checkout master
 
 #### Step 1. Fetch and check out the branch for this merge request
+git checkout master
 git fetch origin
 git checkout -b "$MYBRANCH" 
 
+#### Step 1a
+# Update file(s)
+
 #### Step 2. Review the changes locally
-# Update files
 # git add {file}
 # git commit -m "Message" {file}
 
