@@ -7,6 +7,9 @@
 #           Script is not idempotent - not sure what would happen if run several multiple times.
 #           Some of these steps must be in order - and see the previous "warning"
 
+# Update /etc/sudoers to allow NOPASSWD
+## TODO: make this scriptable
+
 # Change shell BACK to bash 
 chsh -s /bin/bash
 /bin/bash
@@ -39,9 +42,7 @@ curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/maste
 xcode-select --install
 
 # Clone this repo
-mkdir -p ~/Repositories/cloudxabide
-cd $_
-git clone git@github.com:cloudxabide/devops.git
+[ ! -d ~/Repositories/cloudxabide ] && { mkdir -p ~/Repositories/cloudxabide; cd $_; git clone git@github.com:cloudxabide/devops.git; }
 
 # OS X Desktop Tweaks
 # Enable "tap-to-click" (not sure whether sudo is needed - does not seem to work)
@@ -103,11 +104,8 @@ brew cask install visual-studio-code  # Install the given cask.
 brew cask info atom                   # Displays information about the given Cask
 brew cask install atom                # Install the given cask.
 
-# Update Brew (should not be necessary at this time, here for a reference)
-brew update                           # Fetch latest version of homebrew and formula.
-
-# Install Microsoft Office (huh?)
-#brew cask install microsoft-office
+# Install Asciidoctor stuff
+sudo gem install asciidoctor-pdf asciidoctor-diagram rouge
 
 # Install Slack
 brew cask install slack
@@ -131,6 +129,9 @@ echo "PATH=\"$(dirname $( find ~/Library/Python/ -name aws)):$PATH\" " >> ~/.bas
 # Install Steam Client
 #brew cask install steam 
 
+# Install Microsoft Office (huh?)
+#brew cask install microsoft-office
+
 # Install VMware Fusion
 #brew cask install vmware-fusion
 
@@ -150,43 +151,18 @@ brew install wget
 #brew install conky-all 
 
 #  LASTLY....
+# Update Brew (should not be necessary at this time, here for a reference)
+brew update                           # Fetch latest version of homebrew and formula.
 brew cleanup                          # For all installed or specific formulae, remove any older versions from the cellar.
 
 exit 0
 ##########################
 
 
-# Install Chrome (using homebrew)
-case `hostname -f | sed -e 's/^[^.]*\.//'` in
-  ant.amazon.com)
-    echo "Install Chrome from Self-Service Apps"
-  ;;
-  *)
-      brew cask install google-chrome
-  ;;
-esac
-
 # Install GRIP  (GitHub Readme Instant Preview)
 ## Not entirely sure this is worth messing around with. (Atom has a built-in md viewer)
 ## https://github.com/joeyespo/grip
-brew install grip
-
-### This section is for AWS Amplify
-# https://aws-amplify.github.io/docs/js/start?ref=amplify-rn-btn&platform=react-native
-# Install Node.js and npm
-install_Amplify() {
-  mkdir -p ~/Projects/Amplify ; cd $_
-  brew install npm node.js yarn node watchman
-  brew install yarn
-  brew install node
-  brew install watchman
-  npm install -g @aws-amplify/cli
-  npm install -g create-react-native-app
-  npm install -g react-native-macos-cli
-  npm install -g react-native-cli
-  npm install --save -g aws-amplify
-  npm install --save -g aws-amplify-react-native
-}
+#brew install grip
 
 ## References:
 https://docs.python-guide.org/starting/install3/osx/
