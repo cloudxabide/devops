@@ -123,3 +123,14 @@ git push --set-upstream origin "$MYBRANCH"
 - Example URL
 https://gitlab.consulting.company.com/reports/client-cers/reportn-name-/merge_requests/new?merge_request%5Bsource_branch%5D=$MYBRANCH
 ```
+
+## Duplicating a repo
+If you have a reason to duplicate a repo (say you have an internal/on-prem repo that you'd like to push to github...)
+
+```
+$ git clone --bare https://github.com/exampleuser/old-repository.git
+$ cd old-repository.git
+$ git push --mirror https://github.com/exampleuser/new-repository.git
+$ cd ..
+$ rm -rf old-repository.git
+```
