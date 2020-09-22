@@ -92,11 +92,13 @@ brew install python
 # Install iTerm2
 brew cask install iterm2
 
+# Install  Viscosity (OS X VPN client)
+brew cask install viscosity
+
 # Install Microsoft Visual Studio Code
 #brew search visual-studio-code        # Searches all known Casks for a partial or exact match.
 brew cask info visual-studio-code     # Displays information about the given Cask
 brew cask install visual-studio-code  # Install the given cask.
-
 
 # Install Atom
 ## Visit https://www.code2bits.com
@@ -122,9 +124,17 @@ python3 ~/get-pip.py
 rm ~/get-pip.py
 
 # Install AWS CLI
+# NOTE: The PIP method seems all fooked right now
+
 ## https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html
-pip install awscli --upgrade --user
-echo "PATH=\"$(dirname $( find ~/Library/Python/ -name aws)):$PATH\" " >> ~/.bashrc
+#pip install awscli --upgrade --user
+#echo "PATH=\"$(dirname $( find ~/Library/Python/ -name aws)):$PATH\" " >> ~/.bashrc
+
+# https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html#cliv2-mac-install-cmd-all-users
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /
+#curl "https://awscli.amazonaws.com/AWSCLIV2-2.0.30.pkg" -o "AWSCLIV2.pkg"
+#sudo installer -pkg AWSCLIV2.pkg -target /
 
 # Install Steam Client
 #brew cask install steam 
