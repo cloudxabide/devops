@@ -29,5 +29,34 @@ otherperson@email.com
 $ 
 ```
 
+## Add a comment (#) to the beginning of a line in a range 
+```
+# in vi....
+<ESC>
+:3,8s/^/# /
+```
+Will change
+```
+#!/bin/bash
+
+
+Status:   Works
+Purpose:  Generically display temps that are available via "thermal_zone"
+          Mostly just wanted to validate my fan works as expected.
+Data:     2020-11-15
+
+```
+to 
+```
+#!/bin/bash
+
+#
+# Status:   Works
+# Purpose:  Generically display temps that are available via "thermal_zone"
+#           Mostly just wanted to validate my fan works as expected.
+# Data:     2020-11-15
+#
+```
+
 ## NOTES:
 Some of the tweaks here **may** be Mac specific (i.e. adding LC_CTYPE to the tr command).  I don't know whether they apply to Linux bash without modification.
