@@ -29,6 +29,20 @@ otherperson@email.com
 $ 
 ```
 
+## Run multiple commands after a logic (true/false) statement
+This example should be fairly self-explanatory, I believe.  Please note the trailing semi-colon ";" in each stanza.
+
+```
+neo:~ jradtke$ [ -f /tmp/file  ] && { echo "/tmp/file already exists"; echo "I repeat: file exists"; } || { echo "creating /tmp/file"; echo "blah" > /tmp/file; echo "file create"; }
+creating /tmp/file
+file create
+neo:~ jradtke$ cat /tmp/file
+blah
+neo:~ jradtke$ [ -f /tmp/file  ] && { echo "/tmp/file already exists"; echo "I repeat: file exists"; } || { echo "creating /tmp/file"; echo "blah" > /tmp/file; echo "file create"; }
+/tmp/file already exists
+I repeat: file exists
+```
+
 ## Add a comment (#) to the beginning of a line in a range 
 ```
 # in vi....
