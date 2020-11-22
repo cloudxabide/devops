@@ -16,8 +16,8 @@ $ aws configure
 
 ```
 [default]
-aws_access_key_id = ACCESSKEYIDHERE 
-aws_secret_access_key = SECRETACCESSKEYHERE
+# I leave this empty on purpose
+#   it "forces" you to select a profile first
 
 [cxa-jaradtke]
 aws_access_key_id = ACCESSKEYIDHERE
@@ -27,14 +27,13 @@ aws_secret_access_key = SECRETACCESSKEYHERE
 
 ```
 [default]
-region=us-east-2
+region=us-east-1
 output=json
 
 [profile cxa-jaradtke]
 region=us-east-2
 output=text
 ```
-
 ### CLI examples
 -- To utilize the configuration from the command line...  
 

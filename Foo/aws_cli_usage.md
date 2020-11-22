@@ -80,3 +80,20 @@ us-east-2 | ami-15e9c770
 us-west-2 | ami-bf4193c7
 us-west-1 | ami-a51f27c5
 ```
+
+#### Find images from a company (Red Hat)
+Status:  Work In Progress (WIP)
+Reference: https://access.redhat.com/solutions/15356
+```
+GOVCLOUD=0
+case $GOVCLOUD in 
+  0) OWNERS="309956199498"; REGIONS="us-east-1 us-east-2 us-west-1 us-west-2" ;;
+  *) OWNERS="219670896067"; REGIONS="us-gov-east-1 us-gov-west-1";;
+esac
+
+
+for REGION in $REGIONS
+do
+  echo "$OWNER
+
+

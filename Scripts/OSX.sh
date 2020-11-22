@@ -136,6 +136,9 @@ sudo installer -pkg AWSCLIV2.pkg -target /
 #curl "https://awscli.amazonaws.com/AWSCLIV2-2.0.30.pkg" -o "AWSCLIV2.pkg"
 #sudo installer -pkg AWSCLIV2.pkg -target /
 
+# Install Terraform
+brew install terraform
+
 # Install Steam Client
 #brew cask install steam 
 

@@ -1,12 +1,8 @@
 # AWS CLI Cheatsheet
 Source: https://gist.github.com/apolloclark/b3f60c1f68aa972d324b
 
-http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html
+http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html  
 https://www.youtube.com/watch?v=_wiGpBQGCjU
-
-
-
-
 
 ## Setup
 
@@ -69,10 +65,6 @@ paste # combine rows of text, by line
 join # combine rows of text, by initial column value
 ```
 <br/><br/><br/>
-
-
-
-
 
 ## Cloudtrail - Logging and Auditing
 

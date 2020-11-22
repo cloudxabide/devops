@@ -29,6 +29,9 @@ export default_region=$(grep -A2 $AWS_DEFAULT_PROFILE ${AWS_CONFIG} | grep defau
 echo "$AWS_DEFAULT_PROFILE $aws_access_key_id $aws_secret_access_key $default_region"
 ```
 
+## Opt-out of non-US regions
+TODO:  this ^^^
+
 ## Removing the default VPC
 # First... clean up your damn room
 # Get the Vpc-Id for the Default VPC

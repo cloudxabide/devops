@@ -84,6 +84,8 @@ Regardless if the topic of this section is *actually* true, you should build you
 
 <hr>
 
+I am not hiding the fact that a lot of my strategy is derived from my time spent at AWS.  The [Leadership Principles](https://www.amazon.jobs/en/principles) are a great way to approach a sound mindset.
+
 ## From Jeff Bezos...  
 I included the following because I think it's a meaningful thing to read.  
 https://www.inc.com/scott-mautz/jeff-bezos-says-asking-these-12-questions-now-will-make-you-proud-of-life-youve-built-later.html  
