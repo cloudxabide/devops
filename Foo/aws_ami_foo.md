@@ -90,3 +90,4 @@ Or.. hammer through by hand
 ```
 aws ec2 describe-images --owners 531415883065 --filters "Name=name,Values=rhcos-46*"  --query "sort_by(Images, &CreationDate)[*].[Name,ImageId]" --region $REGION
 ```
+
