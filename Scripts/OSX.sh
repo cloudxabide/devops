@@ -90,33 +90,33 @@ brew tap homebrew/cask                      # Tap the Caskroom/Cask repository f
 brew install python
 
 # Install iTerm2
-brew cask install iterm2
+brew install --cask iterm2
 
 # Install  Viscosity (OS X VPN client)
-brew cask install viscosity
+brew install cask viscosity
 
 # Install Microsoft Visual Studio Code
 #brew search visual-studio-code        # Searches all known Casks for a partial or exact match.
-brew cask info visual-studio-code     # Displays information about the given Cask
-brew cask install visual-studio-code  # Install the given cask.
+brew info --cask visual-studio-code     # Displays information about the given Cask
+brew install --cask visual-studio-code  # Install the given cask.
 
 # Install Atom
 ## Visit https://www.code2bits.com
 #brew search atom                      # Searches all known Casks for a partial or exact match.
-brew cask info atom                   # Displays information about the given Cask
-brew cask install atom                # Install the given cask.
+brew info --cask atom                   # Displays information about the given Cask
+brew install --cask atom                # Install the given cask.
 
 # Install Asciidoctor stuff
 sudo gem install asciidoctor-pdf asciidoctor-diagram rouge
 
 # Install Slack
-brew cask install slack
+brew install --cask slack
 
 # Install Google Chrome
-brew cask install google-chrome
+brew install --cask google-chrome
 
 # Install Steam Client
-#brew cask install steam
+#brew install --cask steam
 
 ## Install PIP
 curl  https://bootstrap.pypa.io/get-pip.py -o ~/get-pip.py
@@ -133,20 +133,22 @@ rm ~/get-pip.py
 # https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html#cliv2-mac-install-cmd-all-users
 curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
 sudo installer -pkg AWSCLIV2.pkg -target /
+mv AWSCLIV2.pkg ~/Downloads
+
 #curl "https://awscli.amazonaws.com/AWSCLIV2-2.0.30.pkg" -o "AWSCLIV2.pkg"
 #sudo installer -pkg AWSCLIV2.pkg -target /
 
 # Install Terraform
-brew install terraform
+brew install --cask terraform
 
 # Install Steam Client
-#brew cask install steam 
+#brew install --cask steam 
 
 # Install Microsoft Office (huh?)
-#brew cask install microsoft-office
+#brew install --cask microsoft-office
 
 # Install VMware Fusion
-#brew cask install vmware-fusion
+#brew install --cask vmware-fusion
 
 ###### ###### ###### ######
 # Install some Gnu utils 
