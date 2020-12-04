@@ -26,6 +26,9 @@ sudo scutil --set HostName "$MYHOSTNAME"
 sudo scutil --set LocalHostName "$MYHOSTNAME"
 sudo scutil --set ComputerName "$MYHOSTNAME"
 
+# This is necessary for homebrew 
+sudo chown -R $(whoami) /usr/local/share/man/man5
+
 # I put the following in a "routine" so that this can be run as a script 
 #   (and ignore the following which needs to be done prior to this 
 #   script being run (chicken-egg)
@@ -59,10 +62,10 @@ sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableTheme
 #git config --global core.excludesfile ~/.gitignore_global
 cat << EOF > ~/.gitconfig
 [core]
-	excludesfile = /Users/jradtke/.gitignore_global
+  excludesfile = /Users/jradtke/.gitignore_global
 [user]
-	name = James Radtke
-	email = emailaddy@gmail.com
+  name = James Radtke
+  email = emailaddy@gmail.com
 EOF
 echo ".DS_Store" >> ~/.gitignore_global
 
@@ -139,7 +142,7 @@ mv AWSCLIV2.pkg ~/Downloads
 #sudo installer -pkg AWSCLIV2.pkg -target /
 
 # Install Terraform
-brew install --cask terraform
+brew install terraform
 
 # Install Steam Client
 #brew install --cask steam 
