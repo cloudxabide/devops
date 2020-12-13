@@ -18,8 +18,11 @@ do
   aws ec2 describe-images --query 'length(Images[].Name)' --owners $OWNER \
     --filter Name=name,Values="RHEL-8.2*"
   echo "Owner: $OWNER - rhcos-46*"
+  ## How many can we find (given the filter)
   aws ec2 describe-images --query 'length(Images[].Name)' --owners $OWNER \
     --filters "Name=name,Values=rhcos-46*"
+  aws ec2 describe-images --query 'sort_by(Images, &CreationDate)[].Name' \
+    --owners $AMI_OWNER --filters "Name=name,Values=rhcos-46*"
 done
 }
 

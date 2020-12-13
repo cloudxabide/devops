@@ -43,9 +43,12 @@ do
   echo "# VPCS in $REGION"
   aws ec2 describe-vpcs --query "Vpcs[].VpcId" 
   aws ec2 describe-vpcs --query 'Vpcs[*].CidrBlock' 
-  aws ec2 describe-volumes 
+  aws ec2 describe-volumes --output text
   aws ec2 describe-subnets --query 'Subnets[*].[CidrBlock,Tags[?Key==`Name`].Value|[0]]' 
   aws ec2 describe-internet-gateways --query 'InternetGateways[*].Attachments' 
+  aws ec2 describe-nat-gateways 
+  aws ec2 describe-vpc-endpoints
+  aws ec2 describe-addresses 
   # SecurityGroups
   aws ec2 describe-security-groups --query '[Description,GroupId[*],GroupName,VpcId]' 
   aws rds describe-db-security-groups --query 'DBSecurityGroups[*].EC2SecurityGroups[*].EC2SecurityGroupId' 

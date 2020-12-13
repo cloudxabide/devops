@@ -24,7 +24,7 @@ I feel all the points in this doc are important points - but "Have Fun" is fairl
 This may seem obvious, but... listen to calls, really listen.  Take notes.  Try to read the customers tone.  Don't browse, don't scribble (unless scribbling is how you center, I suppose)
 
 ### Be Punctual  
-Being on-time is likely one of the simplest goals.  If this means you have to add a 15 reminder to meeting notices, then.. you know what you have to do.
+Being on-time is likely one of the simplest things you can expect yourself to do.  If this means you have to add a 15 reminder to meeting notices, then.. you know what you have to do.
 
 ### Yearn to Learn (elevate your state)
 Find passion in digging in and learning about the topics and technology(s) we implement and support.
@@ -71,10 +71,40 @@ While we may not *all* have Security in our job title, it certainly should be in
 I find the [Defense in Depth](https://en.wikipedia.org/wiki/Defense_in_depth_(computing)) to probably be the most interesting.  My opinion is that it seems like the most strategic and logical approach (regardless of what context it is being applied).  For example:  the wikipedia article says it's also known as the Castle Approach (and not Frank Castle from The Punisher).  Review the following [NIST 800-53](https://nvd.nist.gov/800-53/Rev4/control/SC-32) Control Description as an example in the "real world".
 
 ### Blast Radius
+Initially, I had the following:  
 I suppose technically a resut of Defense In Depth.  (provide more detail for this later though)
 
+Well, later.. has arrived.  Blast radius is not only a security concept, but an ideal for resliency.  An example:
+ Let's consider an outage scenario for something like OpenShift - which has a control-plane, and compute-plane.  
+Imagine you need 6 compute nodes to provide enough capacity for your workload.  
+Now, let's talk about 2 ways you could manage that capacity:
+* 1 cluster Environment - called Hercules
+  * single "control plane" of 3 nodes (blue)
+  * single "compute plane" of 6 nodes (blue)
+* 2 cluster(s) Environment - called Orthrus 
+  * control plane of 3 nodes (blue)
+  * control plane of 3 nodes (green)
+  * compute plane of 3 "compute nodes" (blue)
+  * compute plane of 3 "compute nodes" (green)
+
+Failure scenario 1:  bad information is uploaded to the control plane  
+Failure scenario 2:  the control plane is hacked 
+
+| Cluster Name | Failure Scenario | Outcome |
+|:-------------|:----------------:|:--------|
+| Hercules     | 1                | Potential failure for ALL compute
+| Hercules     | 2                | Potential failure for ALL compute
+| Orthrus      | 1                | Potential faliure for Green cluster compute, Blue compute still operational
+| Orthrus      | 2                | Potential failure for Green cluster compute, Blue compute still operational
+
+### Using multiple cluster
+#### Cons
+* there is the added cost of 3 "control-plane" nodes to provide extra resilience (which incurs no adtl licensing for OCP, I might add).  
+#### Pros
+* Easier to test platform updates, execute maintenance, etc.. with lesser risk
+
 ### Separation of Duties
-The Principle regarding the [Separation of Duties](https://en.wikipedia.org/wiki/Separation_of_duties) has a history outside the realm of IT.  
+The Principle regarding the [Separation of Duties](https://en.wikipedia.org/wiki/Separation_of_duties) has a history outside the realm of IT.  While SOD is not a perfect system/approach, (of course it is possible to have multiple people coordinate to execute a nefarious plan).  SOD is not only to prevent bad actors, but to also protect your workflow by having multiple people review and approve the review.
 
 ### Least Privilege 
 The [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) is similar to the previous Principles insofar as you should *always* limit what access/exposure a service/user/process has.

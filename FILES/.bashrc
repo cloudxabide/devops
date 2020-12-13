@@ -45,7 +45,7 @@ case `uname` in
     # Placeholder for Apple Mac OS X
     #alias 
     export BASH_SILENCE_DEPRECATION_WARNING=1
-    PATH="/usr/local/opt/python/libexec/bin:${HOME}/Library/Python/3.7/bin:$PATH"
+    PATH="/usr/local/opt/python/libexec/bin:${HOME}/Library/Python/3.8/bin:$PATH"
   ;;
   SunOS)
     PS1="`/usr/ucb/whoami`@${MYHOSTNAME} $ "

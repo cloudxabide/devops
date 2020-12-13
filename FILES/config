@@ -1,16 +1,20 @@
+# Example showing a bunch of options (as a reference)
 Host 10.10.10.10 
    #AddKeysToAgent yes
    #UseKeychain yes 
    #RSAAuthentication yes
    #GSSAPIAuthentication yes
    IdentityFile ~/.ssh/id_rsa-slippy
+# Change the default user and what the escape character is
 Host trinity-ilom.matrix.lab neo-ilom.matrix.lab morpheus-ilom.matrix.lab 10.10.10.21 10.10.10.22 10.10.10.23
   User Administrator
   EscapeChar none
+# Options needed for Cisco Devices
 Host ciscoasa cisco-sg300-28.matrix.lab ciscoasa.matrix.private
   User ciscoasa
   KexAlgorithms +diffie-hellman-group1-sha1
   Ciphers aes128-cbc
+# Write a separate known hosts file for specific hosts
 Host *.matrix.lab 
   User root
   UserKnownHostsFile ~/.ssh/known_hosts.matrix.lab
