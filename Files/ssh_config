@@ -33,6 +33,3 @@ Host github.com-cloudxabide
   Hostname github.com
   User git
   IdentityFile ~/.ssh/id_rsa-github-cloudxabide
-Host *.rideandabide.com
-  User jradtke
-  IdentityFile ~/.ssh/id_rsa-slippy
