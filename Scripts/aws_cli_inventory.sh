@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 AWS_PAGER=""
 
 # IAM
