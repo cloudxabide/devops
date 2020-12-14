@@ -1,5 +1,17 @@
 #!/bin/bash
+
+#
+# Status:   Works (also still a work in progress)
+# Purpose:  Generically display temps that are available via "thermal_zone"
+#           Mostly just wanted to validate my fan works as expected.
+# Date:     2020-12-14
+#
+# Todo:     Need to clean up (make output options consistent)
+
 AWS_PAGER=""
+
+RED='\033[0;31m'
+NC='\033[0m' # No Color
 
 # IAM
 aws iam list-groups
@@ -12,8 +24,7 @@ aws route53 list-hosted-zones
 ## Region specific objects
 header(){  echo "############################# ############################# #############################"; }
 footer(){  echo "############################# ############################# #############################"; }
-RED='\033[0;31m'
-NC='\033[0m' # No Color
+
 
 REGIONS=$(aws ec2 describe-regions --query "Regions[].{Name:RegionName}" --output text --filters "Name=region-name,Values=us-*")
 for REGION in $REGIONS
