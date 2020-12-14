@@ -1,4 +1,5 @@
 #!/bin/sh
+AWS_PAGER=""
 
 # IAM
 aws iam list-groups

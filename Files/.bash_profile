@@ -1,3 +1,4 @@
+
 # .bash_profile
 
 # Get the aliases and functions
@@ -11,4 +12,3 @@ if [ -f .bash_profile.d/* ]; then . ~/.bash_profile.d/*; fi
 
 # User specific environment and startup programs
 # If you need something to run every time you "login", then add it here.
-
