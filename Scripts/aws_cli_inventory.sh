@@ -1,18 +1,26 @@
 #!/bin/bash
 
 #
-# Status:   Works (also still a work in progress)
-# Purpose:  Generically display temps that are available via "thermal_zone"
-#           Mostly just wanted to validate my fan works as expected.
-# Date:     2020-12-14
+# Status:    Works (also still a work in progress)
+# Purpose:   Generically display temps that are available via "thermal_zone"
+#            Mostly just wanted to validate my fan works as expected.
+# Date:      2020-12-14
 #
-# Todo:     Need to clean up (make output options consistent)
+# Todo:      Need to clean up (make output options consistent)
+# Expectations:  You have declared an "AWS_DEFAULT_PROFILE" in your terminal.  
+#                  Else, it will just use "default" AWS profile
 
-AWS_PAGER=""
 
-RED='\033[0;31m'
-NC='\033[0m' # No Color
+# Script Variables
+AWS_PAGER=""      # If a pager is available, the script stops waiting to page through output
+RED='\033[0;31m'  # Set text Red
+NC='\033[0m'      # No text color
 
+########## ##########
+########## ##########
+# MAIN() 
+
+# Non-Specific Region objects
 # IAM
 aws iam list-groups
 aws iam list-policies
@@ -23,8 +31,7 @@ aws route53 list-hosted-zones
 
 ## Region specific objects
 header(){  echo "############################# ############################# #############################"; }
-footer(){  echo "############################# ############################# #############################"; }
-
+footer(){  echo "# --------------------------- ----------------------------- -----------------------------"; }
 
 REGIONS=$(aws ec2 describe-regions --query "Regions[].{Name:RegionName}" --output text --filters "Name=region-name,Values=us-*")
 for REGION in $REGIONS

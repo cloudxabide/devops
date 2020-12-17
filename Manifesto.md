@@ -98,18 +98,20 @@ Failure scenario 2:  the control plane is hacked
 | Orthrus      | 1                | Potential faliure for Green cluster compute, Blue compute still operational
 | Orthrus      | 2                | Potential failure for Green cluster compute, Blue compute still operational
 
-### Using multiple cluster
-#### Cons
+#### Using multiple cluster
+##### Cons
 * there is the added cost of 3 "control-plane" nodes to provide extra resilience (which incurs no adtl licensing for OCP, I might add).  
-#### Pros
+* development tasks and maintenance must be performed on each cluster (requiring more work)
+##### Pros
 * Easier to test platform updates, execute maintenance, etc.. with lesser risk
+* development tasks and maintenance must be performed on each cluster (providing more protection, as you should discover issues on one cluster before impacting both)
 
 ### Separation of Duties
 The Principle regarding the [Separation of Duties](https://en.wikipedia.org/wiki/Separation_of_duties) has a history outside the realm of IT.  While SOD is not a perfect system/approach, (of course it is possible to have multiple people coordinate to execute a nefarious plan).  SOD is not only to prevent bad actors, but to also protect your workflow by having multiple people review and approve the review.
 
 ### Least Privilege 
-The [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) is similar to the previous Principles insofar as you should *always* limit what access/exposure a service/user/process has.
-
+The [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) is similar to the previous Principles.  As a general approach/practice you should *always* limit what access a service/user/process has to the minimum that is necessary.  This limits your exposure in the case that part of your environment is comprimised.
+.
 ### Bad design/implementation WILL happen
 Regardless if the topic of this section is *actually* true, you should build your system as though it is - and, architect to mitigate this reality.  Like mentioned earlier, treat these systems as though your *own* data is going to be acquired if/when the systems are comprimised.
 
