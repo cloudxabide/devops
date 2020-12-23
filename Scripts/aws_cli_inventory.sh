@@ -22,8 +22,9 @@ NC='\033[0m'      # No text color
 
 # Non-Specific Region objects
 # IAM
+aws sts get-caller-identity
 aws iam list-groups
-aws iam list-policies
+#aws iam list-policies
 
 ### Route53 Information
 echo "## S3 in $REGION"
@@ -37,7 +38,7 @@ REGIONS=$(aws ec2 describe-regions --query "Regions[].{Name:RegionName}" --outpu
 for REGION in $REGIONS
 do 
   header
-  echo "# Analyzing Region:  ${RED} $REGION ${NC}"
+  echo -e "# Analyzing Region:  ${RED}  $REGION  ${NC}"
   aws configure set region $REGION
   aws configure set output table
 
