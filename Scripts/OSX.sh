@@ -14,8 +14,8 @@
 chsh -s /bin/bash
 /bin/bash
 # Local setup
-curl -o ~/.bashrc https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/.bashrc
-curl -o ~/.bash_profile https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/.bash_profile
+curl -o ~/.bashrc https://raw.githubusercontent.com/cloudxabide/devops/master/Files/.bashrc
+curl -o ~/.bash_profile https://raw.githubusercontent.com/cloudxabide/devops/master/Files/.bash_profile
 . ~/.bash_profile
 
 # My Parameters
@@ -37,7 +37,7 @@ manual_steps() {
 ssh-keygen -trsa -b2048 -f ~/.ssh/id_rsa-github-cloudxabide
 
 # Update your local SSH config
-curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/config; chmod 0600 ~/.ssh/config
+curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/Files/config; chmod 0600 ~/.ssh/config
 }
 
 
@@ -76,7 +76,7 @@ bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/master/Scrip
 # See if there is an existing ~/.ssh - if not, create one (with keys)
 [ -d ${HOME}/.ssh ] || ssh-keygen -trsa -b2048
 # The next command should have already been executed (above)
-# curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/FILES/config;  chmod 0600 ~/.ssh/config
+# curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/Files/config;  chmod 0600 ~/.ssh/config
 
 # Install Homebrew  (https://brew.sh) 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"

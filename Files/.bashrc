@@ -1,7 +1,7 @@
 # .bashrc
 
 # THIS FILE WAS DERIVED FROM
-# https://github.com/cloudxabide/devops/blob/master/FILES/.bashrc
+# https://github.com/cloudxabide/devops/blob/master/Files/.bashrc
 #  Personalize file at the bottom
 
 # Source global definitions
