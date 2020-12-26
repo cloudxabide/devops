@@ -47,12 +47,11 @@ I repeat: file exists
 ```
 # in vi....
 <ESC>
-:3,8s/^/# /
+:3,7s/^/# /
 ```
 Will change
 ```
 #!/bin/bash
-
 
 Status:   Works
 Purpose:  Generically display temps that are available via "thermal_zone"
@@ -63,13 +62,35 @@ Data:     2020-11-15
 to 
 ```
 #!/bin/bash
-
 #
 # Status:   Works
 # Purpose:  Generically display temps that are available via "thermal_zone"
 #           Mostly just wanted to validate my fan works as expected.
 # Data:     2020-11-15
 #
+```
+
+## Parsing Input with Options
+```
+# Select language, optional
+declare -A LANGS=(
+    [Chinese]=zh_CN
+    [English]=EN
+    [French]=FR
+)
+
+LANG_NAMES=($(echo ${!LANGS[*]} | tr ' ' '\n' | sort -n))
+
+PS3='Please select language #: '
+select l in "${LANG_NAMES[@]}"
+do
+    if [[ -v LANGS[$l] ]]; then
+        LANG=$l
+        break
+    else
+        echo 'No such language, try again'
+    fi
+done < /dev/tty
 ```
 
 ## NOTES:
