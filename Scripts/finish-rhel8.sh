@@ -11,11 +11,15 @@ then
   exit 9
 fi
 
+# Subscription and Repository Management (Red Hat)
 subscription-manager status || { 
 subscription-manager register --auto-attach; 
 subscription-manager repos --disable="*" --enable=rhel-7-workstation-rpms --enable=rhel-7-workstation-extras-rpms --enable=rhel-7-workstation-optional-rpms --enable=rhel-7-workstation-supplementary-rpms;
+
+# Third-Party Repository Management (EPEL, RPMfusion, Google, Adobe)
 $YUM -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm;
-$YUM -y install yum-plugin-fastestmirror.noarch
+$YUM -y install --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+$YUM -y install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm
 
 cat << EOF > /etc/yum.repos.d/google-x86_64.repo
 [google64]
@@ -29,11 +33,12 @@ rpm --import https://dl-ssl.google.com/linux/linux_signing_key.pub
 
 $YUM -y install http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
 
-
 #####################
 # USER MAINTENANCE
 #####################
 # (NotAPassword)
+id -u mansible &>/dev/null || useradd -u1000 -G10 -c "My Ansible" -p '$6$MIxbq9WNh2oCmaqT$10PxCiJVStBELFM.AKTV3RqRUmqGryrpIStH5wl6YNpAtaQw.Nc/lkk0FT9RdnKlEJEuB81af6GWoBnPFKqIh.' mansible 
+id -u morpheus &>/dev/null || useradd -u2001 -G10 -c "Morpheus" -p '$6$MIxbq9WNh2oCmaqT$10PxCiJVStBELFM.AKTV3RqRUmqGryrpIStH5wl6YNpAtaQw.Nc/lkk0FT9RdnKlEJEuB81af6GWoBnPFKqIh.' morpheus 
 id -u jradtke &>/dev/null || useradd -u2025 -G10 -c "James Radtke" -p '$6$MIxbq9WNh2oCmaqT$10PxCiJVStBELFM.AKTV3RqRUmqGryrpIStH5wl6YNpAtaQw.Nc/lkk0FT9RdnKlEJEuB81af6GWoBnPFKqIh.' jradtke
 
 # Customize environment for Morpheus
@@ -46,12 +51,6 @@ then
   mkdir /home/morpheus
   mount -a
 fi
-
-rsync -tugrpolvv /home/ /data/home/
-# BIND Mounts
-echo "# BIND MOUNTS " >> /etc/fstab
-echo "/data/home 	/home none bind,defaults 0 0" >> /etc/fstab
-mount -a
 
 # Setup wheel group for NOPASSWD:
 sed -i -e 's/^%wheel/#%wheel/g' /etc/sudoers
@@ -70,6 +69,7 @@ CD_RECORD="python-eyed3 abcde cd-discid lame cdparanoia"
 
 MISSING_PKGS="spice-client docky gnome-shell-extension-weather spice-gtk-python gnome-rdp rdesktop tomboy eclipse eclipse-pydev ccsm id3v2"
 # INSTALL PACKAGES
+$YUM -y install yum-plugin-fastestmirror.noarch
 $YUM -y install $SYS_PKGS
 $YUM -y install $DESKTOP_PKGS
 $YUM -y install $DEV_PKGS
@@ -86,14 +86,17 @@ $YUM -y install gnome-shell-extension-*
 # * * * * * * * * * * * *
 $YUM -y install grub2-starfield-theme.x86_64 plymouth-theme-*
 
+# Commented out the theme, I will be using the fallout boy one
 cat << EOF >> /etc/default/grub
 # Custom stuff
 GRUB_DISABLE_RECOVERY="true"
 GRUB_SAVEDEFAULT="true"
 GRUB_GFXMODE=auto
 GRUB_GFXPAYLOAD_LINUX=keep
-GRUB_THEME="/boot/grub2/themes/starfield/theme.txt"
+#GRUB_THEME="/boot/grub2/themes/starfield/theme.txt"
 EOF
+# Install Fall Out Grub
+wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash
 
 sed -i -e 's/console/gfxterm/g' /etc/default/grub
 sed -i -e '1i# grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg' /etc/default/grub
@@ -108,35 +111,19 @@ sed -i -e 's/starfield.png/mask-wallpapers.png/g' /boot/grub2/themes/starfield/t
 plymouth-set-default-theme solar
 
 # * * * * * * * * * * * *
-# LUKS
-# * * * * * * * * * * * *
-cat << EOF > /etc/dracut.conf.d/10_include-keyfile.conf
-# dracut modules to omit
-# https://bugzilla.redhat.com/show_bug.cgi?id=905683
-omit_dracutmodules+="systemd"
-
-# dracut modules to add to the default
-add_dracutmodules+="lvm crypt"
-
-install_items="/root/.keyfile /etc/crypttab"
-EOF
-# Only need to do this if you are not going to update the kernel afterwards (I think)
-#dracut --force --install /root/.keyfile /boot/initramfs-`uname -r`.img
-
-# This is for the add-on SSD (and is interactive)
-echo "NOTE:  You will need to enter an existing (valid) passphrase for /dev/sdb1"
-cryptsetup luksAddKey /dev/sdb1 /root/.keyfile
-cryptsetup --key-file /root/.keyfile luksOpen /dev/sdb1 DATA
-MYUUID=`cryptsetup luksUUID /dev/sdb1`
-echo "DATA UUID=$MYUUID /root/.keyfile" >> /etc/crypttab
-mkdir /data
-echo "/dev/mapper/DATA /data xfs rw,nosuid,nodev,relatime,nofail 1 2" >> /etc/fstab
-mount -a
-
-
-# * * * * * * * * * * * *
 # Setup Custom Build/Test Environment
 # * * * * * * * * * * * *
+$YUM -y groupinstall Virtualizaiton 'Additional Virtualization Tools'
+$YUM -y install virt-install virt-manager
+systemctl enable virt
+
+# Create BIND mount for Libvirt Guests
+mkdir /home/images
+echo "# BIND Mount for Libvirt Guests" >> /etc/fstab
+echo "/home/images /var/lib/libvirt/images none bind,defaults 0 0" >> /etc/fstab
+mount -a
+restorecon -RFvv /var/lib/libvirt/images
+
 # Customize Web Server
 $YUM -y install httpd php
 cat << EOF > /etc/httpd/conf.d/OS.conf
@@ -153,14 +140,9 @@ firewall-cmd --reload
 rm -rf /var/www/html
 ln -s /data/Projects/aperture.lab /var/www/html
 
-mkdir /var/www/OS/rhel-server-7.4-x86_64
-echo "/data/images/rhel-server-7.4-x86_64-dvd.iso /var/www/OS/rhel-server-7.4-x86_64 iso9660 defaults,nofail 0 0" >> /etc/fstab
+mkdir /var/www/OS/rhel-server-7.7-x86_64
+echo "/data/images/rhel-server-7.7-x86_64-dvd.iso /var/www/OS/rhel-server-7.7-x86_64 iso9660 defaults,nofail 0 0" >> /etc/fstab
 mount -a
-
-$YUM -y groupinstall Virtualizaiton 'Additional Virtualization Tools'
-$YUM -y install virt-install virt-manager
-systemctl enable virt
-
 
 # * * * * * * * * * * * *
 #   ClamAV
@@ -172,24 +154,6 @@ sed -i -e 's/^Example/#Example/' /etc/clamd.d/scan.conf
 sed -i -e 's/#LocalSocket/LocalSocket/' /etc/clamd.d/scan.conf
 
 exit 0
-
-# * * * * * * * * * * * *
-# Disk Encryption (not sure this works with Dual-Boot)
-#  Also - this needs more testing... aka - how to figure out what the luks-devices are?
-# * * * * * * * * * * * *
-dd if=/dev/urandom of=/root/.keyfile bs=32 count=1
-chmod 0400 /root/.keyfile
-cryptsetup luksAddKey /dev/sdb1 /root/.keyfile
-sed -i -e 's/none/\/root\/.keyfile/g' /etc/crypttab
-dracut --force --install /root/.keyfile /boot/initramfs-`uname -r`.img
-
-cryptsetup luksAddKey /dev/sdb1 /root/.keyfile
-cryptsetup --key-file /root/.keyfile luksOpen /dev/sdb1 DATA
-MYUUID=`cryptsetup luksUUID /dev/sdb1`
-echo "DATA UUID=$MYUUID /root/.keyfile" >> /etc/crypttab
-mkdir /data
-echo "/dev/mapper/DATA /data xfs rw,nosuid,nodev,relatime,nofail 1 2" >> /etc/fstab
-mount -a
 
 # * * * * * * * * * * * *
 # Multimedia
