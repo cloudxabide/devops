@@ -61,17 +61,17 @@ sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sud
 # * * * * * * * * * * * *
 # PACKAGE MANAGEMENT
 # * * * * * * * * * * * *
-SYS_PKGS="audit autofs dstat expect gcc git glibc hddtemp intltool iotop kernel-headers kernel-devel lm_sensors nmap ntp openssh-askpass openssl-static policycoreutils-gui powertop sysfsutils sysstat tuned xorg-x11-xauth"
-DESKTOP_PKGS="conky conky-manager  google-chrome-stable java-*-openjdk icedtea-web libreoffice pidgin spice-xpi wireshark wireshark-gnome xscreensaver xscreensaver-extras-gss xscreensaver-gl-* gimp"
+SYS_PKGS="audit autofs dstat expect gcc git glibc hddtemp intltool iotop kernel-headers kernel-devel lm_sensors nmap openssh-askpass policycoreutils-gui powertop sysfsutils sysstat tuned xorg-x11-xauth"
 DEV_PKGS="python-lxml ansible"
+DESKTOP_PKGS="conky-manager google-chrome-stable java-*-openjdk icedtea-web gimp"
 DVD_PKGS="libdvdread libdvdnav gstreamer-plugins-ugly gstreamer-plugins-bad lsdvd gstreamer-ffmpeg xine-lib xine-lib-extras-freeworld mplayer smplayer vlc"
 AUDIO_PKGS="gstreamer1* gstreamer* gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly phonon-backend-gstreamer gstreamer1-libav gstreamer1-plugins-ugly gstreamer1-plugins-bad-freeworld pulseaudio-equalizer pulseaudio-esound-compat.x86_64 alsa-plugins-pulseaudio"
-GNOME_PKGS="gnome-tweak-tool gnome-shell-extension-* gnome-shell-theme-* gnome-common gnome-themes-legacy verne-backgrounds-extras-gnome verne-backgrounds-gnome system-switch-displaymanager-gnome gnome-video-arcade gnome-screensaver "
+GNOME_PKGS="gnome-tweak-tool gnome-common"
 CD_RECORD="python-eyed3 abcde cd-discid lame cdparanoia"
 
 MISSING_PKGS="spice-client docky gnome-shell-extension-weather spice-gtk-python gnome-rdp rdesktop tomboy eclipse eclipse-pydev ccsm id3v2"
+MISSING_DESKTOP_PKGS="conky conky-manager libreoffice spice-xpi wireshark wireshark-gnome xscreensaver xscreensaver-extras-gss xscreensaver-gl-*"
 # INSTALL PACKAGES
-$YUM -y install yum-plugin-fastestmirror.noarch
 $YUM -y install $SYS_PKGS
 $YUM -y install $DESKTOP_PKGS
 $YUM -y install $DEV_PKGS
@@ -86,7 +86,7 @@ $YUM -y install gnome-shell-extension-*
 # * * * * * * * * * * * *
 #  GRUB and Plymouth
 # * * * * * * * * * * * *
-$YUM -y install grub2-starfield-theme.x86_64 plymouth-theme-*
+$YUM -y install plymouth-theme-*
 
 # Commented out the theme, I will be using the fallout boy one
 cat << EOF >> /etc/default/grub
@@ -105,19 +105,13 @@ sed -i -e '1i# grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg' /etc/default/gru
 sed -i -e '2i# grub2-mkfont --output=/boot/efi/EFI/redhat/unicode.pf2 /usr/share/fonts/dejavu/DejaVuSansMono.ttf' /etc/default/grub
 grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
 
-$YUM -y install grub2-starfield-theme
-# For some reason the RPM is not putting the files in /boot?
-if [! -d /boot/grub2/themes/starfield]; then rsync -tugrpolvv /usr/share/grub/themes/starfield /boot/grub2/themes/; fi
-scp jradtke@nexus:/home/jradtke/Pictures/Wallpapers/Linux/mask-wallpapers.png /boot/grub2/themes/starfield/
-sed -i -e 's/starfield.png/mask-wallpapers.png/g' /boot/grub2/themes/starfield/theme.txt
 plymouth-set-default-theme solar
 
 # * * * * * * * * * * * *
 # Setup Custom Build/Test Environment
 # * * * * * * * * * * * *
-$YUM -y groupinstall Virtualizaiton 'Additional Virtualization Tools'
 $YUM -y install virt-install virt-manager
-systemctl enable virt
+systemctl enable libvirtd.service
 
 # Create BIND mount for Libvirt Guests
 mkdir /home/images
@@ -140,7 +134,7 @@ firewall-cmd --permanent --zone=public --add-port=80/tcp
 firewall-cmd --permanent --zone=public --add-service=http
 firewall-cmd --reload
 rm -rf /var/www/html
-ln -s /data/Projects/aperture.lab /var/www/html
+ln -s /home/jradtke/Repositories/cloudxabide/aperture.lab /var/www/html
 
 mkdir /var/www/OS/rhel-server-7.7-x86_64
 echo "/data/images/rhel-server-7.7-x86_64-dvd.iso /var/www/OS/rhel-server-7.7-x86_64 iso9660 defaults,nofail 0 0" >> /etc/fstab
