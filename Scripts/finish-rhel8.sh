@@ -14,6 +14,9 @@ fi
 # Subscription and Repository Management (Red Hat)
 subscription-manager status || { subscription-manager register --auto-attach; }
 subscription-manager repos --disable="*" --enable=rhel-8-for-x86_64-baseos-rpms --enable=rhel-8-for-x86_64-appstream-rpms --enable "codeready-builder-for-rhel-8-$(uname -m)-rpms"
+syspurpose set-role="Red Hat Enterprise Linux Server" 
+syspurpose set-sla="Self-Support" 
+syspurpose set-usage="Development/Test"
 
 # Third-Party Repository Management (EPEL, RPMfusion, Google, Adobe)
 $YUM -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm;
