@@ -14,7 +14,7 @@ fi
 # Subscription and Repository Management (Red Hat)
 subscription-manager status || { 
 subscription-manager register --auto-attach; 
-subscription-manager repos --disable="*" --enable=rhel-7-workstation-rpms --enable=rhel-7-workstation-extras-rpms --enable=rhel-7-workstation-optional-rpms --enable=rhel-7-workstation-supplementary-rpms;
+subscription-manager repos --disable="*" --enable=rhel-8-for-x86_64-baseos-rpms --enable=rhel-8-for-x86_64-appstream-rpms --enable "codeready-builder-for-rhel-8-$(uname -m)-rpms"
 
 # Third-Party Repository Management (EPEL, RPMfusion, Google, Adobe)
 $YUM -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm;
