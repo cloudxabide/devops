@@ -1,0 +1,203 @@
+#!/bin/bash
+
+PWD=`pwd`
+DATE=`date +%Y%m%d`
+ARCH=`uname -p`
+YUM=$(which yum)
+
+if [ `/bin/whoami` != "root" ]
+then
+  echo "ERROR:  You should be root to run this..."
+  exit 9
+fi
+
+subscription-manager status || { 
+subscription-manager register --auto-attach; 
+subscription-manager repos --disable="*" --enable=rhel-7-workstation-rpms --enable=rhel-7-workstation-extras-rpms --enable=rhel-7-workstation-optional-rpms --enable=rhel-7-workstation-supplementary-rpms;
+$YUM -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm;
+$YUM -y install yum-plugin-fastestmirror.noarch
+
+cat << EOF > /etc/yum.repos.d/google-x86_64.repo
+[google64]
+name=Google - x86_64
+baseurl=http://dl.google.com/linux/rpm/stable/x86_64
+enabled=1
+gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+EOF
+rpm --import https://dl-ssl.google.com/linux/linux_signing_key.pub
+
+$YUM -y install http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
+
+
+#####################
+# USER MAINTENANCE
+#####################
+# (NotAPassword)
+id -u jradtke &>/dev/null || useradd -u2025 -G10 -c "James Radtke" -p '$6$MIxbq9WNh2oCmaqT$10PxCiJVStBELFM.AKTV3RqRUmqGryrpIStH5wl6YNpAtaQw.Nc/lkk0FT9RdnKlEJEuB81af6GWoBnPFKqIh.' jradtke
+
+# Customize environment for Morpheus
+# Add TMPFS mount for user:morpheus
+grep morpheus /etc/fstab
+if [ $? -ne 0 ]
+then
+  echo "# TMPFS Mount" >> /etc/fstab
+  echo "tmpfs   /home/morpheus tmpfs  rw,size=1G,nr_inodes=5k,noexec,nodev,nosuid,uid=2001,gid=2001,mode=1700   0  0" >> /etc/fstab
+  mkdir /home/morpheus
+  mount -a
+fi
+
+rsync -tugrpolvv /home/ /data/home/
+# BIND Mounts
+echo "# BIND MOUNTS " >> /etc/fstab
+echo "/data/home 	/home none bind,defaults 0 0" >> /etc/fstab
+mount -a
+
+# Setup wheel group for NOPASSWD:
+sed -i -e 's/^%wheel/#%wheel/g' /etc/sudoers
+sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sudoers
+
+# * * * * * * * * * * * *
+# PACKAGE MANAGEMENT
+# * * * * * * * * * * * *
+SYS_PKGS="audit autofs dstat expect gcc git glibc hddtemp intltool iotop kernel-headers kernel-devel lm_sensors nmap ntp openssh-askpass openssl-static policycoreutils-gui powertop sysfsutils sysstat tuned xorg-x11-xauth"
+DESKTOP_PKGS="conky conky-manager  google-chrome-stable java-*-openjdk icedtea-web libreoffice pidgin spice-xpi wireshark wireshark-gnome xscreensaver xscreensaver-extras-gss xscreensaver-gl-* gimp"
+DEV_PKGS="python-lxml ansible"
+DVD_PKGS="libdvdread libdvdnav gstreamer-plugins-ugly gstreamer-plugins-bad lsdvd gstreamer-ffmpeg xine-lib xine-lib-extras-freeworld mplayer smplayer vlc"
+AUDIO_PKGS="gstreamer1* gstreamer* gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly phonon-backend-gstreamer gstreamer1-libav gstreamer1-plugins-ugly gstreamer1-plugins-bad-freeworld pulseaudio-equalizer pulseaudio-esound-compat.x86_64 alsa-plugins-pulseaudio"
+GNOME_PKGS="gnome-tweak-tool gnome-shell-extension-* gnome-shell-theme-* gnome-common gnome-themes-legacy verne-backgrounds-extras-gnome verne-backgrounds-gnome system-switch-displaymanager-gnome gnome-video-arcade gnome-screensaver "
+CD_RECORD="python-eyed3 abcde cd-discid lame cdparanoia"
+
+MISSING_PKGS="spice-client docky gnome-shell-extension-weather spice-gtk-python gnome-rdp rdesktop tomboy eclipse eclipse-pydev ccsm id3v2"
+# INSTALL PACKAGES
+$YUM -y install $SYS_PKGS
+$YUM -y install $DESKTOP_PKGS
+$YUM -y install $DEV_PKGS
+$YUM -y install $DVD_PKGS
+$YUM -y install $AUDIO_PKGS
+$YUM -y install $GNOME_PKGS
+$YUM -y install $CD_RECORD
+
+# Optimize gnome-shell
+$YUM -y install gnome-shell-extension-*
+
+# * * * * * * * * * * * *
+#  GRUB and Plymouth
+# * * * * * * * * * * * *
+$YUM -y install grub2-starfield-theme.x86_64 plymouth-theme-*
+
+cat << EOF >> /etc/default/grub
+# Custom stuff
+GRUB_DISABLE_RECOVERY="true"
+GRUB_SAVEDEFAULT="true"
+GRUB_GFXMODE=auto
+GRUB_GFXPAYLOAD_LINUX=keep
+GRUB_THEME="/boot/grub2/themes/starfield/theme.txt"
+EOF
+
+sed -i -e 's/console/gfxterm/g' /etc/default/grub
+sed -i -e '1i# grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg' /etc/default/grub
+sed -i -e '2i# grub2-mkfont --output=/boot/efi/EFI/redhat/unicode.pf2 /usr/share/fonts/dejavu/DejaVuSansMono.ttf' /etc/default/grub
+grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
+
+$YUM -y install grub2-starfield-theme
+# For some reason the RPM is not putting the files in /boot?
+if [! -d /boot/grub2/themes/starfield]; then rsync -tugrpolvv /usr/share/grub/themes/starfield /boot/grub2/themes/; fi
+scp jradtke@nexus:/home/jradtke/Pictures/Wallpapers/Linux/mask-wallpapers.png /boot/grub2/themes/starfield/
+sed -i -e 's/starfield.png/mask-wallpapers.png/g' /boot/grub2/themes/starfield/theme.txt
+plymouth-set-default-theme solar
+
+# * * * * * * * * * * * *
+# LUKS
+# * * * * * * * * * * * *
+cat << EOF > /etc/dracut.conf.d/10_include-keyfile.conf
+# dracut modules to omit
+# https://bugzilla.redhat.com/show_bug.cgi?id=905683
+omit_dracutmodules+="systemd"
+
+# dracut modules to add to the default
+add_dracutmodules+="lvm crypt"
+
+install_items="/root/.keyfile /etc/crypttab"
+EOF
+# Only need to do this if you are not going to update the kernel afterwards (I think)
+#dracut --force --install /root/.keyfile /boot/initramfs-`uname -r`.img
+
+# This is for the add-on SSD (and is interactive)
+echo "NOTE:  You will need to enter an existing (valid) passphrase for /dev/sdb1"
+cryptsetup luksAddKey /dev/sdb1 /root/.keyfile
+cryptsetup --key-file /root/.keyfile luksOpen /dev/sdb1 DATA
+MYUUID=`cryptsetup luksUUID /dev/sdb1`
+echo "DATA UUID=$MYUUID /root/.keyfile" >> /etc/crypttab
+mkdir /data
+echo "/dev/mapper/DATA /data xfs rw,nosuid,nodev,relatime,nofail 1 2" >> /etc/fstab
+mount -a
+
+
+# * * * * * * * * * * * *
+# Setup Custom Build/Test Environment
+# * * * * * * * * * * * *
+# Customize Web Server
+$YUM -y install httpd php
+cat << EOF > /etc/httpd/conf.d/OS.conf
+Alias "/OS" "/var/www/OS"
+<Directory "/var/www/OS">
+  Options FollowSymLinks Indexes
+</Directory>
+EOF
+mkdir /var/www/OS; restorecon -RF /var/www/OS
+systemctl enable httpd; systemctl start $_
+firewall-cmd --permanent --zone=public --add-port=80/tcp
+firewall-cmd --permanent --zone=public --add-service=http
+firewall-cmd --reload
+rm -rf /var/www/html
+ln -s /data/Projects/aperture.lab /var/www/html
+
+mkdir /var/www/OS/rhel-server-7.4-x86_64
+echo "/data/images/rhel-server-7.4-x86_64-dvd.iso /var/www/OS/rhel-server-7.4-x86_64 iso9660 defaults,nofail 0 0" >> /etc/fstab
+mount -a
+
+$YUM -y groupinstall Virtualizaiton 'Additional Virtualization Tools'
+$YUM -y install virt-install virt-manager
+systemctl enable virt
+
+
+# * * * * * * * * * * * *
+#   ClamAV
+# * * * * * * * * * * * *
+$YUM -y install clamav clamav-data  clamav-filesystem clamav-lib clamav-lib clamav-scanner-systemd clamav-update clamav-unofficial-sigs
+sed -i -e 's/^Example/#Example/' /etc/freshclam.conf
+sed -i -e 's/db.XY/db.US/' /etc/freshclam.conf
+sed -i -e 's/^Example/#Example/' /etc/clamd.d/scan.conf
+sed -i -e 's/#LocalSocket/LocalSocket/' /etc/clamd.d/scan.conf
+
+exit 0
+
+# * * * * * * * * * * * *
+# Disk Encryption (not sure this works with Dual-Boot)
+#  Also - this needs more testing... aka - how to figure out what the luks-devices are?
+# * * * * * * * * * * * *
+dd if=/dev/urandom of=/root/.keyfile bs=32 count=1
+chmod 0400 /root/.keyfile
+cryptsetup luksAddKey /dev/sdb1 /root/.keyfile
+sed -i -e 's/none/\/root\/.keyfile/g' /etc/crypttab
+dracut --force --install /root/.keyfile /boot/initramfs-`uname -r`.img
+
+cryptsetup luksAddKey /dev/sdb1 /root/.keyfile
+cryptsetup --key-file /root/.keyfile luksOpen /dev/sdb1 DATA
+MYUUID=`cryptsetup luksUUID /dev/sdb1`
+echo "DATA UUID=$MYUUID /root/.keyfile" >> /etc/crypttab
+mkdir /data
+echo "/dev/mapper/DATA /data xfs rw,nosuid,nodev,relatime,nofail 1 2" >> /etc/fstab
+mount -a
+
+# * * * * * * * * * * * *
+# Multimedia
+# * * * * * * * * * * * *
+# Need to research this repo a bit.  
+$YUM -y install http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+$YUM -y install flash-plugin icedtea-web 
+$YUM -y install vlc smplayer ffmpeg HandBrake-{gui,cli} libdvdcss gstreamer{,1}-plugins-ugly gstreamer-plugins-bad-nonfree gstreamer1-plugins-bad-freeworld
+
+$YUM -y update && shutdown now -r
+
