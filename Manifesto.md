@@ -60,6 +60,10 @@ While I appreciate the sentiment of trying to mitigate concern we inevitably enc
 Similiar to the last quip, you should find a way to normalize being uncomfortable.  Many of us do this in different ways (pushing ourselves during exercise, getting a college degree as an adult, etc..)  To be clear:  don't seek to be indifferent about being uncomfortable - rather, learn to acknowledge it, and embrace it as a normal part of life (for someone who is trying to continously be better and challenge themself).  
 [Inc.com article](https://www.inc.com/chris-dessi/how-to-get-comfortable-with-being-uncomfortable-according-to-a-green-beret.html)
 
+### Embrace the Fail
+Don't be afraid to fail. (#TBC#)
+
+
 ### References
 [Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)  
 [Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)

@@ -23,7 +23,9 @@ NC='\033[0m'      # No text color
 # Non-Specific Region objects
 # IAM
 aws sts get-caller-identity
+aws iam get-user
 aws iam list-groups
+aws iam list-roles
 #aws iam list-policies
 
 ### Route53 Information

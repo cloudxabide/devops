@@ -3,11 +3,13 @@
 ## Clone ALL of my public repos (private requires an API key)
 It is expected that you already have your SSH key configured for each GIT repo(user) you're about to clone.  
 ```
+URL=api.github.com
+USERS="cloudxabide ridexabide jradtke-rh"
 cd
-for USER in cloudxabide ridexabide jradtke-rh
+for USER in $USERS
 do
   mkdir -p ~/Repositories/$USER; cd $_
-  for REPO in $(curl -s https://api.github.com/users/$USER/repos | grep "ssh_url" | awk '{ print $2 }' | sed 's/,//g' | sed 's/"//g')
+  for REPO in $(curl -s https://$URL/users/$USER/repos | grep "ssh_url" | awk '{ print $2 }' | sed 's/,//g' | sed 's/"//g')
   do
     git clone $REPO
   done
