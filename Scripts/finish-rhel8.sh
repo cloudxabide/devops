@@ -14,9 +14,9 @@ fi
 # Subscription and Repository Management (Red Hat)
 subscription-manager status || { subscription-manager register --auto-attach; }
 subscription-manager repos --disable="*" --enable=rhel-8-for-x86_64-baseos-rpms --enable=rhel-8-for-x86_64-appstream-rpms --enable "codeready-builder-for-rhel-8-$(uname -m)-rpms"
-syspurpose set-role="Red Hat Enterprise Linux Server" 
-syspurpose set-sla="Self-Support" 
-syspurpose set-usage="Development/Test"
+syspurpose set-role "Red Hat Enterprise Linux Server" 
+syspurpose set-sla "Self-Support" 
+syspurpose set-usage "Development/Test"
 
 # Third-Party Repository Management (EPEL, RPMfusion, Google, Adobe)
 $YUM -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm;
@@ -62,12 +62,12 @@ sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sud
 # PACKAGE MANAGEMENT
 # * * * * * * * * * * * *
 SYS_PKGS="audit autofs dstat expect gcc git glibc hddtemp intltool iotop kernel-headers kernel-devel lm_sensors nmap openssh-askpass policycoreutils-gui powertop sysfsutils sysstat tuned xorg-x11-xauth"
-DEV_PKGS="python-lxml ansible"
-DESKTOP_PKGS="conky-manager google-chrome-stable java-*-openjdk icedtea-web gimp"
-DVD_PKGS="libdvdread libdvdnav gstreamer-plugins-ugly gstreamer-plugins-bad lsdvd gstreamer-ffmpeg xine-lib xine-lib-extras-freeworld mplayer smplayer vlc"
-AUDIO_PKGS="gstreamer1* gstreamer* gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly phonon-backend-gstreamer gstreamer1-libav gstreamer1-plugins-ugly gstreamer1-plugins-bad-freeworld pulseaudio-equalizer pulseaudio-esound-compat.x86_64 alsa-plugins-pulseaudio"
+DEV_PKGS="ansible"
+DESKTOP_PKGS="google-chrome-stable java-*-openjdk icedtea-web gimp brasero"
+DVD_PKGS="libdvdread libdvdnav xine-lib xine-lib-extras-freeworld mplayer smplayer vlc"
+AUDIO_PKGS="gstreamer1* gstreamer* alsa-plugins-pulseaudio"
 GNOME_PKGS="gnome-tweak-tool gnome-common"
-CD_RECORD="python-eyed3 abcde cd-discid lame cdparanoia"
+CD_RECORD="cdparanoia"
 
 MISSING_PKGS="spice-client docky gnome-shell-extension-weather spice-gtk-python gnome-rdp rdesktop tomboy eclipse eclipse-pydev ccsm id3v2"
 MISSING_DESKTOP_PKGS="conky conky-manager libreoffice spice-xpi wireshark wireshark-gnome xscreensaver xscreensaver-extras-gss xscreensaver-gl-*"
