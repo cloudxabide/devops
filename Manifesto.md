@@ -16,6 +16,7 @@ Know-it-all:  I have learned (with quite a bit of validation from peers/friends)
 In fact, if you feel that you know everything, you're probably [hosed.](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
 
 ---
+## Tenets of Consulting
 ### Have fun
 "Good times, bad times... you know I had my share" -- Jimmy Page  
 I feel all the points in this doc are important points - but "Have Fun" is fairly paramount.  Seriously this is work, and not personal.  Remain Customer-focused and Customer-centric.  Follow the other points below and things should go well.  If things do not go well, and you did your best, it likely has nothing to do with you.  
@@ -62,7 +63,6 @@ Similiar to the last quip, you should find a way to normalize being uncomfortabl
 
 ### Embrace the Fail
 Don't be afraid to fail. (#TBC#)
-
 
 ### References
 [Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)  
