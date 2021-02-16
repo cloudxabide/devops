@@ -64,6 +64,10 @@ Similiar to the last quip, you should find a way to normalize being uncomfortabl
 ### Embrace the Fail
 Don't be afraid to fail. (#TBC#)
 
+### "Manage-Up"
+Keep the people in your chain of command "in check" (#TBC#)
+
+
 ### References
 [Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)  
 [Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
