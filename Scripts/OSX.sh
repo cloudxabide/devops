@@ -59,6 +59,7 @@ sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableTheme
 # Tweak GIT
 #git config --global user.name "Your Name"
 #git config --global user.email you@example.com
+#git config --global pull.rebase false
 #git config --global core.excludesfile ~/.gitignore_global
 cat << EOF > ~/.gitconfig
 [core]
@@ -66,6 +67,8 @@ cat << EOF > ~/.gitconfig
 [user]
   name = James Radtke
   email = emailaddy@gmail.com
+[pull]
+  rebase = false
 EOF
 echo ".DS_Store" >> ~/.gitignore_global
 
