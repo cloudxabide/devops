@@ -37,7 +37,7 @@ manual_steps() {
 ssh-keygen -trsa -b2048 -f ~/.ssh/id_rsa-github-cloudxabide
 
 # Update your local SSH config
-curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/Files/config; chmod 0600 ~/.ssh/config
+curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/Files/ssh_config; chmod 0600 ~/.ssh/config
 }
 
 
