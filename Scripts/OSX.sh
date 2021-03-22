@@ -118,6 +118,9 @@ sudo gem install asciidoctor-pdf asciidoctor-diagram rouge
 # Install Slack
 brew install --cask slack
 
+# Install Miro (desktop App)
+brew install miro
+
 # Install Google Chrome
 brew install --cask google-chrome
 
