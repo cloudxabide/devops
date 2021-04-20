@@ -44,6 +44,10 @@ curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/maste
 # Install Xcode
 xcode-select --install
 
+case `sysctl -b machdep.cpu.brand_string` in 
+  "Apple M1") sudo softwareupdate --install-rosetta;; 
+esac
+
 # Clone this repo
 [ ! -d ~/Repositories/cloudxabide ] && { mkdir -p ~/Repositories/cloudxabide; cd $_; git clone git@github.com:cloudxabide/devops.git; }
 
@@ -87,6 +91,7 @@ bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/master/Scrip
 #   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 # Optional: you should add this to your .profile or .bashrc (etc...)
 grep "opt/python" ~/.bashrc || { echo "PATH=\"$PATH:/usr/local/opt/python/libexec/bin:$PATH" >> ~/.bashrc; }
+grep "/opt/homebrew/bin" ~/.bashrc || { echo "PATH=\"$PATH:/opt/homebrew/bin:$PATH" >> ~/.bashrc; }
  
 # Install Cask (FKA http://caskroom.io/)
 # Homebrew-Cask extends Homebrew and allows you to install large binary files via a command-line tool

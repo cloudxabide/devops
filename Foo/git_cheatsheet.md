@@ -85,17 +85,6 @@ Your code
 goes here
 ```
 
-### Quick branch/checkout/push
-```
-branchname="`whoami`-`date +%F-%H-%M-%S`"
-git checkout -b $branchname
-git add <changed files>
-git commit -m "My comment" <changed file>
-git push --set-upstream origin $branchname
-git push
-```
-
-
 ### Git rec'd process
 -- this still needs tweaking
 ```
@@ -107,7 +96,7 @@ git fetch origin
 git checkout -b "$MYBRANCH" 
 
 #### Step 1a
-# Update file(s)
+# Update {file}
 
 #### Step 2. Review the changes locally
 # git add {file}
@@ -124,6 +113,13 @@ git push --set-upstream origin "$MYBRANCH"
 #### Step 5. Request peer review of MR (or merge it yourself)
 - Example URL
 https://gitlab.consulting.company.com/reports/client-cers/reportn-name-/merge_requests/new?merge_request%5Bsource_branch%5D=$MYBRANCH
+```
+
+## Compare a branch to master (or another branch, I suppose)
+If you manage to get yourself in a spot where you don't know what changes were staged
+```
+git checkout <branc>
+git diff --name-only master
 ```
 
 ## Duplicating a repo
