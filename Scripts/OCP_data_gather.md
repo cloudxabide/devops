@@ -31,3 +31,12 @@ aws route53 list-hosted-zones --query "HostedZones[*].Name" --output $OUTPUT
 
 echo "# EC2 Instance Info (with Networking)"
 aws ec2 describe-instances --region $REGION --query "Reservations[*].Instances[*].{name: Tags[?Key=='Name'] | [0].Value, IP: PrivateIpAddress, Subnet: SubnetId}" --output table --color off
+
+echo "# OCP Status"
+echo "# serviceNetwork is implied in the output"
+oc status
+
+echo "# Host Subnets"
+oc get hostsubnets
+
+
