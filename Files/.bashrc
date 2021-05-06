@@ -21,6 +21,7 @@ HISTCONTROL=ignoredups
 # User specific aliases and functions
 alias ll="/bin/ls -l "
 alias la="/bin/ls -la | egrep -v '.DS_Store'"
+alias lr="/bin/ls -lart"
 alias please='/usr/bin/sudo $(history -p !!)'
 alias butwhy='/usr/bin/systemctl status $_ '
 alias matrixnet='/usr/bin/sudo route add -net 10.10.10.0 netmask 255.255.255.0 gw 192.168.0.1'
@@ -28,6 +29,10 @@ alias quarantining="echo $(expr '(' $(date -j -v -14d -f \"%Y-%m-%d\" \"2020-08-
 alias finalcountdown="echo $(expr '(' $(date -j -f \"%Y-%m-%d\" \"2020-08-14\" +%s) - $(date +%s) ')' / 86400) \"days until \#NERDvana .\" "
 
 alias oclogin='oc login -u morpheus -p 'NotAPassword' --insecure-skip-tls-verify --server=https://rh7-ocp3-mst.matrix.lab.:8443'
+
+alias gitclean='git branch -d $(git branch | grep `whoami`)'
+alias gitdoover='git checkout -- .'
+alias gitreset='git checkout -- .'
 
 # Use vi as the EDITOR
 set -o vi
