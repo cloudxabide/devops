@@ -48,6 +48,9 @@ The Principle regarding the [Separation of Duties](https://en.wikipedia.org/wiki
 ### Least Privilege
 The [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) is similar to the previous Principles.  As a general approach/practice you should *always* limit what access a service/user/process has to the minimum that is necessary.  This limits your exposure in the case that part of your environment is compromised.
 
+### Zero Trust
+(To be Cont'd)
+
 ### Bad design/implementation WILL happen
 Regardless if the topic of this section is *actually* true, you should build your system as though it is - and, architect to mitigate this reality.  Like mentioned earlier, treat these systems as though your *own* data is going to be acquired if/when the systems are comprimised.
 

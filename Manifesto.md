@@ -67,6 +67,11 @@ Don't be afraid to fail. (#TBC#)
 ### "Manage-Up"
 Keep the people in your chain of command "in check" (#TBC#)
 
+### 
+[The Five Monkeys]([https://workingoutloud.com/blog/the-five-monkeys-experiment-with-a-new-lesson) (#TBC#)
+* First off, this is a failure of the 4 monkeys who beat the new monkey.  Plain an simple - but, interpreted loosely, I think this is actually a good story to start further discussion about how we interact with a group, in particular when new to the environment.  
+* If the other 4 monkeys did not go after the bananas, you probably should be asking yourself why.
+* and if you don't pick up on the "social cue", let others know what you're thinking and planning on doing.  "Hey, I see those bananas and I am going to go get some"
 
 ### References
 [Four Stages of Confidence](https://en.wikipedia.org/wiki/Four_stages_of_competence)  
