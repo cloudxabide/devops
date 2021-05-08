@@ -3,7 +3,7 @@
 ## Summary  
 DevOps type stuff I find useful - whatever that might mean.
 
-The particular Renaissance I happen to be in involves a career transition to the cloud, from a primary focus on Infrastructure and OS Platform (i.e.  Red Hat Enterprise Linux, and Red Hat Products - OpenShift, Satellite, Ansible) ... I worked for AWS for a while and learned that I left my heart in.... Washington, D.C. and went back to Red Hat.
+The particular Renaissance I happen to be traversing, involves a career transition to the cloud, from a primary focus on Infrastructure and OS Platform (i.e.  Red Hat Enterprise Linux, and Red Hat Products - OpenShift, Satellite, Ansible) ... I worked for AWS for a while and learned that I left my heart in.... Washington, D.C. and went back to Red Hat.
 
 My past: 
 * Enterprise Storage (Hitachi, EMC, NetApp, Brocade, Cisco)
@@ -31,13 +31,10 @@ Please, if you find stuff that seems inaccurate, non-optimal... or just plain wr
   * FILES - files such as bash profile, git config, etc...  
   * Images - Store the images 
   * Scripts - a bunch of shell scripts.  
-    NOTE:  [Scripts/check_git_status.sh](Scripts/check_git_status.sh) will run through all of my repos and report their status.  Probably useless to most folks.
+    NOTE:  [Scripts/check_git_status.sh](Scripts/check_git_status.sh) will run through all of my repos and report their status (or will pull updates).  Probably useless to most folks.
 
 ## Notes
-I will self-proclaim that I am (probably) fairly old-school.  I would just as soon write a bash script, with some crazy awk/sed thing that I spent far too long researching.  But, I also want to be efficient and valuable to the people I work with/for, so... I am adopting a new strategy.
 
-Expect this to change quite frequently, and quite significantly initially (Winter of 2018/2019).
-
-WARNING ! WARNING ! WARNING... I'll say this again, I am just learning how to do this stuff on Mac
+WARNING ! WARNING ! WARNING... 
   - as with anything you find on the Interwebs, you should be cautious if you deploy anything from my guide here.
 
