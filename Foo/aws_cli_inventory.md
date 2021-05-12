@@ -15,7 +15,7 @@ Rudimentary attempt at codifying a way to gather account inventory (in absence o
 ## Quick and Dirty
 If you want to run *my* simple inventory, do the following
 ```
-bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/master/Scripts/aws_cli_inventory.sh)
+bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Scripts/aws_cli_inventory.sh)
 ```
 or...
 ```
@@ -24,7 +24,7 @@ MYDATE=`date +%F-%H-%M`
 TMPDIR=$(mktemp -d) 
 OUTPUT="${TMPDIR}/aws_cli_inventory-${MYDATE}.out"
 cd $TMPDIR || exit 1
-wget https://raw.githubusercontent.com/cloudxabide/devops/master/Scripts/aws_cli_inventory.sh
+wget https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Scripts/aws_cli_inventory.sh
 chmod a+x aws_cli_inventory.sh
 echo "output at: ${OUTPUT}"
 ./aws_cli_inventory.sh > $OUTPUT

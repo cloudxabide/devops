@@ -60,6 +60,52 @@ git rm -r --cached .
 git add .
 git commit -m "fixed untracked files"
 ```
+#### Nuclear Option(s)
+```
+git checkout -- .
+```
+
+## Moving from master to main (rename)
+I have ZERO interest discussing this with anyone when it comes up at work.  It's fairly trivial to deploy (for most) and I don't see why lengthy
+discussions about freedom and slippery-slopes, etc.. even begin.  That said, I am NOT even very good at using git, and this was very simple to enact...
+
+### Actual Output
+```
+cyberpunk:devops jradtke$ git branch
+* master
+cyberpunk:devops jradtke$ git branch -m master main
+cyberpunk:devops jradtke$ git branch
+* main
+cyberpunk:devops jradtke$ git push -u origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'main' on GitHub by visiting:
+remote:      https://github.com/cloudxabide/devops/pull/new/main
+remote:
+To github.com:cloudxabide/devops.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+```
+
+### Just commands
+```
+git branch
+git branch -m master main
+git push -u origin main
+```
+
+### Theory/suspicions
+I *think* that for most cases, you can simply replace "master" with "HEAD" if you are using some code to pull something down.
+I had documented how to install Homebrew for my team and a code scan/audit identified the URL which needed to be reviewed.  I then checked out https://brew.sh and noticed they had already updated THEIR installation docs to remove the "master" reference - which then made me curious:  can I just replace "master" with "HEAD" and be done with it.  A:  Seems like it?
+
+For example:  Brew used to utilize 
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+Which has been replaced with:
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 ## Markdown examples
 
@@ -91,7 +137,7 @@ goes here
 MYBRANCH="`whoami`-`date +%F-%H%M%S`"
 
 #### Step 1. Fetch and check out the branch for this merge request
-git checkout master
+git checkout main 
 git fetch origin
 git checkout -b "$MYBRANCH" 
 
@@ -117,8 +163,8 @@ https://gitlab.consulting.company.com/reports/client-cers/reportn-name-/merge_re
 ## Compare a branch to master (or another branch, I suppose)
 If you manage to get yourself in a spot where you don't know what changes were staged
 ```
-git checkout <branc>
-git diff --name-only master
+git checkout <branch>
+git diff --name-only main
 ```
 
 ## Duplicating a repo
