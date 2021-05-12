@@ -131,3 +131,8 @@ $ git push --mirror https://github.com/exampleuser/new-repository.git
 $ cd ..
 $ rm -rf old-repository.git
 ```
+
+## References
+I decided to start collecting some of the resources I have found helpful  
+
+[[Linux.conf.au 2013] - Git For Ages 4 And Up](https://www.youtube.com/watch?v=1ffBJ4sVUb4)
