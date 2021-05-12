@@ -14,8 +14,8 @@
 chsh -s /bin/bash
 /bin/bash
 # Local setup
-curl -o ~/.bashrc https://raw.githubusercontent.com/cloudxabide/devops/master/Files/.bashrc
-curl -o ~/.bash_profile https://raw.githubusercontent.com/cloudxabide/devops/master/Files/.bash_profile
+curl -o ~/.bashrc https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Files/.bashrc
+curl -o ~/.bash_profile https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Files/.bash_profile
 . ~/.bash_profile
 
 # My Parameters
@@ -37,7 +37,7 @@ manual_steps() {
 ssh-keygen -trsa -b2048 -f ~/.ssh/id_rsa-github-cloudxabide
 
 # Update your local SSH config
-curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/Files/ssh_config; chmod 0600 ~/.ssh/config
+curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Files/ssh_config; chmod 0600 ~/.ssh/config
 }
 
 
@@ -78,17 +78,17 @@ echo ".DS_Store" >> ~/.gitignore_global
 
 # Optimize VIM
 # See [vim_foo.sh](./vim_foo.sh)
-bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/master/Scripts/vim_foo.sh)
+bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Scripts/vim_foo.sh)
 
 # See if there is an existing ~/.ssh - if not, create one (with keys)
 [ -d ${HOME}/.ssh ] || ssh-keygen -trsa -b2048
 # The next command should have already been executed (above)
-# curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/master/Files/config;  chmod 0600 ~/.ssh/config
+# curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Files/config;  chmod 0600 ~/.ssh/config
 
 # Install Homebrew  (https://brew.sh) 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # Old (deprecated) method
-#   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install)"
 # Optional: you should add this to your .profile or .bashrc (etc...)
 grep "opt/python" ~/.bashrc || { echo "PATH=\"$PATH:/usr/local/opt/python/libexec/bin:$PATH" >> ~/.bashrc; }
 grep "/opt/homebrew/bin" ~/.bashrc || { echo "PATH=\"$PATH:/opt/homebrew/bin:$PATH" >> ~/.bashrc; }
