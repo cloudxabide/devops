@@ -69,29 +69,31 @@ git checkout -- .
 I have ZERO interest discussing this with anyone when it comes up at work.  It's fairly trivial to deploy (for most) and I don't see why lengthy
 discussions about freedom and slippery-slopes, etc.. even begin.  That said, I am NOT even very good at using git, and this was very simple to enact...
 
-### Actual Output
-```
-cyberpunk:devops jradtke$ git branch
-* master
-cyberpunk:devops jradtke$ git branch -m master main
-cyberpunk:devops jradtke$ git branch
-* main
-cyberpunk:devops jradtke$ git push -u origin main
-Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
-remote:
-remote: Create a pull request for 'main' on GitHub by visiting:
-remote:      https://github.com/cloudxabide/devops/pull/new/main
-remote:
-To github.com:cloudxabide/devops.git
- * [new branch]      main -> main
-Branch 'main' set up to track remote branch 'main' from 'origin'.
-```
+Browse to your repo and click on "master" above the filesystem view, then click on "View all branches"
+Click the pencil on the right-hand side of that view and replace "master" with "main"
+Click on "< > Code" and it will display a handy set of commands to run locally to update your copy
+ 
 
 ### Just commands
 ```
-git branch
 git branch -m master main
-git push -u origin main
+git fetch origin
+git branch -u origin/main main
+git remote set-head origin -a
+```
+
+### Actual Output
+```
+cyberpunk:aws-terraform jradtke$ git branch -m master main
+cyberpunk:aws-terraform jradtke$ git fetch origin
+From github.com:cloudxabide/aws-terraform
+ * [new branch]      main       -> origin/main
+cyberpunk:aws-terraform jradtke$ git branch -u origin/main main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+cyberpunk:aws-terraform jradtke$ git remote set-head origin -a
+origin/HEAD set to main
+cyberpunk:aws-terraform jradtke$ git branch
+* main
 ```
 
 ### Theory/suspicions
