@@ -1,7 +1,6 @@
 # Manifesto
 
-## The Story
-The chronicles of my crazy journey working as a consultant in the Services and Delivery Organization of premiere companies which provide OS and middleware software, and public cloud.  (Sun Microsystems, Red Hat and AWS - if you were wondering...)
+## The Story The chronicles of my crazy journey working as a consultant in the Services and Delivery Organization of premiere companies which provide OS and middleware software, and public cloud.  (Sun Microsystems, Red Hat and AWS - if you were wondering...)
 
 [Pixies - Where is my Mind?](https://www.youtube.com/watch?v=49FB9hhoO6c)  
 "You've met me in a very strange time in my life" -- The Narrator, Fight Club   
@@ -40,6 +39,11 @@ If you don't know *why* you are doing *what* you are doing, find out.  Dig in.  
 ### Start with the End (in mind)
 "The Beginning Is The End Is The Beginning" -- Smashing Pumpkins  
 Or, working backwards.  Try to focus on the Business Objectives and what we are trying to accomplish - rather than focusing on all the issues that have existed and how they are (seemingly) insurmountable.
+
+### Sum of all parts
+Marginal Change, applied continuously, adds up to big results  
+[Kaizen Approach](https://en.wikipedia.org/wiki/Kaizen)  
+Every journey, regardless of the size, starts with a single step.
 
 ### Know thy enemy...  
 While the saying is a bit dramatic, the point is:  Your "enemy" (perhaps "competition" is a better word) is your competition for a reason - they possess traits/skills/etc...which present a challenge to you, or differentiate them from you.  Learn what those traits are, focus on the merits of the traits.  There is no shame in following other's example when they are positive and constructive.
