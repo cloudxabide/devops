@@ -161,6 +161,10 @@ git push --set-upstream origin "$MYBRANCH"
 - Example URL
 https://gitlab.consulting.company.com/reports/client-cers/reportn-name-/merge_requests/new?merge_request%5Bsource_branch%5D=$MYBRANCH
 ```
+## Cleanup
+```
+git branch -d $(git branch | grep jradtke)
+```
 
 ## Compare a branch to master (or another branch, I suppose)
 If you manage to get yourself in a spot where you don't know what changes were staged
