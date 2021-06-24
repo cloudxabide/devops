@@ -90,8 +90,8 @@ bash <(curl -s https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Scripts
 # Old (deprecated) method
 #   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install)"
 # Optional: you should add this to your .profile or .bashrc (etc...)
-grep "opt/python" ~/.bashrc || { echo "PATH=\"$PATH:/usr/local/opt/python/libexec/bin:$PATH" >> ~/.bashrc; }
-grep "/opt/homebrew/bin" ~/.bashrc || { echo "PATH=\"$PATH:/opt/homebrew/bin:$PATH" >> ~/.bashrc; }
+grep "opt/python" ~/.bashrc || { echo "PATH=\"$PATH:/usr/local/opt/python/libexec/bin:$PATH\"" >> ~/.bashrc; }
+grep "/opt/homebrew/bin" ~/.bashrc || { echo "PATH=\"$PATH:/opt/homebrew/bin:$PATH\"" >> ~/.bashrc; }
  
 # Install Cask (FKA http://caskroom.io/)
 # Homebrew-Cask extends Homebrew and allows you to install large binary files via a command-line tool
