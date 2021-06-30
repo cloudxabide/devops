@@ -137,9 +137,10 @@ goes here
 -- this still needs tweaking
 ```
 MYBRANCH="`whoami`-`date +%F-%H%M%S`"
+MAINBRANCH="main"
 
 #### Step 1. Fetch and check out the branch for this merge request
-git checkout main 
+git checkout $MAINBRANCH || { MAINBRANCH="master"; git checkout $MAINBRANCH; }
 git fetch origin
 git checkout -b "$MYBRANCH" 
 
