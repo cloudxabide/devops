@@ -73,3 +73,5 @@ export PATH PS1 MANPATH LD_LIBRARY_PATH TERM EDITOR VISUAL GIT_EDITOR
 # Entries BELOW this line are custom
 # ==============================================
 
+PATH="/usr/local/opt/python/libexec/bin:/Users/jradtke/Library/Python/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/usr/local/opt/python/libexec/bin:/Users/jradtke/Library/Python/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/python/libexec/bin:/Users/jradtke/Library/Python/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/usr/local/opt/python/libexec/bin:/Users/jradtke/Library/Python/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" 
