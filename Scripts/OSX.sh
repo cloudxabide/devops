@@ -169,7 +169,7 @@ brew install terraform
 # Install a "sane" version of sed.
 brew install gnu-sed
 #-- add the following to your .bash_profile/.bashrc/etc...
-grep "gnu-sed" ~/.bashrc || { echo "PATH=\"/usr/local/opt/gnu-sed/libexec/gnubin:$PATH\" " >> ~/.bashrc; }
+grep "gnu-sed" ~/.bashrc || { echo "PATH=\"/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH\" " >> ~/.bashrc; }
 brew install tree
 brew install wget
 
