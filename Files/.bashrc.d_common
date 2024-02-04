@@ -1,0 +1,77 @@
+# .bashrc.d_common
+
+# THIS FILE WAS DERIVED FROM
+# https://github.com/cloudxabide/devops/blob/HEAD/Files/.bashrc
+#  Personalize file at the bottom
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment and startup programs
+TERM=vt100
+EDITOR=vi
+VISUAL=vi
+GIT_EDTIOR=vim
+HISTCONTROL=ignoredups
+HISTIGNORE='*sudo -S*'
+MYHOSTNAME=`hostname | cut -f1 -d.`
+
+# Use vi as the EDITOR
+set -o vi
+
+# User specific aliases and functions
+alias ll="/bin/ls -l "
+alias la="/bin/ls -la | egrep -v '.DS_Store'"
+alias lr="/bin/ls -lart"
+alias please='/usr/bin/sudo $(history -p !!)'
+alias butwhy='/usr/bin/systemctl status $_ '
+alias matrixnet='/usr/bin/sudo route add -net 10.10.10.0 netmask 255.255.255.0 gw 192.168.0.1'
+
+# Git aliases
+alias gitpull='git pull; git fetch'
+alias gitpush='git add $_; git commit -m "generic update" $_; git push'
+alias gitclean='git branch -d $(git branch | grep -i "radtke")'
+alias gitdoover='git checkout -- .'
+alias gitreset='git checkout -- .'
+
+alias oclogin='oc login -u morpheus -p 'NotAPassword' --insecure-skip-tls-verify --server=https://rh7-ocp3-mst.matrix.lab.:8443'
+
+# OS-specific optimization
+case `uname` in 
+  Linux)
+    alias ls="/bin/ls -N "
+    alias vms="sudo virsh list --inactive --all"
+    alias vv="sudo virt-viewer ${1}"
+    alias finalcountdown="echo $(expr '(' $(date +%s --date "2022-12-09") - $(date +%s)  ')' / 86400) days to study."
+  ;;
+  Darwin)
+    # Placeholder for Apple Mac OS X
+    PATH="/usr/local/opt/python/libexec/bin:${HOME}/Library/Python/3.8/bin:$PATH"
+    alias quarantining="echo $(expr '(' $(date -j -v -14d -f \"%Y-%m-%d\" \"2020-08-14\" +%s) - $(date +%s) ')' / 86400) \"days until quarantine begins. \" "
+    alias finalcountdown="echo $(expr '(' $(date -j -f \"%Y-%m-%d\" \"2020-08-14\" +%s) - $(date +%s) ')' / 86400) \"days until \#NERDvana .\" "
+  ;;
+  SunOS)
+    PS1="`/usr/ucb/whoami`@${MYHOSTNAME} $ "
+    echo "\033]0; `uname -n` - `/usr/ucb/whoami` \007"
+    PATH=$PATH:/usr/sfw/bin:/opt/sfw/bin:/usr/sfw/sbin:/opt/sfw/sbin:/usr/openwin/bin
+    PATH=$PATH:/usr/ucb/:/usr/platform/sun4u/bin:/usr/platform/i86pc:/usr/ccs/bin
+    PATH=$PATH:/opt/VRTS/bin:/opt/VRTSvcs/bin:/usr/openv/netbackup/bin
+    PATH=$PATH:/usr/openv/volmgr/bin:/opt/SUNWsrspx/bin:/opt/SUNWppro/bin
+    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/sfw/lib:/opt/sfw/lib
+  ;;
+  AIX)
+    PS1="`/usr/bin/whoami`@${HOSTNAME} $ "
+    echo "\033]0; ${HOSTNAME} - `/usr/bin/whoami` \007";
+  ;;
+esac
+
+PATH="$PATH:/usr/local/opt/python/libexec/bin:/Users/jradtke/Library/Python/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+MANPATH=$MANPATH:/usr/share/man:/opt/VRTS/man
+
+export PATH PS1 MANPATH LD_LIBRARY_PATH TERM EDITOR VISUAL GIT_EDITOR
+
+#echo "This is a login shell - ~/.bash_profile sourced"
+# MYSSHKEY=blah.pem; eval "$(ssh-agent -s)"; ssh-add $MYSSHKEY

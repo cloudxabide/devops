@@ -1,0 +1,51 @@
+# Work
+Host gitlab.consulting.redhat.com
+  User git
+  IdentityFile ~/.ssh/id_rsa-gitlab-consulting-redhat
+
+# HomeLab
+Host seraph seraph.matrix.lab
+  IdentityFile ~/.ssh/id_rsa-truenas
+  User root
+Host *.matrix.lab  # HomeLab
+  User root
+  UserKnownHostsFile ~/.ssh/known_hosts.matrix.lab
+Host ocpbastion
+  Hostname rh8-util-srv01.matrix.lab
+  User morpheus
+Host ansbastion
+  Hostname rh8-util-srv01.matrix.lab
+  User mansible
+
+Host *.jetsons.lab
+  User nvidia
+  UserKnownHostsFile ~/.ssh/known_hosts.jetsons.lab
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa-jetsons.lab
+Host sophos.evil.corp sophos
+  User admin
+
+# Github Foo
+Host github.com-JamesRadtke-RedHat
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa-github-JamesRadtke-RedHat
+Host github.com-cloudxabide
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa-github-cloudxabide
+  IdentitiesOnly yes
+Host github.com
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa-github-cloudxabide
+
+# I think it is best to leave this one last in the list
+# This apparently needs to be at the bottom (the IdentitiesOnly part, anyhow)
+Host *
+  AddKeysToAgent yes
+  #UseKeychain yes
+  #RSAAuthentication yes
+  #GSSAPIAuthentication yes
+  IdentityFile ~/.ssh/id_rsa
+  IdentitiesOnly yes

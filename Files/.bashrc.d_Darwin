@@ -1,0 +1,22 @@
+# .bashrc
+
+# THIS FILE WAS DERIVED FROM
+# https://github.com/cloudxabide/devops/blob/HEAD/Files/.bashrc
+#  Personalize file at the bottom
+#  Place macOS specific content in this file
+
+# Apple macOS 
+alias unfuckthispieceofshit="sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache"
+export BASH_SILENCE_DEPRECATION_WARNING=1
+alias brewup="brew update; brew upgrade"
+
+# Brew Config
+export HOMEBREW_NO_INSTALL_CLEANUP=true
+export HOMEBREW_NO_ENV_HINTS=true
+
+# Update AWS CLI
+alias update_aws='
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /'
+
+# Custom Stuff (below)

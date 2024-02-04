@@ -1,0 +1,4 @@
+
+
+wget https://docs.openshift.com/container-platform/4.6/installing/installing_aws/installing-aws-account.html#installation-aws-permissions_installing-aws-account
+grep "<p><code>" installing-aws-account.html | grep ":" | sed 's/<p><code>//g' | sed 's/<\/code><\/p>//g'
