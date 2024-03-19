@@ -1,8 +1,20 @@
 #!/bin/bash
 
+#
+# @(#)$Id$
+#
+# Purpose:  A script to iterate through the local git repos (personal and public) on my machine 
+#             and execute a task.  I currently have 231 repos from 41 users - I wanted a way to
+#             quickly/easily make sure they were all current, and this script will do that.
+
+# NOTES:  "checkout main" in a loop is not "simple" due to the fact that many repos are actually
+#           still using "master"
+
+
 clear 
+
 # Variables
-ERRMSG=""
+export ERRMSG=""
 
 # Subroutines
 usage() {
@@ -39,13 +51,6 @@ case $COMMAND in
     echo "# Executing:  git remote -v against $REPO"
     echo "cd $REPO &&  git $COMMAND; cd -" 
     cd $REPO && git $COMMAND -v
-    cd -
-    echo ""
-  ;;
-  'checkout main')
-    echo "# Executing:  git remote -v against $REPO"
-    echo "cd $REPO && git $COMMAND; cd -" 
-    cd $REPO && git $COMMAND 
     cd -
     echo ""
   ;;
