@@ -32,8 +32,7 @@ echo "$AWS_DEFAULT_PROFILE $aws_access_key_id $aws_secret_access_key $default_re
 ## Opt-out of non-US regions
 TODO:  this ^^^
 
-## Removing the default VPC
-# First... clean up your damn room
+## Removing the default VPC (this is not really necessary)
 # Get the Vpc-Id for the Default VPC
 ```
 VPCID=$(aws ec2 describe-vpcs --region $default_region --filter Name=isDefault,Values=true --query Vpcs[].VpcId --output text)
