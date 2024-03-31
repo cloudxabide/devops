@@ -2,6 +2,13 @@
 
 Some "default" things I will generally do, and not do very often (so, I'll forget)
 
+## Search for AWS ACCESS KEY/ACCESS KEY ID in your files
+```
+cd $REPOSITORY
+grep -RP '(?<![A-Z0-9])[A-Z0-9]{20}(?![A-Z0-9])' *
+grep -RP '(?<![A-Za-z0-9/+=])[A-Za-z0-9/+=]{40}(?![A-Za-z0-9/+=])' *
+```
+
 I'm not a huge fan of entering my AWS KEY/SECRET as a ENV variable (mostly because it ends up in .bash_history)
 
 So - this is some security-through-obscurity and *should* be managed via aws-vault
