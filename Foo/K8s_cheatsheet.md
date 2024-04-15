@@ -15,6 +15,13 @@ export KUBECONFIG=$KUBE_HOME/config
 export KUBECONFIG=$KUBECONFIG:~/.kube/kubeconfig-1:~/.kube/kubeconfig-2
 ```
 
+### KUBECONFIG
+
+```
+kubectl config get-contexts
+kubectl config delete-cluster 
+
+```
 
 ## EKS Foo
 
