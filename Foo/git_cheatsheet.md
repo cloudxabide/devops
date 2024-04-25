@@ -93,8 +93,10 @@ do
   cd $REPO_DIR
   for REPO in $(curl -s https://api.github.com/users/$REPO_OWNER/repos | grep "clone_url"  | awk '{ print $2 }' | sed 's/,//g' | sed 's/"//g')
   do
-    echo "git clone $REPO"
-    git clone $REPO
+    echo "$REPO"
+    GITDIR=$(echo "${REPO##*/}" | sed 's/.git//g' )
+    echo "$GITDIR"
+    [ -d $GITDIR ] && { cd $GITDIR; git pull; cd -; } || { echo "git clone $REPO"; git clone $REPO; }
   done
   echo "cd -"
   cd -
