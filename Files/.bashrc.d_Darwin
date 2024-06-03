@@ -1,7 +1,9 @@
 # .bashrc
 
 # THIS FILE WAS DERIVED FROM
-# https://github.com/cloudxabide/devops/blob/HEAD/Files/.bashrc
+# https://github.com/cloudxabide/devops/blob/HEAD/Files/.bashrc_Darwin 
+# curl -o ~/.bashrc.d/Darwin https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_Darwin
+
 #  Personalize file at the bottom
 #  Place macOS specific content in this file
 

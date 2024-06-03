@@ -38,10 +38,6 @@ alias gitclean='git branch -d $(git branch | grep -i "radtke")'
 alias gitdoover='git checkout -- .'
 alias gitreset='git checkout -- .'
 
-# Kubernetes specific (work-in-progress)
-alias oclogin='oc login -u morpheus -p 'NotAPassword' --insecure-skip-tls-verify --server=https://rh7-ocp3-mst.matrix.lab.:8443'
-KUBECONFIG=${HOME}/.kube/config
-
 # OS-specific optimization
 case `uname` in 
   Linux)
@@ -70,14 +66,6 @@ case `uname` in
     echo "\033]0; ${HOSTNAME} - `/usr/bin/whoami` \007";
   ;;
 esac
-
-update_kubeconfig() {
-unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
-cat /dev/null > $KUBECONFIG
-for CONFIG in $(find ${HOME}/.kube/ -name "*kubeconfig"); do export KUBECONFIG=$KUBECONFIG:$CONFIG; done
-kubectl config view --flatten > ${HOME}/.kube/config
-unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
-}
 
 PATH="$PATH:/usr/local/opt/python/libexec/bin:/Users/jradtke/Library/Python/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
