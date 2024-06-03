@@ -93,8 +93,8 @@ case `uname` in
   Darwin) . ~/.bashrc.d/Darwin ;;
   Linux)
     case `lsb_release -d` in 
-      *"Fedora"*)  . ~/.bashrc.d/Darwin/Fedora ;;
-      *"Ubuntu"*)  . ~/.bashrc.d/Darwin/Ubuntu ;;
+      *"Fedora"*)  . ~/.bashrc.d/Fedora ;;
+      *"Ubuntu"*)  . ~/.bashrc.d/Ubuntu ;;
     esac
   ;;
 esac
