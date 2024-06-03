@@ -14,4 +14,4 @@ unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
 }
 
 
-export KUBECONFIG
+export oclogin KUBECONFIG
