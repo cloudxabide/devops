@@ -14,5 +14,6 @@ kubectl config view --flatten > ${HOME}/.kube/config
 unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
 }
 
+function kn() { kubectl config set-context --current --namespace=${1}; }
 
 export oclogin KUBECONFIG
