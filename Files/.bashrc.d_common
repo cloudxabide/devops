@@ -1,7 +1,9 @@
 # .bashrc.d_common
 
 # THIS FILE WAS DERIVED FROM
-# https://github.com/cloudxabide/devops/blob/HEAD/Files/.bashrc
+# https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_common
+# curl -o ~/.bashrc.d/common https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_common
+
 #  Personalize file at the bottom
 
 # Source global definitions
