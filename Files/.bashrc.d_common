@@ -85,3 +85,15 @@ export PATH PS1 MANPATH LD_LIBRARY_PATH TERM EDITOR VISUAL GIT_EDITOR
 
 #echo "This is a login shell - ~/.bash_profile sourced"
 # MYSSHKEY=blah.pem; eval "$(ssh-agent -s)"; ssh-add $MYSSHKEY
+
+# Last step - source bash profile specific to OS/Release we are running
+case `uname` in
+  Darwin) . ~/.bashrc.d/Darwin ;;
+  Linux)
+    case `lsb_release -d` in 
+      *"Fedora"*)  . ~/.bashrc.d/Darwin/Fedora ;;
+      *"Ubuntu"*)  . ~/.bashrc.d/Darwin/Ubuntu ;;
+    esac
+  ;;
+esac
+
