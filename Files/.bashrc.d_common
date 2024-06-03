@@ -1,4 +1,4 @@
-# .bashrc.d_common
+# filename: ~/.bashrc.d/common
 
 # THIS FILE WAS DERIVED FROM
 # https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_common
@@ -81,8 +81,8 @@ case `uname` in
   Darwin) . ~/.bashrc.d/Darwin ;;
   Linux)
     case `lsb_release -d` in 
-      *"Fedora"*)  . ~/.bashrc.d/Fedora ;;
-      *"Ubuntu"*)  . ~/.bashrc.d/Ubuntu ;;
+      *"Fedora"*)  [ -f  ~/.bashrc.d/Fedora ] && { . ~/.bashrc.d/Fedora; } ;;
+      *"Ubuntu"*)  [ -f ~/.bashrc.d/Ubuntu ] && { . ~/.bashrc.d/Ubuntu; } ;;
     esac
   ;;
 esac

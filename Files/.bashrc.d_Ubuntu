@@ -1,3 +1,5 @@
+# filename: ~/.bashrc.d/Ubuntu
+
 # placeholder for Ubuntu-specific bash profile content
 # curl -o ~/.bashrc.d/Ubuntu https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_Ubuntu
 

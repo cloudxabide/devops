@@ -1,3 +1,5 @@
+# filename: ~/.bashrc.d/K8s
+
 # THIS FILE WAS DERIVED FROM
 # https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_K8s
 # curl -o ~/.bashrc.d/K8s https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_K8s

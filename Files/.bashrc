@@ -1,4 +1,5 @@
-# .bashrc
+# filename: ~/.bashrc
+
 # This file is stored/managed at: https://raw.githubusercontent.com/cloudxabide/devops/main/Files/
 # grep cxa-customization ~/.bashrc || { curl https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc | tee -a ~/.bashrc; }
 
