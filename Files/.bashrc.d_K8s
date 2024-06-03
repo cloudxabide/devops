@@ -1,0 +1,17 @@
+
+
+# Kubernetes specific (work-in-progress)
+alias oclogin='oc login -u morpheus -p 'NotAPassword' --insecure-skip-tls-verify --server=https://rh7-ocp3-mst.matrix.lab.:8443'
+KUBECONFIG=${HOME}/.kube/config
+
+
+update_kubeconfig() {
+unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
+cat /dev/null > $KUBECONFIG
+for CONFIG in $(find ${HOME}/.kube/ -name "*kubeconfig"); do export KUBECONFIG=$KUBECONFIG:$CONFIG; done
+kubectl config view --flatten > ${HOME}/.kube/config
+unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
+}
+
+
+export KUBECONFIG
