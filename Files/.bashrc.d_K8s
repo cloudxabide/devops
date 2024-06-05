@@ -16,6 +16,17 @@ kubectl config view --flatten > ${HOME}/.kube/config
 unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
 }
 
-function kn() { kubectl config set-context --current --namespace=${1}; }
+# replicationg the OpenShit "oc ns" command, sort of
+kns() {
+  if [[ -z $1 ]]
+  then
+    kubectl get ns
+    echo
+    echo -e "Current namespace is: $(kubectl config get-contexts | grep \* | awk '{ print $5 }')"
+  else
+    kubectl config set-context --current --namespace=${1}
+    echo "Current namespace is: $1"
+  fi
+}
 
 export oclogin KUBECONFIG
