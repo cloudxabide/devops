@@ -8,8 +8,8 @@
 # Kubernetes specific (work-in-progress)
 alias oclogin='oc login -u morpheus -p 'NotAPassword' --insecure-skip-tls-verify --server=https://rh7-ocp3-mst.matrix.lab.:8443'
 KUBECONFIG=${HOME}/.kube/config
-alias kge='kubectl get events --sort-by=.lastTimestamp'
-alias kgea='kubectl get events -A --sort-by=.lastTimestamp'
+alias kge='clear; kubectl get events --sort-by=.lastTimestamp'
+alias kgea='clear; kubectl get events -A --sort-by=.lastTimestamp'
 
 update_kubeconfig() {
 unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
