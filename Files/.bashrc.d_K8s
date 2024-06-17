@@ -4,9 +4,12 @@
 # https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_K8s
 # curl -o ~/.bashrc.d/K8s https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_K8s
 
+## Alias(es) do not accept parameters - use a function, if you need to pass something in
 # Kubernetes specific (work-in-progress)
 alias oclogin='oc login -u morpheus -p 'NotAPassword' --insecure-skip-tls-verify --server=https://rh7-ocp3-mst.matrix.lab.:8443'
 KUBECONFIG=${HOME}/.kube/config
+alias kge='kubectl get events --sort-by=.lastTimestamp'
+alias kgea='kubectl get events -A --sort-by=.lastTimestamp'
 
 update_kubeconfig() {
 unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
