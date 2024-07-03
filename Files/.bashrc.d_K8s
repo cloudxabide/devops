@@ -8,8 +8,9 @@
 # Kubernetes specific (work-in-progress)
 alias oclogin='oc login -u morpheus -p 'NotAPassword' --insecure-skip-tls-verify --server=https://rh7-ocp3-mst.matrix.lab.:8443'
 KUBECONFIG=${HOME}/.kube/config
+alias k=$(which kubectl)
 alias kge='clear; kubectl get events --sort-by=.lastTimestamp'
-alias kgea='clear; kubectl get events -A --sort-by=.lastTimestamp'
+alias kgea='clear; kubetl get events -A --sort-by=.lastTimestamp'
 alias kwtf='clear; kubectl top pod; echo; kubectl top node; echo; kubectl get events --sort-by=.lastTimestamp'
 
 update_kubeconfig() {
@@ -21,6 +22,7 @@ unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
 }
 
 # replicationg the OpenShit "oc ns" command, sort of
+#  I am not sure this is even needed
 kns() {
   if [[ -z $1 ]]
   then
