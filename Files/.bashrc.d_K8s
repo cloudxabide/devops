@@ -10,7 +10,7 @@ alias oclogin='oc login -u morpheus -p 'NotAPassword' --insecure-skip-tls-verify
 KUBECONFIG=${HOME}/.kube/config
 alias k=$(which kubectl)
 alias kge='clear; kubectl get events --sort-by=.lastTimestamp'
-alias kgea='clear; kubetl get events -A --sort-by=.lastTimestamp'
+alias kgea='clear; kubectl get events -A --sort-by=.lastTimestamp'
 alias kwtf='clear; kubectl top pod; echo; kubectl top node; echo; kubectl get events --sort-by=.lastTimestamp'
 
 update_kubeconfig() {
