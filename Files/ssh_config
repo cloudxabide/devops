@@ -1,21 +1,35 @@
-# Work
-Host gitlab.consulting.redhat.com
-  User git
-  IdentityFile ~/.ssh/id_rsa-gitlab-consulting-redhat
-
+# Home
+Host steamdeck.evil.corp steamdeck
+  User deck
+  
 # HomeLab
 Host seraph seraph.matrix.lab
   IdentityFile ~/.ssh/id_rsa-truenas
   User root
 Host *.matrix.lab  # HomeLab
-  User root
+  User mansible 
   UserKnownHostsFile ~/.ssh/known_hosts.matrix.lab
 Host ocpbastion
-  Hostname rh8-util-srv01.matrix.lab
+  Hostname rh8-util-srv02.matrix.lab
   User morpheus
 Host ansbastion
-  Hostname rh8-util-srv01.matrix.lab
+  Hostname rh8-util-srv02.matrix.lab
   User mansible
+Host *.linuxrevolution.com # HomeLab (external)
+  User mansible 
+  UserKnownHostsFile ~/.ssh/known_hosts.matrix.lab
+
+# Kubernerdes.lab Hosts
+Host 10.10.12.* *.kubernerdes.lab
+  User mansible
+  IdentityFile ~/.ssh/id_ecdsa-kubernerdes.lab
+  UserKnownHostsFile ~/.ssh/known_hosts.kubernerdes.lab
+
+Host thekubernerd
+  Hostname 10.10.12.10
+  User mansible
+  IdentityFile ~/.ssh/id_ecdsa-kubernerdes.lab
+  UserKnownHostsFile ~/.ssh/known_hosts.kubernerdes.lab
 
 Host *.jetsons.lab
   User nvidia
@@ -24,28 +38,35 @@ Host *.jetsons.lab
   IdentityFile ~/.ssh/id_rsa-jetsons.lab
 Host sophos.evil.corp sophos
   User admin
+Host hal-9000.matrix.lab hal hal9000
+  #Hostname hal-9000.matrix.lab
+  Hostname 10.10.10.20
+  User jradtke
+Host *.evil.corp
+  User mansible
 
 # Github Foo
-Host github.com-JamesRadtke-RedHat
+Host github.com-knowbettercloud
   Hostname github.com
   User git
-  IdentityFile ~/.ssh/id_rsa-github-JamesRadtke-RedHat
+  IdentityFile ~/.ssh/id_ecdsa-github-knowbettercloud
 Host github.com-cloudxabide
   Hostname github.com
   User git
-  IdentityFile ~/.ssh/id_rsa-github-cloudxabide
+  IdentityFile ~/.ssh/id_ecdsa-github-cloudxabide
   IdentitiesOnly yes
 Host github.com
   Hostname github.com
   User git
-  IdentityFile ~/.ssh/id_rsa-github-cloudxabide
+  IdentityFile ~/.ssh/id_ecdsa-github-cloudxabide
 
 # I think it is best to leave this one last in the list
 # This apparently needs to be at the bottom (the IdentitiesOnly part, anyhow)
 Host *
   AddKeysToAgent yes
-  #UseKeychain yes
+  #  UseKeychain yes
   #RSAAuthentication yes
   #GSSAPIAuthentication yes
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ecdsa
   IdentitiesOnly yes
+
