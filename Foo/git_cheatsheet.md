@@ -143,8 +143,7 @@ git checkout -- .
 ```
 
 ## Moving from master to main (rename)
-I have ZERO interest discussing this with anyone when it comes up at work.  It's fairly trivial to deploy (for most) and I don't see why lengthy
-discussions about freedom and slippery-slopes, etc.. even begin.  That said, I am NOT even very good at using git, and this was very simple to enact...
+That said, I am NOT even very good at using git, and this was very simple to enact...
 
 Browse to your repo and click on "master" above the filesystem view, then click on "View all branches"
 Click the pencil on the right-hand side of that view and replace "master" with "main"
