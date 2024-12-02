@@ -30,11 +30,12 @@ EOD
 sudo mkdir -p /usr/local/share/man/man5
 sudo chown -R $(whoami) /usr/local/share/man/man5
 
-# this doesn't work.. cuz.. It's MacOS.. ugh
-case `sudo -c "sysctl -b machdep.cpu.brand_string"` in
-  "Apple M1") sudo softwareupdate --install-rosetta;;
+# Install Rosetta non-interactively
+case $(sudo sysctl -b machdep.cpu.brand_string) in
+  'Apple M1' | 'Apple M2') sudo /usr/sbin/softwareupdate --install-rosetta --agree-to-license 
+;;
+  "*")  echo "Unsupported Processor";;
 esac
-
 
 # Enable "tap-to-click" (not sure whether sudo is needed - does not seem to work)
 sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
