@@ -72,7 +72,7 @@ cat << EOF > ~/.gitconfig
 	default = current
 EOF
 
-mkdir ~/.config/git
+mkdir -p ~/.config/git
 curl -o ${HOME}/.config/git/ignore  https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.config_git_ignore.Darwin
 
 # Optimize VIM (I need to research better VIM setup)
@@ -186,6 +186,9 @@ brew install --cask microsoft-office
 
 # Install VMware Fusion
 #brew install --cask vmware-fusion
+
+# Install Draw.IO
+brew install --cask drawio
 
 #  LASTLY....
 # Update Brew (should not be necessary at this time, here for a reference)
