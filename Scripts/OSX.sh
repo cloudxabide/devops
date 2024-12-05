@@ -99,7 +99,7 @@ grep $BINPATH ~/.bashrc.d/Darwin || { echo "PATH=\"\$PATH:$BINPATH\"" >> ~/.bash
  
 # Install Cask (FKA http://caskroom.io/)
 # Homebrew-Cask extends Homebrew and allows you to install large binary files via a command-line tool
-brew tap homebrew/cask                      # Tap the Caskroom/Cask repository from Github using HTTPS.
+#brew tap homebrew/cask                      # Tap the Caskroom/Cask repository from Github using HTTPS.
 
 # Install Python 3.x
 brew install python
