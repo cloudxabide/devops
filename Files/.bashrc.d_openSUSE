@@ -17,3 +17,8 @@ ssh_key_add() {
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ecdsa-github-knowbettercloud
 }
+
+fixgrub() {
+rm /boot/grub2/grubenv
+ln -s $(find /boot -name grubenv) /boot/grub2/grubenv
+}
