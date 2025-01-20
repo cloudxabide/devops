@@ -1,18 +1,20 @@
-#!/bin/bash -x
-#profiles=($(perl -lne '/\[\K[^\]]+/ and print $&' ${HOME}/.aws/credentials ))
-profiles=$(aws configure list-profiles)
+#!/bin/bash 
+# Purpose: script to gather AWS Profiles and present them as a numbered
+#            option to select
+
+PROFILES=($(aws configure list-profiles ))
 PS3='Profile number: '
 export AWS_SHARED_CREDENTIALS_FILE=${HOME}/.aws/credentials
 echo " "
 echo "-------------------------------"
 echo "Please select a profile to load"
 echo "-------------------------------"
-select choice in "${profiles[@]}"
+select CHOICE in "${PROFILES[@]}"
 do
-  export AWS_PROFILE=$choice
-  export AWS_DEFAULT_PROFILE=$choice
+  export AWS_PROFILE=$CHOICE
+  export AWS_DEFAULT_PROFILE=$CHOICE
   echo "-------------------------------"
-  echo "AWS CLI profile set to "$choice
+  echo "AWS CLI profile set to "$CHOICE
   echo "-------------------------------"
   echo " "
   break
