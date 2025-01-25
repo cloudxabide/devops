@@ -23,6 +23,10 @@ MYHOSTNAME=`hostname | cut -f1 -d.`
 # Use vi as the EDITOR
 set -o vi
 
+# While this should be available and sourced from ~/.aws/config, it seems like a good idea to define regardless
+AWS_DEFAULT_PROFILE=default
+AWS_DEFAULT_REGION=us-east-1
+
 # User specific aliases and functions
 alias ll="/bin/ls -l "
 alias la="/bin/ls -la | egrep -v '.DS_Store'"
