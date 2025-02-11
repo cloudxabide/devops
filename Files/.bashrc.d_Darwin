@@ -22,6 +22,10 @@ curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
 sudo installer -pkg AWSCLIV2.pkg -target /'
 
 # chat-cli alias (https://github.com/chat-cli/chat-cli) - obviously very specific
-alias letschat='chat-cli --max-tokens 1024 --model-id "anthropic.claude-3-5-sonnet-20240620-v1:0" prompt '
+# chat-cli aliases
+alias letschat='chat-cli --max-tokens 1024 --model-id "amazon.nova-pro-v1:0" prompt '
+alias letschatnova='chat-cli --max-tokens 1024 --model-id "amazon.nova-pro-v1:0" prompt '
+alias letschatclaude='chat-cli --max-tokens 1024 --model-id "anthropic.claude-3-5-sonnet-20240620-v1:0" prompt '
+
 
 # Custom Stuff (below)
