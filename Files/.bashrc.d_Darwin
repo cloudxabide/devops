@@ -8,9 +8,12 @@
 #  Place macOS specific content in this file
 
 # Apple macOS 
-alias unfuckthispieceofshit="sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache"
+alias unfthispieceofs="sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 alias brewup="brew update; brew upgrade"
+
+# iTerm Top Bar Customization
+export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD##*/}\007"'
 
 # Brew Config
 export HOMEBREW_NO_INSTALL_CLEANUP=true
