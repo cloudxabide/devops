@@ -29,3 +29,10 @@ alias letschatnovapro='chat-cli --max-tokens 2048 --model-id="amazon.nova-pro-v1
 alias letschat='chat-cli --max-tokens 2048 --model-id="amazon.nova-pro-v1:0" prompt '
 
 # Custom Stuff (below)
+export PATH="/opt/homebrew/Cellar/gnu-sed/4.9/libexec/gnubin/:$PATH:/opt/homebrew/bin:${HOME}/Library/Python/3.9/bin/"
+
+[ ! -z $TROUBLESHOOT_BASH ] && { 
+  echo "#### Sourcing: $rc"
+}
+
+echo 

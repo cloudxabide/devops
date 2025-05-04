@@ -133,9 +133,8 @@ brew install gnu-sed
 BINPATH="/opt/homebrew/Cellar/gnu-sed/4.9/libexec/gnubin/"
 grep $BINPATH ~/.bashrc.d/Darwin || { echo "PATH=\"$BINPATH:\$PATH\"" >> ~/.bashrc.d/Darwin; }
 
-brew install tree
-brew install wget
-brew install cmake
+PKGS="tree wget cmake jsonlint"
+for PKG in $PKGS; do brew install $PKG; done
 
 # Conky
 # https://github.com/Conky-for-macOS/conky-for-macOS/wiki
@@ -186,6 +185,9 @@ brew install --cask microsoft-office
 
 # Install VMware Fusion
 #brew install --cask vmware-fusion
+
+# Install Signal
+brew install signal 
 
 # Install Draw.IO
 brew install --cask drawio

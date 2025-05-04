@@ -23,6 +23,7 @@ export PATH
 if [ -d ~/.bashrc.d ]; then
 	for rc in ~/.bashrc.d/*; do
 		if [ -f "$rc" ]; then
+                  [ ! -z $TROUBLESHOOT_BASH ] && { echo "### Sourcing: $rc from ~/.bashrc"; }
 			. "$rc"
 		fi
 	done
