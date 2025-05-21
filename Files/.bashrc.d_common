@@ -70,24 +70,11 @@ esac
 MANPATH=$MANPATH:/usr/share/man
 export MANPATH
 
-## I don't recall why I added this (and it should NOT be here, as it will call the same rc file twice)
-#case `uname` in
-#  Darwin) [ -f ~/.bashrc.d/Darwin ] && . ~/.bashrc.d/Darwin ;;
-#  Linux)
-#    case `lsb_release -d` in 
-#      *"Fedora"*)  [ -f  ~/.bashrc.d/Fedora ] && { . ~/.bashrc.d/Fedora; } ;;
-#      *"Ubuntu"*)  [ -f ~/.bashrc.d/Ubuntu ] && { . ~/.bashrc.d/Ubuntu; } ;;
-#      *"openSUSE"*)  [ -f ~/.bashrc.d/openSUSE ] && { . ~/.bashrc.d/openSUSE ; } ;;
-#    esac
-#  ;;
-#esac
-
 [ ! -z $TROUBLESHOOT_BASH ] && { 
   echo "#### Sourcing:  $rc" 
   echo "This is a login shell - ~/.bash_profile sourced"
   #MYSSHKEY=blah.pem; eval "$(ssh-agent -s)"; ssh-add $MYSSHKEY
 }
 
-echo
 
 # Next step - source bash profile specific to OS/Release we are running (Darwin vs Linux/Ubuntu vs Linux/Fedora, etc..)
