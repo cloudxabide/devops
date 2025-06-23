@@ -15,8 +15,9 @@ alias kwtf='clear; kubectl top pod; echo; kubectl top node; echo; kubectl get ev
 
 update_kubeconfig() {
 unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
+cp $KUBECONFIG "$KUBECONFIG.$(date +%F).$(uuidgen | tr -d '-' | head -c 6)"
 cat /dev/null > $KUBECONFIG
-for CONFIG in $(find ${HOME}/.kube/ -name "*kubeconfig"); do export KUBECONFIG=$KUBECONFIG:$CONFIG; done
+for CONFIG in $(find ~/.kube -type f \( -name "*.kubeconfig" -o -name "*.yaml" \)); do export KUBECONFIG=$KUBECONFIG:$CONFIG; done
 kubectl config view --flatten > ${HOME}/.kube/config
 unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
 }
