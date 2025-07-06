@@ -19,6 +19,6 @@ ssh-add ~/.ssh/id_ecdsa-github-knowbettercloud
 }
 
 fixgrub() {
-rm /boot/grub2/grubenv
-ln -s $(find /boot -name grubenv) /boot/grub2/grubenv
+sudo rm /boot/grub2/grubenv
+sudo grub2-editenv /boot/grub2/grubenv unset dummy
 }
