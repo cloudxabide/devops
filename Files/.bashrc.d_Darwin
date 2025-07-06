@@ -38,4 +38,3 @@ export PATH="/opt/homebrew/Cellar/gnu-sed/4.9/libexec/gnubin/:$PATH:/opt/homebre
   echo "#### Sourcing: $rc"
 }
 
-echo 

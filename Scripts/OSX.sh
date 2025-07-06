@@ -180,8 +180,9 @@ curl  https://bootstrap.pypa.io/get-pip.py -o ~/get-pip.py
 python3 ~/get-pip.py
 rm ~/get-pip.py
 
-# Install Microsoft Office (huh?)
-brew install --cask microsoft-office
+# openssl@1.1 for perplexity.ai CLI
+brew install openssl@1.1
+
 
 # Install VMware Fusion
 #brew install --cask vmware-fusion
@@ -192,10 +193,23 @@ brew install signal
 # Install Draw.IO
 brew install --cask drawio
 
+# Bitwarden password manager
+brew install bitwarden
+
+# Krew
+brew install krew
+
+brew install k9s 
+
+# Install Microsoft Office (huh?) - this one is towards the end since it takes a while
+brew install --cask microsoft-office
+
 #  LASTLY....
 # Update Brew (should not be necessary at this time, here for a reference)
+# Fetch latest version of homebrew and formula.
+# Cleanup
 brew upgrade
-brew update         # Fetch latest version of homebrew and formula.
+brew update
 brew cleanup        # For all installed or specific formulae, remove any older versions from the cellar.
 
 exit 0

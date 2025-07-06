@@ -19,7 +19,7 @@ export ERRMSG=""
 # Subroutines
 usage() {
   echo ""
-  echo "$0 -r {public|private|personal|<blank>} -c {status|pull|fetch|remote}"
+  echo "$0 -r {public|private|personal|work|<blank>} -c {status|pull|fetch|remote}"
   echo "$0 <blank> -- runs \"$0 personal status\" as a default"
   echo ""
   exit 0
@@ -108,6 +108,14 @@ case $REPOS in
   ;;
   personal|Personal)
     for REPO in `find Personal -name .git -exec dirname {} \; | egrep -v 'archive'`
+    do
+      echo "################ ################ "
+      run_check
+      echo ""
+    done
+  ;;
+  work|Work)
+    for REPO in `find Work -name .git -exec dirname {} \; | egrep -v 'archive'`
     do
       echo "################ ################ "
       run_check
