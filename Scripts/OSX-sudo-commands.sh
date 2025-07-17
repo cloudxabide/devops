@@ -8,8 +8,8 @@
 #           Some of these steps must be in order - and see the previous "warning"
 
 MYHOSTNAME="cyberpunk"
-USER=$(whoami)
-echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee  /private/etc/sudoers.d/$USER-nopasswd-all
+DAUSER=$(whoami)
+echo "$DAUSER ALL=(ALL) NOPASSWD: ALL" | sudo tee  /private/etc/sudoers.d/$DAUSER-nopasswd-all
 
 # Update /etc/sudoers to allow NOPASSWD
 sudo scutil --set HostName "$MYHOSTNAME"
