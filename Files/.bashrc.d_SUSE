@@ -1,0 +1,24 @@
+# filename: ~/.bashrc.d/SUSE
+
+# THIS FILE WAS DERIVED FROM
+# https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_SUSE
+# curl -o ~/.bashrc.d/SUSE https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_SUSE
+
+#  Personalize file at the bottom
+# Place SUSE specific content in this file
+
+#echo "This is a login shell - ~/.bash_profile sourced"
+
+# Alias docker to run podman, if docker is not present
+CMD="docker"
+[[ $(type -P "$CMD") ]] || { alias docker=$(which podman); }
+
+ssh_key_add() {
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ecdsa-github-knowbettercloud
+}
+
+fixgrub() {
+sudo rm /boot/grub2/grubenv
+sudo grub2-editenv /boot/grub2/grubenv unset dummy
+}

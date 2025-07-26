@@ -1,0 +1,9 @@
+[core]
+  excludesfile = /Users/jradtke/.config/git/ignore
+[user]
+  name = James Radtke
+  email = emal@gmail.com
+[pull]
+  rebase = false
+[push]
+default = current
