@@ -4,14 +4,19 @@
 # https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_K8s
 # curl -o ~/.bashrc.d/K8s https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_K8s
 
-## Alias(es) do not accept parameters - use a function, if you need to pass something in
-# Kubernetes specific (work-in-progress)
-alias oclogin='oc login -u morpheus -p 'NotAPassword' --insecure-skip-tls-verify --server=https://rh7-ocp3-mst.matrix.lab.:8443'
 KUBECONFIG=${HOME}/.kube/config
+
+#############
+## ALIASES
+## Alias(es) do not accept parameters - use a function, if you need to pass something in
+# Kubernetes specific aliases (work-in-progress)
 alias k=$(which kubectl)
 alias kge='clear; kubectl get events --sort-by=.lastTimestamp'
 alias kgea='clear; kubectl get events -A --sort-by=.lastTimestamp'
 alias kwtf='clear; kubectl top pod; echo; kubectl top node; echo; kubectl get events --sort-by=.lastTimestamp'
+
+#############
+## ROUTINES
 
 update_kubeconfig() {
 unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
@@ -46,4 +51,6 @@ kns() {
   fi
 }
 
-export oclogin KUBECONFIG
+export KUBECONFIG
+
+# for CONTEXT in $( kubectl config get-contexts -o name); do kubectl config use-context $CONTEXT; kubectl get all; sleep 1; done
