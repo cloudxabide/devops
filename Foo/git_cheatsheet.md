@@ -101,6 +101,7 @@ do
   echo "cd -"
   cd -
 done
+cd $REPO_DIR
 ```
 
 Want to see what files have been modified recently (like the past 2 days?)
