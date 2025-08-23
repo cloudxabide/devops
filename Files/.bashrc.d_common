@@ -76,5 +76,26 @@ export MANPATH
   #MYSSHKEY=blah.pem; eval "$(ssh-agent -s)"; ssh-add $MYSSHKEY
 }
 
+setup_docker_alias() {
+    # Check if docker command exists
+    if command -v docker >/dev/null 2>&1; then
+        # Docker found, do nothing
+        return 0
+    fi
+    
+    # Docker not found, check for alternatives in order of preference
+    if command -v podman >/dev/null 2>&1; then
+        alias docker='podman'
+        echo "Docker not found. Aliased 'docker' to 'podman'"
+    elif command -v nerdctl >/dev/null 2>&1; then
+        alias docker='nerdctl'
+        echo "Docker not found. Aliased 'docker' to 'nerdctl'"
+    else
+        echo "Warning: No container runtime found (docker, podman, or nerdctl)"
+    fi
+}
+
+# Call the function to set up the alias
+setup_docker_alias
 
 # Next step - source bash profile specific to OS/Release we are running (Darwin vs Linux/Ubuntu vs Linux/Fedora, etc..)
