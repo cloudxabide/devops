@@ -64,8 +64,6 @@ case `uname` in
   ;;
 esac
 
-# I THINK THE 2 x PATH lines can be removed (2025-05-04)
-#PATH="$PATH:/usr/local/opt/python/libexec/bin:/Users/jradtke/Library/Python/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 #PATH=$PATH:$HOME/.local/bin:$HOME/bin
 MANPATH=$MANPATH:/usr/share/man
 export MANPATH
@@ -97,5 +95,10 @@ setup_docker_alias() {
 
 # Call the function to set up the alias
 setup_docker_alias
+
+ssh_key_add() {
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ecdsa-github-knowbettercloud
+}
 
 # Next step - source bash profile specific to OS/Release we are running (Darwin vs Linux/Ubuntu vs Linux/Fedora, etc..)

@@ -9,10 +9,6 @@
 
 #echo "This is a login shell - ~/.bash_profile sourced"
 
-# Alias docker to run podman, if docker is not present
-CMD="docker"
-[[ $(type -P "$CMD") ]] || { alias docker=$(which podman); }
-
 ssh_key_add() {
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ecdsa-github-knowbettercloud
