@@ -91,14 +91,13 @@ setup_docker_alias() {
 # Call the function to set up the alias
 setup_docker_alias
 
-update_bashrc_scripts() {
-cd ${HOME}/.bashrc.d
+alias update_bashrc_scripts='
+cd ${HOME}/.bashrc.d/
 for FILE in $(ls)
 do
   curl -o ~/.bashrc.d/${FILE} https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_${FILE}
 done
-}
-
+cd - '
 
 ssh_key_add() {
 eval "$(ssh-agent -s)"
