@@ -84,12 +84,8 @@ setup_docker_alias() {
     # Docker not found, check for alternatives in order of preference
     if command -v podman >/dev/null 2>&1; then
         alias docker='podman'
-        echo "Docker not found. Aliased 'docker' to 'podman'"
     elif command -v nerdctl >/dev/null 2>&1; then
         alias docker='nerdctl'
-        echo "Docker not found. Aliased 'docker' to 'nerdctl'"
-    else
-        echo "Warning: No container runtime found (docker, podman, or nerdctl)"
     fi
 }
 
