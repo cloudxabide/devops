@@ -4,7 +4,7 @@
 # https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_K8s
 # curl -o ~/.bashrc.d/K8s https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_K8s
 
-KUBECONFIG=${HOME}/.kube/config
+export KUBECONFIG=${HOME}/.kube/config
 
 #############
 ## ALIASES
@@ -19,39 +19,75 @@ alias kwtf='clear; kubectl top pod; echo; kubectl top node; echo; kubectl get ev
 #############
 ## ROUTINES
 
+# Backs up the current kubeconfig and merges all .kubeconfig and .yaml files from ~/.kube
 update_kubeconfig() {
-unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
-cp $KUBECONFIG "$KUBECONFIG.$(date +%F).$(uuidgen | tr -d '-' | head -c 6)"
-cat /dev/null > $KUBECONFIG
-for CONFIG in $(find ~/.kube -type f \( -name "*.kubeconfig" -o -name "*.yaml" \)); do export KUBECONFIG=$KUBECONFIG:$CONFIG; done
-kubectl config view --flatten > ${HOME}/.kube/config
-unset KUBECONFIG; export KUBECONFIG=${HOME}/.kube/config
-}
+  set -e # Exit on error
+  local backup_dir="${HOME}/.kube/backups"
+  mkdir -p "${backup_dir}"
+  local backup_file="${backup_dir}/config.$(date +%F_%H-%M-%S)"
+  
+  if [[ -f "${HOME}/.kube/config" ]]; then
+    cp "${HOME}/.kube/config" "${backup_file}"
+    echo "Backed up kubeconfig to ${backup_file}"
+  fi
 
-update_cilium() {
-CILIUM_CLI_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/main/stable.txt)
-CLI_ARCH=amd64
-if [ "$(uname -m)" = "aarch64" ]; then CLI_ARCH=arm64; fi
-curl -L --fail --remote-name-all https://github.com/cilium/cilium-cli/releases/download/${CILIUM_CLI_VERSION}/cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
-sha256sum --check cilium-linux-${CLI_ARCH}.tar.gz.sha256sum
-sudo tar xzvfC cilium-linux-${CLI_ARCH}.tar.gz /usr/local/bin
-rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
-}
+  local merged_config
+  merged_config=$(mktemp)
 
-# replicationg the OpenShit "oc ns" command, sort of
-#  I am not sure this is even needed
-kns() {
-  if [[ -z $1 ]]
-  then
-    kubectl get ns
-    echo
-    echo -e "Current namespace is: $(kubectl config get-contexts | grep \* | awk '{ print $5 }')"
+  local config_files
+  config_files=$(find "${HOME}/.kube" -type f \( -name "*.kubeconfig" -o -name "*.yaml" \))
+
+  if [[ -n "${config_files}" ]]; then
+    KUBECONFIG=$(IFS=:; echo "${config_files}") kubectl config view --flatten > "${merged_config}"
+    mv "${merged_config}" "${HOME}/.kube/config"
+    echo "Updated kubeconfig with found files."
   else
-    kubectl config set-context --current --namespace=${1}
-    echo "Current namespace is: $1"
+    echo "No kubeconfig files found to merge."
+    # Create an empty config if none exist
+    touch "${HOME}/.kube/config"
   fi
 }
 
-export KUBECONFIG
+# Downloads and installs the latest version of the Cilium CLI
+update_cilium() {
+  set -e
+  local tmp_dir
+  tmp_dir=$(mktemp -d)
+  cd "${tmp_dir}"
 
-# for CONTEXT in $( kubectl config get-contexts -o name); do kubectl config use-context $CONTEXT; kubectl get all; sleep 1; done
+  local cilium_version
+  cilium_version=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/main/stable.txt)
+  local arch="amd64"
+  if [[ "$(uname -m)" == "aarch64" ]]; then
+    arch="arm64"
+  fi
+
+  local filename="cilium-linux-${arch}.tar.gz"
+  local url="https://github.com/cilium/cilium-cli/releases/download/${cilium_version}/${filename}"
+
+  echo "Downloading Cilium CLI version ${cilium_version} for ${arch}..."
+  curl -L --fail --remote-name-all "${url}{,.sha256sum}"
+  sha256sum --check "${filename}.sha256sum"
+  
+  echo "Installing to /usr/local/bin..."
+  sudo tar xzvfC "${filename}" /usr/local/bin
+  
+  cd -
+  rm -rf "${tmp_dir}"
+  echo "Cilium CLI update complete."
+}
+
+# Switch Kubernetes namespace or list namespaces
+kns() {
+  if [[ -z "$1" ]]; then
+    echo "Available namespaces:"
+    kubectl get ns
+    echo
+    local current_ns
+    current_ns=$(kubectl config view --minify --output 'jsonpath={..namespace}')
+    echo "Current namespace is: ${current_ns:-default}"
+    return
+  fi
+  kubectl config set-context --current --namespace="$1"
+  echo "Namespace set to: $1"
+}
