@@ -44,7 +44,3 @@ sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
 sudo gem install asciidoctor-pdf asciidoctor-diagram rouge
 
-# https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html#cliv2-mac-install-cmd-all-users
-curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-sudo installer -pkg AWSCLIV2.pkg -target /
-mv AWSCLIV2.pkg ~/Downloads

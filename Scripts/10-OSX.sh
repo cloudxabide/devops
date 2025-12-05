@@ -133,73 +133,75 @@ brew install gnu-sed
 BINPATH="/opt/homebrew/Cellar/gnu-sed/4.9/libexec/gnubin/"
 grep $BINPATH ~/.bashrc.d/Darwin || { echo "PATH=\"$BINPATH:\$PATH\"" >> ~/.bashrc.d/Darwin; }
 
-PKGS="tree wget cmake jsonlint"
+PKGS="tree wget cmake jsonlint" 
 for PKG in $PKGS; do brew install $PKG; done
 
-# Conky
-# https://github.com/Conky-for-macOS/conky-for-macOS/wiki
-#brew cask install xquartz
-#brew tap Conky-for-macOS/homebrew-formulae
-#brew install conky-all 
-
-case `hostname -d` in
-  ant.amazon.com)
-    echo "Wrap up Brew tasks"
-    brew_finish
-    echo "Note:  completed tasks.  Now exiting."
-    exit 0
-  ;;
-esac
-
-# Install iTerm2
-brew install --cask iterm2
-
-# Install  Viscosity (OS X VPN client)
-brew install cask viscosity
-
-# Install Microsoft Visual Studio Code
-#brew search visual-studio-code        # Searches all known Casks for a partial or exact match.
-brew info --cask visual-studio-code     # Displays information about the given Cask
-brew install --cask visual-studio-code  # Install the given cask.
-brew install --cask microsoft-teams
+PKGS="nmap mcphost"
+for PKG in $PKGS; do brew install $PKG; done
 
 # Install Asciidoctor stuff (moved this to the sudo script ./OSX-sudo-commands.sh)
 #sudo gem install asciidoctor-pdf asciidoctor-diagram rouge
-
-# Install Slack
-brew install --cask slack
-
-# Install Miro (desktop App)
-brew install miro
-
-# Install Google Chrome
-brew install --cask google-chrome
 
 ## Install PIP
 curl  https://bootstrap.pypa.io/get-pip.py -o ~/get-pip.py
 python3 ~/get-pip.py
 rm ~/get-pip.py
 
-# openssl@1.1 for perplexity.ai CLI
-brew install openssl@1.1
-
-
-# Install VMware Fusion
-#brew install --cask vmware-fusion
-
-# Install Signal
-brew install signal 
-
-# Install Draw.IO
-brew install --cask drawio
+# Install iTerm2
+brew install --cask iterm2
 
 # Bitwarden password manager
 brew install bitwarden
 
+# https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html#cliv2-mac-install-cmd-all-users
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /
+rm AWSCLIV2.pkg
+
+# Install Kuberenetes Tools
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/arm64/kubectl"
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/arm64/kubectl.sha256"
+echo "$(cat kubectl.sha256)  kubectl" | shasum -a 256 --check
+sudo install -o root -m 0755 kubectl /usr/local/bin
+kubectl version --client --output=yaml
+rm kubectl*
 # Krew
 brew install krew
-
+# K9s
 brew install k9s 
+
+s Install Microsoft Visual Studio Code
+#brew search visual-studio-code        # Searches all known Casks for a partial or exact match.
+brew info --cask visual-studio-code     # Displays information about the given Cask
+brew install --cask visual-studio-code  # Install the given cask.
+#brew install --cask microsoft-teams
+
+# Install Slack
+brew install --cask slack
+
+# Install Signal
+brew install signal 
+
+# Install Google Chrome
+brew install --cask google-chrome
+
+# openssl@1.1 for perplexity.ai CLI
+brew install openssl@1.1
+
+# Install Viscosity (OS X VPN client)
+#brew install cask viscosity
+
+# Install Tunnelblick 
+brew install tunnelblick
+
+# Install VMware Fusion
+#brew install --cask vmware-fusion
+
+# Install Miro (desktop App)
+brew install miro
+# Install Draw.IO
+brew install --cask drawio
+
 
 # Install Microsoft Office (huh?) - this one is towards the end since it takes a while
 brew install --cask microsoft-office
