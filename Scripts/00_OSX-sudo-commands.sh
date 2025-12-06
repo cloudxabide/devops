@@ -44,3 +44,4 @@ sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
 sudo gem install asciidoctor-pdf asciidoctor-diagram rouge
 
+exit 0

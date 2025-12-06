@@ -139,9 +139,6 @@ for PKG in $PKGS; do brew install $PKG; done
 PKGS="nmap mcphost"
 for PKG in $PKGS; do brew install $PKG; done
 
-# Install Asciidoctor stuff (moved this to the sudo script ./OSX-sudo-commands.sh)
-#sudo gem install asciidoctor-pdf asciidoctor-diagram rouge
-
 ## Install PIP
 curl  https://bootstrap.pypa.io/get-pip.py -o ~/get-pip.py
 python3 ~/get-pip.py
