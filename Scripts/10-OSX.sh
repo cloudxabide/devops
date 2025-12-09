@@ -119,7 +119,9 @@ brew install openjdk@11
 #echo "PATH=\"$(dirname $( find ~/Library/Python/ -name aws)):$PATH\" " >> ~/.bashrc.d/Darwin
 
 # Install Terraform
-brew install terraform
+# brew install terraform
+# Install OpenTofu 
+brew install opentofu 
 
 # Balena Etcher (media software)
 brew install --cask balenaetcher
@@ -199,9 +201,12 @@ brew install miro
 # Install Draw.IO
 brew install --cask drawio
 
-
 # Install Microsoft Office (huh?) - this one is towards the end since it takes a while
 brew install --cask microsoft-office
+
+# AI Tools
+brew install --cask claude-code
+npm install -g @google/gemini-cli
 
 #  LASTLY....
 # Update Brew (should not be necessary at this time, here for a reference)
@@ -210,5 +215,6 @@ brew install --cask microsoft-office
 brew upgrade
 brew update
 brew cleanup        # For all installed or specific formulae, remove any older versions from the cellar.
+
 
 exit 0
