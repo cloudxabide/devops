@@ -135,7 +135,7 @@ brew install gnu-sed
 BINPATH="/opt/homebrew/Cellar/gnu-sed/4.9/libexec/gnubin/"
 grep $BINPATH ~/.bashrc.d/Darwin || { echo "PATH=\"$BINPATH:\$PATH\"" >> ~/.bashrc.d/Darwin; }
 
-PKGS="tree wget cmake jsonlint" 
+PKGS="tree wget cmake jsonlint yamllint" 
 for PKG in $PKGS; do brew install $PKG; done
 
 PKGS="nmap mcphost"
