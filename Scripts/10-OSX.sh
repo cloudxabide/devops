@@ -35,9 +35,10 @@ brew cleanup    # For all installed or specific formulae, remove any older versi
 
 brew install bash
 echo "$(brew --prefix)/bin/bash" | sudo tee -a /etc/shells
+[ -f $(brew --prefix)/bin/bash ] && chsh -s "$(brew --prefix)/bin/bash"
 
 ####
-/bin/bash
+$(brew --prefix)/bin/bash
 # Local setup (first copy files in HOME dir, then *.d files)
 curl -o ~/.zshrc https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Files/.zshrc
 curl -o ~/.bashrc https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Files/.bashrc
