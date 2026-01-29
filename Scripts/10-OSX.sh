@@ -33,6 +33,9 @@ brew cleanup    # For all installed or specific formulae, remove any older versi
 #  NOTE:  No longer doing this.  Instead, create a .zshrc that switch to bash if iTerm is the terminal.app
 # chsh -s /bin/bash
 
+brew install bash
+echo "$(brew --prefix)/bin/bash" | sudo tee -a /etc/shells
+
 ####
 /bin/bash
 # Local setup (first copy files in HOME dir, then *.d files)
