@@ -104,4 +104,7 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ecdsa-github-knowbettercloud
 }
 
+# You will need to update this to where you decide to store your file
+export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/creds
+
 # Next step - source bash profile specific to OS/Release we are running (Darwin vs Linux/Ubuntu vs Linux/Fedora, etc..)
