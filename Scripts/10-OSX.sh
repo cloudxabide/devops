@@ -168,6 +168,13 @@ echo "$(cat kubectl.sha256)  kubectl" | shasum -a 256 --check
 sudo install -o root -m 0755 kubectl /usr/local/bin
 kubectl version --client --output=yaml
 rm kubectl*
+
+# Install Helm
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4
+chmod 700 get_helm.sh
+./get_helm.sh
+rm ./get_helm.sh
+
 # Krew
 brew install krew
 # K9s
