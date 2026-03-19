@@ -37,9 +37,6 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# VSCode cache/config
-.vscode
-
 ################################## ##################################
 # Reference: https://github.com/github/gitignore/blob/main/Global/macOS.gitignore
 # General
@@ -68,3 +65,16 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Claude / Anthropic
+.claude/
+CLAUDE.md
+
+# Gemini / Google AI
+.aiexclude
+.gemini/
+
