@@ -142,13 +142,13 @@ grep $BINPATH ~/.bashrc.d/Darwin || { echo "PATH=\"$BINPATH:\$PATH\"" >> ~/.bash
 PKGS="tree wget cmake jsonlint yamllint" 
 for PKG in $PKGS; do brew install $PKG; done
 
-PKGS="nmap mcphost"
+PKGS="nmap mcphost htop"
 for PKG in $PKGS; do brew install $PKG; done
 
-## Install PIP
-curl  https://bootstrap.pypa.io/get-pip.py -o ~/get-pip.py
-python3 ~/get-pip.py
-rm ~/get-pip.py
+## Install PIP (just use pip3)
+# curl  https://bootstrap.pypa.io/get-pip.py -o ~/get-pip.py
+# python3 ~/get-pip.py
+# rm ~/get-pip.py
 
 # Install iTerm2
 brew install --cask iterm2
@@ -177,10 +177,10 @@ s Install Microsoft Visual Studio Code
 #brew search visual-studio-code        # Searches all known Casks for a partial or exact match.
 brew info --cask visual-studio-code     # Displays information about the given Cask
 brew install --cask visual-studio-code  # Install the given cask.
-#brew install --cask microsoft-teams
 
-# Install Slack
+# Install Chat Apps 
 brew install --cask slack
+brew install discord
 
 # Install Signal
 brew install signal 
@@ -189,7 +189,7 @@ brew install signal
 brew install --cask google-chrome
 
 # openssl@1.1 for perplexity.ai CLI
-brew install openssl@1.1
+#brew install openssl@1.1
 
 # Install Viscosity (OS X VPN client)
 #brew install cask viscosity
@@ -206,11 +206,14 @@ brew install miro
 brew install --cask drawio
 
 # Install Microsoft Office (huh?) - this one is towards the end since it takes a while
-brew install --cask microsoft-office
+#brew install --cask microsoft-office
+#brew install --cask microsoft-teams
 
 # AI Tools
 brew install --cask claude-code
 npm install -g @google/gemini-cli
+brew install opencode
+brew install asitop
 
 #  LASTLY....
 # Update Brew (should not be necessary at this time, here for a reference)
