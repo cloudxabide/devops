@@ -1,0 +1,12 @@
+# This is Git's per-user configuration file.
+[core]
+  excludesfile = ${HOME}/.gitignore_global
+[user]
+# Please adapt and uncomment the following lines:
+  name = James Radtke
+  email = cloudxabide@gmail.com
+[pull]
+  rebase = false
+[push]
+  default = current
+
