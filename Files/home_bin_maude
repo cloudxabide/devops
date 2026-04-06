@@ -1,0 +1,120 @@
+#!/usr/bin/env bash
+# maude - MyclAude: run claude(1) against a local OpenAI-compatible inference endpoint
+#
+# Install: cp home_bin_maude $HOME/bin/maude && chmod +x $HOME/bin/maude
+#
+# Usage: maude [-e HOST:PORT] [-m MODEL] [-- claude-args...]
+#   -e HOST:PORT   endpoint (default: localhost:11434)
+#   -m MODEL       model name; if omitted, a menu is shown
+#   --             remaining args passed directly to claude
+
+set -euo pipefail
+
+# ── OS detection ──────────────────────────────────────────────────────────────
+OS_TYPE=$(uname -s)
+case "$OS_TYPE" in
+  Darwin) OS="macos" ;;
+  Linux)  OS="linux" ;;
+  *)      echo "WARNING: unsupported OS '${OS_TYPE}', proceeding anyway" >&2; OS="unknown" ;;
+esac
+
+# ── prefer Homebrew bash on macOS (system bash is 3.2; brew bash is 5.x) ─────
+# Re-exec with a modern bash if one is available and we're not already using it.
+if [[ "$OS" == "macos" && "${BASH_VERSINFO[0]}" -lt 4 ]]; then
+  for _brew_bash in \
+      /opt/homebrew/bin/bash \
+      /usr/local/bin/bash; do
+    if [[ -x "$_brew_bash" ]]; then
+      exec "$_brew_bash" "$0" "$@"
+    fi
+  done
+  # No Homebrew bash found — continue with system bash (script is 3.2-safe)
+  echo "NOTE: using system bash ${BASH_VERSION}; install 'bash' via Homebrew for best results" >&2
+fi
+
+ENDPOINT="localhost:11434"
+MODEL=""
+
+usage() {
+  grep '^#' "$0" | grep -v '#!/' | sed 's/^# \{0,1\}//'
+  exit 1
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -e|--endpoint) ENDPOINT="$2"; shift 2 ;;
+    -m|--model)    MODEL="$2";    shift 2 ;;
+    -h|--help)     usage ;;
+    --)            shift; break ;;
+    *)             break ;;
+  esac
+done
+
+# Ollama does not use a /v1 path prefix at the top level; Claude Code appends
+# its own path components to ANTHROPIC_BASE_URL as-is.
+BASE_URL="http://${ENDPOINT}"
+
+# ── model selection ───────────────────────────────────────────────────────────
+if [[ -z "$MODEL" ]]; then
+  echo "Querying ${BASE_URL}/v1/models ..."
+  MODELS_JSON=$(curl -sf "${BASE_URL}/v1/models") || {
+    echo "ERROR: could not reach ${BASE_URL}/v1/models" >&2
+    exit 1
+  }
+
+  # Extract model IDs — works with both Ollama and standard OpenAI-style responses
+  # Use a while-read loop instead of mapfile: macOS ships bash 3.2 (no mapfile)
+  MODELS=()
+  while IFS= read -r line; do
+    [[ -n "$line" ]] && MODELS+=("$line")
+  done < <(
+    echo "$MODELS_JSON" | \
+      python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+# handle {models:[{name:...}]} (Ollama /api/tags) and {data:[{id:...}]} (OpenAI)
+items = data.get('data') or data.get('models') or []
+for m in items:
+    print(m.get('id') or m.get('name') or '')
+" | grep -v '^$' | sort
+  )
+
+  if [[ ${#MODELS[@]} -eq 0 ]]; then
+    echo "ERROR: no models found at ${BASE_URL}/v1/models" >&2
+    exit 1
+  fi
+
+  echo ""
+  echo "Available models at ${ENDPOINT}:"
+  for i in "${!MODELS[@]}"; do
+    printf "  %2d) %s\n" $((i+1)) "${MODELS[$i]}"
+  done
+  echo ""
+  read -rp "Select model [1-${#MODELS[@]}]: " CHOICE
+
+  if ! [[ "$CHOICE" =~ ^[0-9]+$ ]] || \
+     (( CHOICE < 1 )) || (( CHOICE > ${#MODELS[@]} )); then
+    echo "Invalid selection." >&2
+    exit 1
+  fi
+
+  MODEL="${MODELS[$((CHOICE-1))]}"
+fi
+
+echo "Model:    ${MODEL}"
+echo "Endpoint: ${BASE_URL}"
+echo ""
+
+# ── environment setup ─────────────────────────────────────────────────────────
+export ANTHROPIC_BASE_URL="${BASE_URL}"
+export ANTHROPIC_AUTH_TOKEN="ollama"   # satisfies claude(1) auth check for local endpoints
+export ANTHROPIC_API_KEY=""            # must be empty string (not unset) to avoid auth conflict
+# Map all Claude tier models to the selected local model so claude(1) does not
+# attempt to fall back to a different Anthropic model.
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="${MODEL}"
+export ANTHROPIC_DEFAULT_SONNET_MODEL="${MODEL}"
+export ANTHROPIC_DEFAULT_OPUS_MODEL="${MODEL}"
+export DISABLE_TELEMETRY=1
+
+# ── launch claude ─────────────────────────────────────────────────────────────
+exec claude --model "${MODEL}" "$@"
