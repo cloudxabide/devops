@@ -8,108 +8,94 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+  . /etc/bashrc
 fi
 
 # User specific environment and startup programs
-TERM=vt100
-EDITOR=vi
-VISUAL=vi
-GIT_EDTIOR=vim
-HISTCONTROL=ignoredups
-HISTIGNORE='*sudo -S*'
-MYHOSTNAME=`hostname | cut -f1 -d.`
+export TERM=xterm-256color
+export EDITOR=vi
+export VISUAL=vi
+export GIT_EDITOR=vim
+export HISTCONTROL=ignoredups
+export HISTIGNORE='*sudo -S*'
+export MYHOSTNAME=$(hostname | cut -f1 -d.)
 
-# Use vi as the EDITOR
+# Use vi keybindings
 set -o vi
 
 # User specific aliases and functions
-alias ll="/bin/ls -l "
-alias la="/bin/ls -la | egrep -v '.DS_Store'"
+alias ll="/bin/ls -l"
+alias la="/bin/ls -la | grep -Ev '.DS_Store'"
 alias lr="/bin/ls -lart"
-alias please='/usr/bin/sudo $(history -p !!)'
-alias butwhy='/usr/bin/systemctl status $_ '
-alias matrixnet='/usr/bin/sudo route add -net 10.10.10.0 netmask 255.255.255.0 gw 192.168.0.1'
+alias please='sudo $(history -p !!)'
+alias butwhy='systemctl status $_'
+alias matrixnet='sudo route add -net 10.10.10.0 netmask 255.255.255.0 gw 192.168.0.1'
 
 # Git aliases
-alias gitpull='git pull; git fetch'
-alias gitpush='git add $_; git commit -m "generic update" $_; git push'
+alias gitpull='git pull'
+alias gitpush='git add -u && git commit -m "generic update" && git push'
 alias gitclean='git branch -d $(git branch | grep -i "radtke")'
 alias gitdoover='git checkout -- .'
 alias gitreset='git checkout -- .'
 
-# OS-specific optimization
-case `uname` in 
+# OS-specific settings
+case "$(uname)" in
   Linux)
-    alias ls="/bin/ls -N "
+    alias ls="/bin/ls -N"
     alias vms="sudo virsh list --inactive --all"
-    alias vv="sudo virt-viewer ${1}"
-    alias finalcountdown="echo $(expr '(' $(date +%s --date "2022-12-09") - $(date +%s)  ')' / 86400) days to study."
+    vv() { sudo virt-viewer "${1}"; }
   ;;
   Darwin)
     # Placeholder for Apple Mac OS X
   ;;
   SunOS)
-    PS1="`/usr/ucb/whoami`@${MYHOSTNAME} $ "
-    echo "\033]0; `uname -n` - `/usr/ucb/whoami` \007"
+    PS1="$(/usr/ucb/whoami)@${MYHOSTNAME} $ "
+    echo "\033]0; $(uname -n) - $(/usr/ucb/whoami) \007"
     PATH=$PATH:/usr/sfw/bin:/opt/sfw/bin:/usr/sfw/sbin:/opt/sfw/sbin:/usr/openwin/bin
     PATH=$PATH:/usr/ucb/:/usr/platform/sun4u/bin:/usr/platform/i86pc:/usr/ccs/bin
     PATH=$PATH:/opt/VRTS/bin:/opt/VRTSvcs/bin:/usr/openv/netbackup/bin
     PATH=$PATH:/usr/openv/volmgr/bin:/opt/SUNWsrspx/bin:/opt/SUNWppro/bin
-    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/sfw/lib:/opt/sfw/lib
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/sfw/lib:/opt/sfw/lib
   ;;
   AIX)
-    PS1="`/usr/bin/whoami`@${HOSTNAME} $ "
-    echo "\033]0; ${HOSTNAME} - `/usr/bin/whoami` \007";
+    PS1="$(/usr/bin/whoami)@${HOSTNAME} $ "
+    echo "\033]0; ${HOSTNAME} - $(/usr/bin/whoami) \007"
   ;;
 esac
 
-#PATH=$PATH:$HOME/.local/bin:$HOME/bin
-MANPATH=$MANPATH:/usr/share/man
-export MANPATH
+export MANPATH=$MANPATH:/usr/share/man
 
-[ ! -z $TROUBLESHOOT_BASH ] && { 
-  echo "#### Sourcing:  $rc" 
+[ -n "$TROUBLESHOOT_BASH" ] && {
+  echo "#### Sourcing:  $rc"
   echo "This is a login shell - ~/.bash_profile sourced"
-  #MYSSHKEY=blah.pem; eval "$(ssh-agent -s)"; ssh-add $MYSSHKEY
 }
 
 setup_docker_alias() {
-    # Check if docker command exists
-    if command -v docker >/dev/null 2>&1; then
-        # Docker found, do nothing
-        return 0
-    fi
-    
-    # Docker not found, check for alternatives in order of preference
-    if command -v podman >/dev/null 2>&1; then
-        alias docker='podman'
-    elif command -v nerdctl >/dev/null 2>&1; then
-        alias docker='nerdctl'
-    fi
+  command -v docker >/dev/null 2>&1 && return 0
+  if command -v podman >/dev/null 2>&1; then
+    alias docker='podman'
+  elif command -v nerdctl >/dev/null 2>&1; then
+    alias docker='nerdctl'
+  fi
 }
-# Call the function to set up the alias
 setup_docker_alias
 
-# This actually doesn't work as expect :-(
-# Leaving here though so I can just cut-and-paste until I figure it out
-# -- probably needs to be a routine, and not an alias
-alias update_bashrc_scripts='
-cd ${HOME}/.bashrc.d/
-for FILEPATH in $(find $HOME/.bashrc.d/*)
-do
-  ENVFILE=$(basename $FILEPATH)
-  echo "curl -o ~/.bashrc.d/${ENVFILE} https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_${ENVFILE}"
-  curl -o ~/.bashrc.d/${ENVFILE} https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_${ENVFILE}
-done
-cd - '
-
-ssh_key_add() {
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ecdsa-github-knowbettercloud
+update_bashrc_scripts() {
+  local bashrc_dir="${HOME}/.bashrc.d"
+  for filepath in "${bashrc_dir}"/*; do
+    local envfile
+    envfile=$(basename "$filepath")
+    echo "Updating ${envfile}..."
+    curl -fsSL -o "${bashrc_dir}/${envfile}" \
+      "https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc.d_${envfile}"
+  done
 }
 
-# You will need to update this to where you decide to store your file
+ssh_key_add() {
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_ecdsa-github-knowbettercloud
+}
+
 export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/creds
 
 # Next step - source bash profile specific to OS/Release we are running (Darwin vs Linux/Ubuntu vs Linux/Fedora, etc..)
