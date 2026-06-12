@@ -30,3 +30,20 @@ if [ -d ~/.bashrc.d ]; then
 fi
 
 unset rc
+
+# Ingest and export creds for bashrc.d/* scripts that exist
+# Safely iterate over the directory using globbing instead of $(find ...)
+for RC in "$HOME"/.bashrc.d/*
+do
+  # Guard against an empty directory (where the literal string '* ' is returned)
+  [[ -e "$RC" ]] || continue
+
+  # Properly quote variables to prevent issues with spaces in file paths
+  CREDS_FILE="${HOME}/.config/$(basename "$RC")/creds"
+  echo "sourcing $CREDS_FILE"
+
+  # Use [[ ... ]] for file testing instead of arithmetic (( ... ))
+  [[ -f "$CREDS_FILE" ]] && source "$CREDS_FILE"
+done
+
+unset RC

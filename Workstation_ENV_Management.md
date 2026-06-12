@@ -1,4 +1,4 @@
-# Local ENV Management
+# Workstation ENV Management
 
 Notes regarding how I would like to manage my "local" environment on my workstations
 
@@ -20,6 +20,7 @@ if [ -f ~/.config/$ENV_RC/creds ] then . ~/.config/$ENV_RC/creds; fi
 
 Now - do I add that code to each RC file?  Or... should I add logic in $HOME/.bashrc to execute based on what it finds in $HOME/.bashrc.d/ (trending towards latter)
 
+## TL;DR: implement this bashrc approach
 ```
 # Safely iterate over the directory using globbing instead of $(find ...)
 for RC in "$HOME"/.bashrc.d/*
