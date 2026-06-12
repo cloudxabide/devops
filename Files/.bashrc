@@ -40,7 +40,7 @@ do
 
   # Properly quote variables to prevent issues with spaces in file paths
   CREDS_FILE="${HOME}/.config/$(basename "$RC")/creds"
-  echo "sourcing $CREDS_FILE"
+  # echo "sourcing $CREDS_FILE"
 
   # Use [[ ... ]] for file testing instead of arithmetic (( ... ))
   [[ -f "$CREDS_FILE" ]] && source "$CREDS_FILE"

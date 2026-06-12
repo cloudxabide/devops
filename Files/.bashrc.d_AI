@@ -1,5 +1,4 @@
-export GEMINI_API_KEY=""
-export ANTHROPIC_API_KEY=""
+# NOTE: to inherit "creds" place them in ~/.config/AI/creds
 
 alias chatjarvis="mcphost -m ollama:gemma3:12b --provider-url http://10.10.12.250:11434"
 alias chatspark="mcphost -m ollama:gemma3:12b --provider-url http://10.10.12.251:11434"
@@ -7,11 +6,3 @@ alias getmodels="curl -s http://10.10.12.251:11434/api/tags | jq -r '.models[].n
 
 # mcphost -m ollama:gemma3:27b --provider-url http://10.10.12.251:11434 --config ~/.mcphost.yml
 
-alias claude-local='ANTHROPIC_AUTH_TOKEN=ollama \
-  ANTHROPIC_API_KEY="" \
-  ANTHROPIC_BASE_URL=http://10.10.12.251:11434 \
-  ANTHROPIC_DEFAULT_HAIKU_MODEL="nemotron:latest" \
-  ANTHROPIC_DEFAULT_SONNET_MODEL="nemotron:latest" \
-  ANTHROPIC_DEFAULT_OPUS_MODEL="nemotron:latest" \
-  DISABLE_TELEMETRY=1 \
-  claude --model nemotron:latest'
