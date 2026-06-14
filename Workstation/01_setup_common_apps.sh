@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Install utilities
+PKGS_COMMON="unzip wget iotop"
 # Source /etc/os-release to get distribution info
 if [[ -f /etc/os-release ]]; then
     source /etc/os-release
@@ -8,19 +9,22 @@ if [[ -f /etc/os-release ]]; then
         fedora)
             echo "This is Fedora"
             $(which lsb_release) || yum -y install lsb-release
-            PKGS="unzip curl wget git iotop"
-            sudo yum -y install $PKGS
+            PKGS="git"
+            sudo yum -y install $PKGS 
+            sudo yum -y install $PKGS_COMMON
         ;;
         ubuntu)
             echo "This is Ubuntu"
-            SYSTEM_PACKAGES="wget gpg curl git npm"
-            sudo apt-get -y install $SYSTEM_PACKAGES
+            SYSTEM_PACKAGES="git"
+            sudo apt-get -y install $SYSTEM_PACKAGES 
+            sudo apt-get -y install $PKGS_COMMON
         ;;
         suse | opensuse* | sles | sled)
             echo "This is SUSE"
             $(which lsb_release) || sudo zypper --non-interactive install lsb-release
-            PKGS="unzip curl wget git-core iotop"
+            PKGS="git-core "
             sudo zypper --gpg-auto-import-keys --non-interactive install --auto-agree-with-licenses $PKGS
+            sudo zypper --gpg-auto-import-keys --non-interactive install --auto-agree-with-licenses $PKGS_COMMON
         ;;
         *)
             echo "Unknown or unsupported OS: $ID"
