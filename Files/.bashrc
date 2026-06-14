@@ -21,12 +21,12 @@ export PATH
 
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
-	for rc in ~/.bashrc.d/*; do
-		if [ -f "$rc" ]; then
-                  [ ! -z $TROUBLESHOOT_BASH ] && { echo "### Sourcing: $rc from ~/.bashrc"; }
-			. "$rc"
-		fi
-	done
+  for rc in ~/.bashrc.d/*; do
+  if [ -f "$rc" ]; then
+    [ ! -z $TROUBLESHOOT_BASH ] && { echo "### Sourcing: $rc from ~/.bashrc"; }
+    . "$rc"
+    fi
+  done
 fi
 
 unset rc
