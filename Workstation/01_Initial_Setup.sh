@@ -77,7 +77,7 @@ esac
 case "$ID" in
   suse | opensuse* | sles | sled)
     echo "This is SUSE"
-    zypper up
+    zypper --non-interactive update
   ;;
   ubuntu)
     echo "This is Ubuntu"
@@ -87,5 +87,12 @@ case "$ID" in
     echo "Unknown or unsupported OS: $ID"
   ;;
 esac
+
+# Add NOPASSWD sudo for admin users
+SUDOERS="jradtke mansible"
+for DAUSER in $SUDOERS; do
+  echo "${DAUSER} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${DAUSER}-nopasswd-all
+  chmod 440 /etc/sudoers.d/${DAUSER}-nopasswd-all
+done
 
 exit 0
