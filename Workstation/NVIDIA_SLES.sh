@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#  Status:  Working (2026-05-08)
-# Purpose:  Install NVIDIA Drivers from NVIDIA 
+#  Status:  Working (2026-06-17, confirmed on SLES 16)
+# Purpose:  Install NVIDIA Drivers from NVIDIA
 #    NOTE:  If you are running SLES with subscription, the included drivers from SUSE should work fine.
 #             I need to this due to running SLES from RGS
 
@@ -33,8 +33,8 @@ lsmod > /tmp/lsmod.0
 lspci > /tmp/lspci.0
 
 # G07 meta-packages (cuda-drivers / nvidia-open) require kernel-syms via DKMS,
-# which is not available on SLES 15 SP7. Use precompiled G06 KMP packages instead;
-# G06 covers Turing/Ampere (RTX 3050 Ti and newer).
+# which was not available on SLES 15 SP7 but IS available on SLES 16.
+# Using G06 KMP packages regardless; G06 covers Turing/Ampere (RTX 3050 Ti and newer).
 #
 # The CUDA-capable signed KMP conflicts with the plain signed KMP; remove it first.
 # Pin all userspace packages to the same version as the KMP to avoid version skew.
@@ -69,12 +69,13 @@ esac
 
 lsmod > /tmp/lsmod.1
 lspci > /tmp/lspci.1
-sdiff /tmp/lsmod.0 /tmp/lsmod.1 | grep -E '[|<>]'
-sdiff /tmp/lspci.0 /tmp/lspci.1 | grep -E '[|<>]'
+# sdiff exits 1 when files differ; pipefail would abort the script without || true
+{ sdiff /tmp/lsmod.0 /tmp/lsmod.1 || true; } | grep -E '[|<>]' || true
+{ sdiff /tmp/lspci.0 /tmp/lspci.1 || true; } | grep -E '[|<>]' || true
 
 # Docker stuff
 sudo zypper refresh
-sudo zypper install docker
+sudo zypper install -y docker
 sudo usermod -a -Gdocker $(whoami)
 sudo systemctl enable --now docker
 
