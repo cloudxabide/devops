@@ -23,7 +23,7 @@ echo "curl -o ${HOME}/.config/git/ignore https://raw.githubusercontent.com/cloud
 curl -o ${HOME}/.config/git/ignore https://raw.githubusercontent.com/cloudxabide/devops/refs/heads/main/Files/.config_git_ignore.$(uname)
 
 # Update bash profile(s)
-mkdir ${HOME}/.bashrc.d/
+mkdir -p ${HOME}/.bashrc.d/
 curl -o ${HOME}/.bashrc.d/common https://raw.githubusercontent.com/cloudxabide/devops/refs/heads/main/Files/.bashrc.d_common
 curl -o ${HOME}/.bashrc.d/K8s https://raw.githubusercontent.com/cloudxabide/devops/refs/heads/main/Files/.bashrc.d_K8s
 curl -o ${HOME}/.bashrc.d/$OS_NAME https://raw.githubusercontent.com/cloudxabide/devops/refs/heads/main/Files/.bashrc.d_${OS_NAME}

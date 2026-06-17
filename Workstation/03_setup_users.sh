@@ -11,7 +11,7 @@
 # * * * * * * * * * * * *
 # System Stuff
 # * * * * * * * * * * * *
-PWD=`pwd`
+MYDIR=$(pwd)
 DATE=`date +%Y%m%d`
 ARCH=`uname -p`
 YUM=$(which dnf || which yum || which zypper)
@@ -43,7 +43,7 @@ esac
 if [[ -f /etc/os-release ]]; then
     source /etc/os-release
     case "$ID" in
-      "openSUSE*"|"SLES"|"sles")  
+      opensuse*|sles|sled)
         groupadd -g 2025 jradtke
         id -u jradtke &>/dev/null || useradd -u2025 -g2025 -Gusers,wheel -c "James Radtke" -m -p '$6$Yyap4/fOS9I4tBAY$c0mDtGG46vO1tS3Idp3/NmamZgupUqL1o8ERWObYtKmw.jvGyuSZvhOeCUWFOE.8osZj6whiQ5l0VfWFDaPhH.' jradtke
       ;;
