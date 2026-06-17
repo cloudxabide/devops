@@ -58,5 +58,8 @@ EOF
 sudo chown -R $(id -u):$(id -g) $HOME/.config/
 #  NOTE:  You'll need to rename "~/.conky/Conky Seamod" "~/.conky/Conky_Seamod"
 
+# Install Claude Code for the current user
+curl -fsSL https://claude.ai/install.sh | bash
+
 exit 0
 

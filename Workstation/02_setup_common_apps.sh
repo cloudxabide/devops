@@ -101,6 +101,3 @@ esac
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/${PLATFORM}/kubectl"
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/${PLATFORM}/kubectl.sha256"
 echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check | grep OK && { sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl; rm ./kubectl*; } || { echo "Checksum failed.  Review."; }
-
-# Install Claude Code
-curl -fsSL https://claude.ai/install.sh | bash
