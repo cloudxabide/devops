@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Purpose:  Install OS utilities and apps
+
 # Install utilities
 PKGS_COMMON="unzip wget iotop"
 # Source /etc/os-release to get distribution info
@@ -34,6 +36,10 @@ else
     echo "/etc/os-release not found. Unable to determine OS."
 fi
 
+# Update Grub, if needed
+sudo cp /etc/default/grub /etc/default/grub.orig
+sudo sed -i -e 's/#GRUB_SAVEDEFAULT/GRUB_SAVEDEFAULT/g' /etc/default/grub
+
 # Install the AWS CLI (TODO: make this OS-independent)
 #curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-$(uname -p).zip" -o "awscliv2.zip"
@@ -46,8 +52,9 @@ case $(uname -m) in
     aarch64) PLATFORM="arm64" ;;
     arm64) PLATFORM="arm64" ;;
 esac
-
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/${PLATFORM}/kubectl"
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/${PLATFORM}/kubectl.sha256"
 echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check | grep OK && { sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl; rm ./kubectl*; } || { echo "Checksum failed.  Review."; }
 
+# install Claude Code
+curl -fsSL https://claude.ai/install.sh | bash

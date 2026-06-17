@@ -5,7 +5,6 @@ do_fedora(){
             $(which lsb_release) || yum -y install lsb-release
             PKGS="unzip curl wget git iotop"
             sudo yum -y install $PKGS
-
 }
 do_ubuntu(){
 echo "This is Ubuntu"
@@ -13,7 +12,7 @@ SYSTEM_PACKAGES="wget gpg curl git npm"
 sudo apt-get -y install $SYSTEM_PACKAGES
 }
 
-do_opensuse(){
+do_suse(){
 # Kill the packagekit stuff so we can actually manage packages.
 SVCS="packagekit-background.service
 packagekit-offline-update.service
@@ -26,11 +25,9 @@ do
 done
 sudo pkill packagekitd
 
-
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo zypper --non-interactive ar  https://packages.microsoft.com/yumrepos/vscode vscode
 }
-
 
 ## OS-specific
 if [[ -f /etc/os-release ]]; then
@@ -45,6 +42,24 @@ else
     echo "/etc/os-release not found. Unable to determine OS."
 fi
 
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/vscode.repo'
+
+# Google Chrome (does not work for aarch64/arm64)
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub > linux_signing_key.pub
+sudo rpm --import linux_signing_key.pub; sudo rm linux_signing_key.pub
+sudo zypper addrepo http://dl.google.com/linux/chrome/rpm/stable/$(uname -p) Google-Chrome
+
+sudo zypper --gpg-auto-import-keys refresh
+
+PKG_LIST="lsb-release google-chrome-stable"
+for PKG in $PKG_LIST
+do
+  sudo zypper --non-interactive install $PKG
+done
+
+PKG_LIST="code git-core npm nodejs gnome-terminal google-chrome-stable"
+for PKG in $PKG_LIST; do sudo zypper --non-interactive install --auto-agree-with-licenses $PKG; done
 
 ## Universal Install
 # Update Bootloader Screen
