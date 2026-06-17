@@ -25,20 +25,6 @@ then
   exit 9
 fi
 
-# Make sure the host is named correctly
-case $(dmidecode -s baseboard-product-name) in
-  21CD000QUS)
-    echo "blackmesa" > /etc/hostname
-  ;;
-  0F6K9V)
-    echo "wheatley" > /etc/hostname
-  ;;
-  'ROG STRIX Z490-E GAMING')
-    echo "jarvis" > /etc/hostname
-  ;;
-esac
-
-# Task: Setup Users (SUSE uses a common group for all users)
 # Create user using dummy Passw0rd - you need to change your password
 if [[ -f /etc/os-release ]]; then
     source /etc/os-release
