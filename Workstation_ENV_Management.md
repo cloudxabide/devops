@@ -1,8 +1,10 @@
 # Workstation ENV Management
 
-Notes regarding how I would like to manage my "local" environment on my workstations
+Notes regarding how I would like to manage my "local" environment on my workstations.
+What is ~/.bashrc.d/creds - and what is it for?
 
 I would like to create an appraoch that limits the possibility of me oversharing sensitive information, while maintainig the functionality I need.  More specifically: I like having useful artifacts in ~/.bashrc.d/ based on the tool or use (a file for K8s, or AI, or... "OS variant") - but... I don't want to have any sensitive data in those files (like API key, or AWS creds, etc...)
+So, for every $HOME/.bashrc.d/* file this method will check for a directory matching the rc script name, with a "creds" file - and then source it.  Overly complicated?  Perhaps
 
 NOTES:
 If I *have* to use long-lived credentials for some reason, I'd rather not just dump them in ~/.aws/credentials - this is partially "security through obscurity" (which is easy enough to unravel the mystery), but
