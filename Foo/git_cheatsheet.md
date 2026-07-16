@@ -80,6 +80,38 @@ do
 done
 ```
 
+## Clone all the repos for a user
+```
+REPO_OWNER=$(basename "$PWD")
+echo "NOTE: cloning $REPO_OWNER"
+REPO_DIR="$HOME/Developer/Repositories/Public/github.com/$REPO_OWNER"
+mkdir -p "$REPO_DIR"
+cd "$REPO_DIR" || exit 1
+
+PAGE=1
+while :; do
+  RESPONSE=$(curl -s "https://api.github.com/users/$REPO_OWNER/repos?per_page=100&page=$PAGE")
+  REPOS=$(echo "$RESPONSE" | grep '"clone_url"' | awk '{ print $2 }' | sed 's/[",]//g')
+  [ -z "$REPOS" ] && break
+
+  for REPO in $REPOS; do
+    echo "######### ######### ######### #########"
+    echo "$REPO"
+    GITDIR=$(basename "$REPO" .git)
+    echo "$GITDIR"
+    if [ -d "$GITDIR" ]; then
+      (cd "$GITDIR" && git pull)
+    else
+      echo "git clone $REPO"
+      git clone "$REPO"
+    fi
+    echo ""
+  done
+
+  PAGE=$((PAGE + 1))
+done
+```
+
 Or... let's say you want to grab all the (public) repos for a user (OpenShiftDemos)  
 This assumes you have created the directory for this Git User and cd'd in to it
 ```
@@ -88,15 +120,18 @@ REPO_OWNERS=$(basename $PWD)
 
 for REPO_OWNER in $REPO_OWNERS
 do
-  REPO_DIR="$HOME/Repositories/Public/github.com/$REPO_OWNER"
+  echo "NOTE:  cloning $REPO_OWNER"
+  REPO_DIR="$HOME/Developer/Repositories/Public/github.com/$REPO_OWNER"
   [ ! -d $REPO_DIR ] && { mkdir $REPO_DIR; }
   cd $REPO_DIR
   for REPO in $(curl -s https://api.github.com/users/$REPO_OWNER/repos | grep "clone_url"  | awk '{ print $2 }' | sed 's/,//g' | sed 's/"//g')
   do
+    echo "######### ######### ######### #########"
     echo "$REPO"
     GITDIR=$(echo "${REPO##*/}" | sed 's/.git//g' )
     echo "$GITDIR"
     [ -d $GITDIR ] && { cd $GITDIR; git pull; cd -; } || { echo "git clone $REPO"; git clone $REPO; }
+    echo ""
   done
   echo "cd -"
   cd -
