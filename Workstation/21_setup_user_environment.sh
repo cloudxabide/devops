@@ -25,9 +25,10 @@ curl -o ${HOME}/.config/git/ignore https://raw.githubusercontent.com/cloudxabide
 
 # Update bash profile(s)
 mkdir -p ${HOME}/.bashrc.d/
-curl -o ${HOME}/.bashrc.d/common https://raw.githubusercontent.com/cloudxabide/devops/refs/heads/main/Files/.bashrc.d_common
-curl -o ${HOME}/.bashrc.d/K8s https://raw.githubusercontent.com/cloudxabide/devops/refs/heads/main/Files/.bashrc.d_K8s
-curl -o ${HOME}/.bashrc.d/$OS_NAME https://raw.githubusercontent.com/cloudxabide/devops/refs/heads/main/Files/.bashrc.d_${OS_NAME}
+curl -o ${HOME}/.bashrc.d/common https://raw.githubusercontent.com/cloudxabide/devops/refs/heads/main/Files/.bashrc.d/common
+curl -o ${HOME}/.bashrc.d/creds https://raw.githubusercontent.com/cloudxabide/devops/refs/heads/main/Files/.bashrc.d/creds
+curl -o ${HOME}/.bashrc.d/K8s https://raw.githubusercontent.com/cloudxabide/devops/refs/heads/main/Files/.bashrc.d/K8s
+curl -o ${HOME}/.bashrc.d/$OS_NAME https://raw.githubusercontent.com/cloudxabide/devops/refs/heads/main/Files/.bashrc.d/${OS_NAME}
 
 # TODO: make this section only run on Linux hosts
 # Add a Conky Startup Desktop App Shortcut
