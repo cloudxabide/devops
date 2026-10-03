@@ -5,7 +5,8 @@
 # Requirements: The user running this script must have SUDO
 #               lsb-release package must be install
 
-OS_NAME=$(grep ^NAME /etc/os-release | awk -F\" '{ print $2 }')
+# Added last awk to reduce "openSUSE Tumbleweed" to "openSUSE"
+OS_NAME=$(grep ^NAME /etc/os-release | awk -F\" '{ print $2 }' | awk '{ print $1 }')
 
 # Update files in ${HOME}
 cd
