@@ -3,11 +3,15 @@
 # This file is stored/managed at: https://raw.githubusercontent.com/cloudxabide/devops/main/Files/
 # grep cxa-customization ~/.bashrc || { curl https://raw.githubusercontent.com/cloudxabide/devops/main/Files/.bashrc | tee -a ~/.bashrc; }
 
+
 # cxa-customization follows 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
+
+# Source local alias definitions
+test -s ~/.alias && . ~/.alias || true
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
