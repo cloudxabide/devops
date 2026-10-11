@@ -33,7 +33,20 @@ brew cleanup    # For all installed or specific formulae, remove any older versi
 #  NOTE:  No longer doing this.  Instead, create a .zshrc that switch to bash if iTerm is the terminal.app
 # chsh -s /bin/bash
 
-brew install bash
+# Install Homebrew  (https://brew.sh)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Old (deprecated) method
+#   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install)"
+# Optional: you should add this to your .profile or .bashrc (etc...)
+# grep "opt/python" ~/.bashrc.d/Darwin || { echo "PATH=\"$PATH:/usr/local/opt/python/libexec/bin:$PATH\"" >> ~/.bashrc.d/Darwin; }
+
+BREWPATH="$(/opt/homebrew/bin/brew --prefix)"
+
+BINPATH="${BREWPATH}/bin"
+grep $BINPATH ~/.bashrc.d/Darwin || { echo "PATH=\"\$PATH:$BINPATH\"" >> ~/.bashrc.d/Darwin; }
+. ~/.bashrc
+
+echo "y" | brew install bash
 echo "$(brew --prefix)/bin/bash" | sudo tee -a /etc/shells
 [ -f $(brew --prefix)/bin/bash ] && chsh -s "$(brew --prefix)/bin/bash"
 
@@ -45,8 +58,8 @@ curl -o ~/.bashrc https://raw.githubusercontent.com/cloudxabide/devops/HEAD/File
 curl -o ~/.bash_profile https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Files/.bash_profile
 
 mkdir -p ~/.bashrc.d/
-curl -o ~/.bashrc.d/Darwin https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Files/.bashrc.d_Darwin
-curl -o ~/.bashrc.d/common https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Files/.bashrc.d_common
+curl -o ~/.bashrc.d/Darwin https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Files/.bashrc.d/Darwin
+curl -o ~/.bashrc.d/common https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Files/.bashrc.d/common
 . ~/.bash_profile
 
 # I put the following in a "routine" so that this can be run as a script 
@@ -87,30 +100,17 @@ curl -o ${HOME}/.config/git/ignore  https://raw.githubusercontent.com/cloudxabid
 [ -d ${HOME}/.ssh ] || ssh-keygen -trsa -b2048
 # The next command should have already been executed (above)
 # curl -o ~/.ssh/config https://raw.githubusercontent.com/cloudxabide/devops/HEAD/Files/ssh_config;  chmod 0600 ~/.ssh/config
-
-# Install Homebrew  (https://brew.sh) 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# Old (deprecated) method
-#   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install)"
-# Optional: you should add this to your .profile or .bashrc (etc...)
-# grep "opt/python" ~/.bashrc.d/Darwin || { echo "PATH=\"$PATH:/usr/local/opt/python/libexec/bin:$PATH\"" >> ~/.bashrc.d/Darwin; }
-
-BREWPATH="$(/opt/homebrew/bin/brew --prefix)"
-
-BINPATH="${BREWPATH}/bin"
-grep $BINPATH ~/.bashrc.d/Darwin || { echo "PATH=\"\$PATH:$BINPATH\"" >> ~/.bashrc.d/Darwin; }
-. ~/.bashrc
  
 # Install Cask (FKA http://caskroom.io/)
 # Homebrew-Cask extends Homebrew and allows you to install large binary files via a command-line tool
 #brew tap homebrew/cask                      # Tap the Caskroom/Cask repository from Github using HTTPS.
 
 # Install Python 3.x
-brew install python
-brew install python-tk@3.9
+echo "y" | brew install python
+# echo "y" | brew install python-tk@3.9 # deprecated 2026-10-15
 
 # Install Java
-brew install java 
+echo "y" | brew install java 
 [ ! -f /Library/Java/JavaVirtualMachines/openjdk.jdk ] && { sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk; }
 
 brew install openjdk@11  
@@ -140,10 +140,10 @@ BINPATH="/opt/homebrew/Cellar/gnu-sed/4.9/libexec/gnubin/"
 grep $BINPATH ~/.bashrc.d/Darwin || { echo "PATH=\"$BINPATH:\$PATH\"" >> ~/.bashrc.d/Darwin; }
 
 PKGS="tree wget cmake jsonlint yamllint yq asciidoctor"  
-for PKG in $PKGS; do brew install $PKG; done
+for PKG in $PKGS; do echo "y" | brew install $PKG; done
 
 PKGS="nmap mcphost htop"
-for PKG in $PKGS; do brew install $PKG; done
+for PKG in $PKGS; do echo "y" | brew install $PKG; done
 
 ## Install PIP (just use pip3)
 # curl  https://bootstrap.pypa.io/get-pip.py -o ~/get-pip.py
@@ -151,10 +151,10 @@ for PKG in $PKGS; do brew install $PKG; done
 # rm ~/get-pip.py
 
 # Install iTerm2
-brew install --cask iterm2
+echo "y" | brew install --cask iterm2
 
 # Bitwarden password manager
-brew install bitwarden
+echo "y" | brew install bitwarden
 
 # https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html#cliv2-mac-install-cmd-all-users
 curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
@@ -176,24 +176,24 @@ chmod 700 get_helm.sh
 rm ./get_helm.sh
 
 # Krew
-brew install krew
+echo "y" | brew install krew
 # K9s
-brew install k9s 
+echo "y" | brew install k9s 
 
 s Install Microsoft Visual Studio Code
 #brew search visual-studio-code        # Searches all known Casks for a partial or exact match.
-brew info --cask visual-studio-code     # Displays information about the given Cask
-brew install --cask visual-studio-code  # Install the given cask.
+echo "y" | brew info --cask visual-studio-code     # Displays information about the given Cask
+echo "y" | brew install --cask visual-studio-code  # Install the given cask.
 
 # Install Chat Apps 
-brew install --cask slack
-brew install discord
+echo "y" | brew install --cask slack
+# brew install discord
 
 # Install Signal
-brew install signal 
+echo "y" | brew install signal 
 
 # Install Google Chrome
-brew install --cask google-chrome
+echo "y" | brew install --cask google-chrome
 
 # openssl@1.1 for perplexity.ai CLI
 #brew install openssl@1.1
@@ -208,16 +208,16 @@ brew install tunnelblick
 #brew install --cask vmware-fusion
 
 # Install Miro (desktop App)
-brew install miro
+echo "y" | brew install miro
 # Install Draw.IO
-brew install --cask drawio
+echo "y" | brew install --cask drawio
 
 # Install Microsoft Office (huh?) - this one is towards the end since it takes a while
 #brew install --cask microsoft-office
 #brew install --cask microsoft-teams
 
 # AI Tools
-brew install --cask claude-code
+echo "y" | brew install --cask claude-code
 npm install -g @google/gemini-cli
 brew install opencode
 brew install asitop
