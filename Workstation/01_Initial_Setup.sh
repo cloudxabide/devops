@@ -9,7 +9,7 @@
 # Determine what OS/Release we are working with
 if [ -f /etc/os-release ]; then
     # Source the file to load the variables
-    . /etc/os-release
+    source /etc/os-release
     OS=$ID
     VERSION=$VERSION_ID
     NAME=$PRETTY_NAME
@@ -47,6 +47,7 @@ case "$ID" in
         SUSEConnect -p "PackageHub/${VERSION}/${ARCH}"
       ;; 
       *)
+        # TODO: so much wrong here, need to first check if we are already registered.  THEN.. if email and regcode are set, proceed.  Sheesh
         SUSEConnect -e $REGEMAIL -r $REGCODE
       ;;
     esac
@@ -69,6 +70,13 @@ sed -i -e 's/# GRUB_SAVEDEFAULT="true"/GRUB_SAVEDEFAULT="true"/g' /etc/default/g
 case "$ID" in
   suse | opensuse* | sles | sled)
     echo "This is SUSE"
+    # TODO: SLES 16 needs PackageHub enabled
+    case $VERSION in
+      16.0)
+        SUSEConnect -p PackageHub/16.0/x86_64
+      ;;
+    esac
+    zypper refresh
     zypper --non-interactive install --auto-agree-with-licenses os-prober  
   ;;
 esac

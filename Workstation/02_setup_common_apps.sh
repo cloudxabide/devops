@@ -62,7 +62,7 @@ sudo zypper addrepo http://dl.google.com/linux/chrome/rpm/stable/$(uname -p) Goo
 
 sudo zypper --gpg-auto-import-keys refresh
 
-zypper --non-interactive install $SYSTEM_PKGS
+sudo zypper --non-interactive install $SYSTEM_PKGS
 
 # I put this in a for-loop so that one bad package does not prevent the others from installing
 PKG_LIST="code npm nodejs gnome-terminal google-chrome-stable"
@@ -101,3 +101,5 @@ esac
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/${PLATFORM}/kubectl"
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/${PLATFORM}/kubectl.sha256"
 echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check | grep OK && { sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl; rm ./kubectl*; } || { echo "Checksum failed.  Review."; }
+
+exit 0
