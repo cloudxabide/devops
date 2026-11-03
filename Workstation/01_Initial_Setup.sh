@@ -44,13 +44,13 @@ case "$ID" in
     case "$USE_RGS" in 
       true|1)
         SUSEConnect --url https://rgscc.ranchergovernment.com --write-config -r $REGCODE
-        SUSEConnect -p "PackageHub/${VERSION}/${ARCH}"
       ;; 
       *)
         # TODO: so much wrong here, need to first check if we are already registered.  THEN.. if email and regcode are set, proceed.  Sheesh
         SUSEConnect -e $REGEMAIL -r $REGCODE
       ;;
     esac
+    SUSEConnect -p "PackageHub/${VERSION}/${ARCH}"
   ;;
   ubuntu)
     echo "This is Ubuntu"
