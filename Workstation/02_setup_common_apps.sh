@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Purpose:  Install OS utilities and apps
+# RunAs:    non-root user (probably mansible)
+# TODO:
 
 # Install utilities
 PKGS_COMMON="unzip wget curl lsb-release"
@@ -81,7 +83,7 @@ else
     echo "/etc/os-release not found. Unable to determine OS."
 fi
 
-## Universal Install
+## Universal Items Install
 # Update Bootloader Screen
 wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash
 # wget -O - https://github.com/johdasgran/mr-robot-theme/raw/main/install.sh | bash
