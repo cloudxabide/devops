@@ -6,6 +6,9 @@
 #           REGEMAIL (optional) - used for SUES reg
 #   RunAs:  root
 
+# TODO - add check to make this is run as root
+#        check for REGCODE and REGEMAIL
+
 # Determine what OS/Release we are working with
 if [ -f /etc/os-release ]; then
     # Source the file to load the variables
